@@ -1,6 +1,4 @@
 library(shiny)
-library(tidyverse)
-library(gridExtra)
 
 range = 6
 expd = 0.005
@@ -29,19 +27,46 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
   output$mainPlot <- renderPlot({
-    g1 <- ggplot()+stat_function(fun=~{dnorm(.x,input$mu,input$sigma2)},n=1001)+
-      scale_x_continuous(expand=c(0,0),limits=c(-range,range)) + 
-      scale_y_continuous(expand=c(expd,expd)) + 
-      geom_point(aes(x=input$x,y=dnorm(input$x,input$mu,input$sigma2)),color="red",size=4) + 
-      stat_function(fun=~{dnorm(.x,input$mu,input$sigma2)},n=1001,geom="area",xlim=c(-100,input$x),fill="red",alpha=.5)+
-      labs(title="Probability density function (PDF)",x="x",y="Density")
-    g2 <- ggplot()+geom_function(fun=~{pnorm(.x,input$mu,input$sigma2)},n=1001)+
-      geom_point(aes(x=input$x,y=pnorm(input$x,input$mu,input$sigma2)),color="red",size=4) +
-      scale_x_continuous(expand=c(expd,expd),limits=c(-range,range)) + scale_y_continuous(expand=c(expd,0)) + labs(title="Cumulative density function (CDF)",x="x",y="Probability")
-    g3 <- ggplot()+geom_function(fun=~{qnorm(.x,input$mu,input$sigma2)},n=1001)+
-      geom_point(aes(x=pnorm(input$x,input$mu,input$sigma2),y=input$x),color="red",size=4) +
-      scale_x_continuous(expand=c(expd,expd),limits=c(0,1)) + scale_y_continuous(expand=c(expd,expd),limits=c(-range,range)) + labs(title="Inverse CDF",x="Probability",y="x")
-          grid.arrange(g1,g2,g3,nrow=1)
+    par(mfrow=c(1,3))
+    xs <- seq(-6,6,length.out=200)
+    prob = round(pnorm(input$x, input$mu, sqrt(input$sigma2)),5)
+    plot(xs, dnorm(xs, input$mu, sqrt(input$sigma2)), type="l", 
+         main="Probability Density Function (PDF)",
+         xlab="x", ylab="density", ylim=c(0, dnorm(0, sd=sqrt(input$sigma2))))
+    polygon(c(-6,seq(-6, input$x, by=.01), input$x), 
+            c(0,dnorm(seq(-6, input$x, by=.01), input$mu, sqrt(input$sigma2)),0), col="pink")
+    text(x=6, y=dnorm(0, sd=sqrt(input$sigma2)), 
+         paste("Area:",prob), pos=2)
+
+    plot(xs, pnorm(xs, input$mu, sqrt(input$sigma2)), type="l", 
+         main="Cumulative density function (CDF)",
+         xlab="x", ylab="probability", ylim=c(0, 1))
+    points(input$x, pnorm(input$x, input$mu, sqrt(input$sigma2)), col="red", pch=16)
+
+    plot(seq(0.001,.999,.001), qnorm(seq(0.001,.999,.001), input$mu, sqrt(input$sigma2)), type="l", 
+         main="Inverse CDF",
+         xlab="probability", ylab="x", xlim=c(0, 1), ylim=c(-6,6))
+    points(pnorm(input$x, input$mu, sqrt(input$sigma2)), input$x, col="red", pch=16)
+    
+        
+#    g1 <- ggplot()+stat_function(fun=~{dnorm(.x,input$mu,input$sigma2)},n=1001)+
+#      scale_x_continuous(expand=c(0,0),limits=c(-range,range)) + 
+#      scale_y_continuous(expand=c(expd,expd)) + 
+#      geom_point(aes(x=input$x,y=dnorm(input$x,input$mu,input$sigma2)),color="red",size=4) + 
+#      stat_function(fun=~{dnorm(.x,input$mu,input$sigma2)},n=1001,geom="area",xlim=c(-100,input$x),fill="red",alpha=.5)+
+#      labs(title="Probability density function (PDF)",x="x",y="Density")
+#    g2 <- 
+#    ggplot()+geom_function(fun=~{pnorm(.x,input$mu,input$sigma2)},n=1001)+
+#      geom_point(aes(x=input$x,y=pnorm(input$x,input$mu,input$sigma2)),color="red",size=4) +
+#      scale_x_continuous(expand=c(expd,expd),limits=c(-range,range)) + scale_y_continuous(expand=c(expd,0)) + 
+#      labs(title="Cumulative density function (CDF)",x="x",y="Probability")
+#    g3 <- ggplot()+geom_function(fun=~{qnorm(.x,input$mu,input$sigma2)},n=1001)+
+#      geom_point(aes(x=pnorm(input$x,input$mu,input$sigma2),y=input$x),color="red",size=4) +
+#      scale_x_continuous(expand=c(expd,expd),limits=c(0,1)) + 
+#    scale_y_continuous(expand=c(expd,expd),limits=c(-range,range)) + 
+#      labs(title="Inverse CDF",x="Probability",y="x")
+#    grid.arrange(g1,g2,g3,nrow=1)
+    
     },height=300)
 }
 

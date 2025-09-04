@@ -6,7 +6,7 @@ editor: source
 
 Here are the course notes, practice problems and other course materials for STAT 340 at UW Madison.
 
-Author credits to Bi Cheng Wu, Brian Powers, Keith Levin
+Author credits to Karl Rohe, Keith Levin, Bi Cheng Wu, and Brian Powers
 
 ## Collection of Shiny Apps
 
@@ -22,5 +22,5 @@ run the code:
 shinylive::export(appdir="shiny/appname", destdir="docs/appname")
 
 to test
-
+httpuv::runStaticServer("docs/appname")
 -->

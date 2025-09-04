@@ -1,12 +1,11 @@
 library(shiny)
 
-# Define UI for application that draws a histogram
 ui <- fluidPage(
 
     # Application title
     titlePanel("One Tail vs Two Tail Test Power: n=200, H_0: p=.5"),
 
-    # Sidebar with a slider input for number of bins 
+    # Sidebar
     sidebarLayout(
         sidebarPanel(
             sliderInput("p",
@@ -30,7 +29,7 @@ ui <- fluidPage(
             ), 
         ),
 
-        # Show a plot of the generated distribution
+        # Show a plot of the generated plots
         mainPanel(
            plotOutput("distPlot")
         ),
