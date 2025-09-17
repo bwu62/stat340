@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 340: Data Science II - 32&nbsp; Model Selection and Cross Validation</title>
+<title>STAT 340: Data Science II - 34&nbsp; Model Selection and Cross Validation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./cv_practice.html" rel="next">
+<link href="./R11_cv-MSEcomparison.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prediction1.html">Prediction</a></li><li class="breadcrumb-item"><a href="./cv.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prediction1.html">Prediction</a></li><li class="breadcrumb-item"><a href="./cv.html"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,14 +163,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
+  <a href="./probability_rv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability and Random Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R01_RandomVariables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Random Variables R Examples</span></span></a>
+  <a href="./R01_Prob_RVs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability and Random Variable R Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -182,14 +182,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cov.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Independence, Conditional Probability and Bayes’ Rule</span></span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variable Distributions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R02_IndepCondBayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Independence, Conditional Probability and Bayes Theorem R Examples</span></span></a>
+  <a href="./R02_Distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Random Variable Distributions R Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -357,34 +357,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./R09_Multiple_Regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">R10 multiple regression further concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./mlr_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R10_LogisticReg_Extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Logistic Regression - Extended Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cv.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_cv-MSEcomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">cv-extra</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Bias_Variance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Bias Variance Tradeoff</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Model_Selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">R11 Model Selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Ridge_LASSO.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">R11: Ridge and Lasso</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cv_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -402,13 +438,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bootstrap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Bootstrapping</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Bootstrapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R12_Bootstrap_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">R13_Bootstrap</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bootstrap_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
   </div>
 </li>
       </ul>
@@ -440,55 +482,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">32.1</span> Learning objectives</a></li>
-  <li><a href="#model-selection-overview" id="toc-model-selection-overview" class="nav-link" data-scroll-target="#model-selection-overview"><span class="header-section-number">32.2</span> Model selection: overview</a></li>
-  <li><a href="#variable-selection" id="toc-variable-selection" class="nav-link" data-scroll-target="#variable-selection"><span class="header-section-number">32.3</span> Variable selection</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">34.1</span> Learning objectives</a></li>
+  <li><a href="#model-selection-overview" id="toc-model-selection-overview" class="nav-link" data-scroll-target="#model-selection-overview"><span class="header-section-number">34.2</span> Model selection: overview</a></li>
+  <li><a href="#variable-selection" id="toc-variable-selection" class="nav-link" data-scroll-target="#variable-selection"><span class="header-section-number">34.3</span> Variable selection</a>
   <ul class="collapse">
-  <li><a href="#example-mtcars" id="toc-example-mtcars" class="nav-link" data-scroll-target="#example-mtcars"><span class="header-section-number">32.3.1</span> Example: <code>mtcars</code></a></li>
-  <li><a href="#overfitting-and-unseen-data" id="toc-overfitting-and-unseen-data" class="nav-link" data-scroll-target="#overfitting-and-unseen-data"><span class="header-section-number">32.3.2</span> Overfitting and Unseen Data</a></li>
+  <li><a href="#example-mtcars" id="toc-example-mtcars" class="nav-link" data-scroll-target="#example-mtcars"><span class="header-section-number">34.3.1</span> Example: <code>mtcars</code></a></li>
+  <li><a href="#overfitting-and-unseen-data" id="toc-overfitting-and-unseen-data" class="nav-link" data-scroll-target="#overfitting-and-unseen-data"><span class="header-section-number">34.3.2</span> Overfitting and Unseen Data</a></li>
   </ul></li>
-  <li><a href="#validation-sets" id="toc-validation-sets" class="nav-link" data-scroll-target="#validation-sets"><span class="header-section-number">32.4</span> Validation Sets</a>
+  <li><a href="#validation-sets" id="toc-validation-sets" class="nav-link" data-scroll-target="#validation-sets"><span class="header-section-number">34.4</span> Validation Sets</a>
   <ul class="collapse">
-  <li><a href="#example-mtcars-revisited" id="toc-example-mtcars-revisited" class="nav-link" data-scroll-target="#example-mtcars-revisited"><span class="header-section-number">32.4.1</span> Example: <code>mtcars</code> revisited</a></li>
-  <li><a href="#variance-in-the-residuals" id="toc-variance-in-the-residuals" class="nav-link" data-scroll-target="#variance-in-the-residuals"><span class="header-section-number">32.4.2</span> Variance in the residuals</a></li>
+  <li><a href="#example-mtcars-revisited" id="toc-example-mtcars-revisited" class="nav-link" data-scroll-target="#example-mtcars-revisited"><span class="header-section-number">34.4.1</span> Example: <code>mtcars</code> revisited</a></li>
+  <li><a href="#variance-in-the-residuals" id="toc-variance-in-the-residuals" class="nav-link" data-scroll-target="#variance-in-the-residuals"><span class="header-section-number">34.4.2</span> Variance in the residuals</a></li>
   </ul></li>
-  <li><a href="#reducing-the-variance-leave-one-out-cross-validation" id="toc-reducing-the-variance-leave-one-out-cross-validation" class="nav-link" data-scroll-target="#reducing-the-variance-leave-one-out-cross-validation"><span class="header-section-number">32.5</span> Reducing the variance: Leave-one-out cross-validation</a>
+  <li><a href="#reducing-the-variance-leave-one-out-cross-validation" id="toc-reducing-the-variance-leave-one-out-cross-validation" class="nav-link" data-scroll-target="#reducing-the-variance-leave-one-out-cross-validation"><span class="header-section-number">34.5</span> Reducing the variance: Leave-one-out cross-validation</a>
   <ul class="collapse">
-  <li><a href="#recap-single-split-versus-loo-cv" id="toc-recap-single-split-versus-loo-cv" class="nav-link" data-scroll-target="#recap-single-split-versus-loo-cv"><span class="header-section-number">32.5.1</span> Recap: single split versus LOO-CV</a></li>
-  <li><a href="#the-happy-medium-k-fold-cross-validation" id="toc-the-happy-medium-k-fold-cross-validation" class="nav-link" data-scroll-target="#the-happy-medium-k-fold-cross-validation"><span class="header-section-number">32.5.2</span> The happy medium: <span class="math inline">\(K\)</span>-fold cross validation</a></li>
+  <li><a href="#recap-single-split-versus-loo-cv" id="toc-recap-single-split-versus-loo-cv" class="nav-link" data-scroll-target="#recap-single-split-versus-loo-cv"><span class="header-section-number">34.5.1</span> Recap: single split versus LOO-CV</a></li>
+  <li><a href="#the-happy-medium-k-fold-cross-validation" id="toc-the-happy-medium-k-fold-cross-validation" class="nav-link" data-scroll-target="#the-happy-medium-k-fold-cross-validation"><span class="header-section-number">34.5.2</span> The happy medium: <span class="math inline">\(K\)</span>-fold cross validation</a></li>
   </ul></li>
-  <li><a href="#aside-the-bias-variance-decomposition" id="toc-aside-the-bias-variance-decomposition" class="nav-link" data-scroll-target="#aside-the-bias-variance-decomposition"><span class="header-section-number">32.6</span> Aside: the bias-variance decomposition</a></li>
-  <li><a href="#cv-and-the-bias-variance-tradeoff" id="toc-cv-and-the-bias-variance-tradeoff" class="nav-link" data-scroll-target="#cv-and-the-bias-variance-tradeoff"><span class="header-section-number">32.7</span> CV and the bias-variance tradeoff</a>
+  <li><a href="#aside-the-bias-variance-decomposition" id="toc-aside-the-bias-variance-decomposition" class="nav-link" data-scroll-target="#aside-the-bias-variance-decomposition"><span class="header-section-number">34.6</span> Aside: the bias-variance decomposition</a></li>
+  <li><a href="#cv-and-the-bias-variance-tradeoff" id="toc-cv-and-the-bias-variance-tradeoff" class="nav-link" data-scroll-target="#cv-and-the-bias-variance-tradeoff"><span class="header-section-number">34.7</span> CV and the bias-variance tradeoff</a>
   <ul class="collapse">
-  <li><a href="#bias-in-cv" id="toc-bias-in-cv" class="nav-link" data-scroll-target="#bias-in-cv"><span class="header-section-number">32.7.1</span> Bias in CV</a></li>
-  <li><a href="#variance-in-cv" id="toc-variance-in-cv" class="nav-link" data-scroll-target="#variance-in-cv"><span class="header-section-number">32.7.2</span> Variance in CV</a></li>
-  <li><a href="#k-fold-cv-the-happy-medium" id="toc-k-fold-cv-the-happy-medium" class="nav-link" data-scroll-target="#k-fold-cv-the-happy-medium"><span class="header-section-number">32.7.3</span> <span class="math inline">\(K\)</span>-fold CV: the happy medium</a></li>
+  <li><a href="#bias-in-cv" id="toc-bias-in-cv" class="nav-link" data-scroll-target="#bias-in-cv"><span class="header-section-number">34.7.1</span> Bias in CV</a></li>
+  <li><a href="#variance-in-cv" id="toc-variance-in-cv" class="nav-link" data-scroll-target="#variance-in-cv"><span class="header-section-number">34.7.2</span> Variance in CV</a></li>
+  <li><a href="#k-fold-cv-the-happy-medium" id="toc-k-fold-cv-the-happy-medium" class="nav-link" data-scroll-target="#k-fold-cv-the-happy-medium"><span class="header-section-number">34.7.3</span> <span class="math inline">\(K\)</span>-fold CV: the happy medium</a></li>
   </ul></li>
-  <li><a href="#variable-selection-for-real-this-time" id="toc-variable-selection-for-real-this-time" class="nav-link" data-scroll-target="#variable-selection-for-real-this-time"><span class="header-section-number">32.8</span> Variable selection, for real this time</a></li>
-  <li><a href="#setup-linear-regression-and-fitting" id="toc-setup-linear-regression-and-fitting" class="nav-link" data-scroll-target="#setup-linear-regression-and-fitting"><span class="header-section-number">32.9</span> Setup: linear regression and fitting</a>
+  <li><a href="#variable-selection-for-real-this-time" id="toc-variable-selection-for-real-this-time" class="nav-link" data-scroll-target="#variable-selection-for-real-this-time"><span class="header-section-number">34.8</span> Variable selection, for real this time</a></li>
+  <li><a href="#setup-linear-regression-and-fitting" id="toc-setup-linear-regression-and-fitting" class="nav-link" data-scroll-target="#setup-linear-regression-and-fitting"><span class="header-section-number">34.9</span> Setup: linear regression and fitting</a>
   <ul class="collapse">
-  <li><a href="#recap-variable-selection" id="toc-recap-variable-selection" class="nav-link" data-scroll-target="#recap-variable-selection"><span class="header-section-number">32.9.1</span> Recap: variable selection</a></li>
+  <li><a href="#recap-variable-selection" id="toc-recap-variable-selection" class="nav-link" data-scroll-target="#recap-variable-selection"><span class="header-section-number">34.9.1</span> Recap: variable selection</a></li>
   </ul></li>
-  <li><a href="#best-subset-selection" id="toc-best-subset-selection" class="nav-link" data-scroll-target="#best-subset-selection"><span class="header-section-number">32.10</span> Best subset selection</a></li>
-  <li><a href="#stepwise-selection" id="toc-stepwise-selection" class="nav-link" data-scroll-target="#stepwise-selection"><span class="header-section-number">32.11</span> Stepwise selection</a>
+  <li><a href="#best-subset-selection" id="toc-best-subset-selection" class="nav-link" data-scroll-target="#best-subset-selection"><span class="header-section-number">34.10</span> Best subset selection</a></li>
+  <li><a href="#stepwise-selection" id="toc-stepwise-selection" class="nav-link" data-scroll-target="#stepwise-selection"><span class="header-section-number">34.11</span> Stepwise selection</a>
   <ul class="collapse">
-  <li><a href="#forward-stepwise-selection" id="toc-forward-stepwise-selection" class="nav-link" data-scroll-target="#forward-stepwise-selection"><span class="header-section-number">32.11.1</span> Forward stepwise selection</a></li>
-  <li><a href="#backward-stepwise-selection" id="toc-backward-stepwise-selection" class="nav-link" data-scroll-target="#backward-stepwise-selection"><span class="header-section-number">32.11.2</span> Backward stepwise selection</a></li>
-  <li><a href="#hybrid-approaches-the-best-of-both-worlds" id="toc-hybrid-approaches-the-best-of-both-worlds" class="nav-link" data-scroll-target="#hybrid-approaches-the-best-of-both-worlds"><span class="header-section-number">32.11.3</span> Hybrid approaches: the best of both worlds?</a></li>
+  <li><a href="#forward-stepwise-selection" id="toc-forward-stepwise-selection" class="nav-link" data-scroll-target="#forward-stepwise-selection"><span class="header-section-number">34.11.1</span> Forward stepwise selection</a></li>
+  <li><a href="#backward-stepwise-selection" id="toc-backward-stepwise-selection" class="nav-link" data-scroll-target="#backward-stepwise-selection"><span class="header-section-number">34.11.2</span> Backward stepwise selection</a></li>
+  <li><a href="#hybrid-approaches-the-best-of-both-worlds" id="toc-hybrid-approaches-the-best-of-both-worlds" class="nav-link" data-scroll-target="#hybrid-approaches-the-best-of-both-worlds"><span class="header-section-number">34.11.3</span> Hybrid approaches: the best of both worlds?</a></li>
   </ul></li>
-  <li><a href="#model-comparison-statistics-adjusted-r2-aic-and-bic" id="toc-model-comparison-statistics-adjusted-r2-aic-and-bic" class="nav-link" data-scroll-target="#model-comparison-statistics-adjusted-r2-aic-and-bic"><span class="header-section-number">32.12</span> Model Comparison Statistics: Adjusted <span class="math inline">\(R^2\)</span>, AIC and BIC</a>
+  <li><a href="#model-comparison-statistics-adjusted-r2-aic-and-bic" id="toc-model-comparison-statistics-adjusted-r2-aic-and-bic" class="nav-link" data-scroll-target="#model-comparison-statistics-adjusted-r2-aic-and-bic"><span class="header-section-number">34.12</span> Model Comparison Statistics: Adjusted <span class="math inline">\(R^2\)</span>, AIC and BIC</a>
   <ul class="collapse">
-  <li><a href="#adjusted-r2" id="toc-adjusted-r2" class="nav-link" data-scroll-target="#adjusted-r2"><span class="header-section-number">32.12.1</span> Adjusted <span class="math inline">\(R^2\)</span></a></li>
-  <li><a href="#akaike-information-criterion-aic" id="toc-akaike-information-criterion-aic" class="nav-link" data-scroll-target="#akaike-information-criterion-aic"><span class="header-section-number">32.12.2</span> Akaike information criterion (AIC)</a></li>
-  <li><a href="#bayesian-information-criterion-bic" id="toc-bayesian-information-criterion-bic" class="nav-link" data-scroll-target="#bayesian-information-criterion-bic"><span class="header-section-number">32.12.3</span> Bayesian information criterion (BIC)</a></li>
+  <li><a href="#adjusted-r2" id="toc-adjusted-r2" class="nav-link" data-scroll-target="#adjusted-r2"><span class="header-section-number">34.12.1</span> Adjusted <span class="math inline">\(R^2\)</span></a></li>
+  <li><a href="#akaike-information-criterion-aic" id="toc-akaike-information-criterion-aic" class="nav-link" data-scroll-target="#akaike-information-criterion-aic"><span class="header-section-number">34.12.2</span> Akaike information criterion (AIC)</a></li>
+  <li><a href="#bayesian-information-criterion-bic" id="toc-bayesian-information-criterion-bic" class="nav-link" data-scroll-target="#bayesian-information-criterion-bic"><span class="header-section-number">34.12.3</span> Bayesian information criterion (BIC)</a></li>
   </ul></li>
-  <li><a href="#shrinkage-and-regularization" id="toc-shrinkage-and-regularization" class="nav-link" data-scroll-target="#shrinkage-and-regularization"><span class="header-section-number">32.13</span> Shrinkage and Regularization</a>
+  <li><a href="#shrinkage-and-regularization" id="toc-shrinkage-and-regularization" class="nav-link" data-scroll-target="#shrinkage-and-regularization"><span class="header-section-number">34.13</span> Shrinkage and Regularization</a>
   <ul class="collapse">
-  <li><a href="#ridge-regression" id="toc-ridge-regression" class="nav-link" data-scroll-target="#ridge-regression"><span class="header-section-number">32.13.1</span> Ridge regression</a></li>
-  <li><a href="#the-lasso" id="toc-the-lasso" class="nav-link" data-scroll-target="#the-lasso"><span class="header-section-number">32.13.2</span> The LASSO</a></li>
-  <li><a href="#how-to-choose-lambda-cv-to-the-rescue" id="toc-how-to-choose-lambda-cv-to-the-rescue" class="nav-link" data-scroll-target="#how-to-choose-lambda-cv-to-the-rescue"><span class="header-section-number">32.13.3</span> How to choose <span class="math inline">\(\lambda\)</span>? CV to the rescue!</a></li>
+  <li><a href="#ridge-regression" id="toc-ridge-regression" class="nav-link" data-scroll-target="#ridge-regression"><span class="header-section-number">34.13.1</span> Ridge regression</a></li>
+  <li><a href="#the-lasso" id="toc-the-lasso" class="nav-link" data-scroll-target="#the-lasso"><span class="header-section-number">34.13.2</span> The LASSO</a></li>
+  <li><a href="#how-to-choose-lambda-cv-to-the-rescue" id="toc-how-to-choose-lambda-cv-to-the-rescue" class="nav-link" data-scroll-target="#how-to-choose-lambda-cv-to-the-rescue"><span class="header-section-number">34.13.3</span> How to choose <span class="math inline">\(\lambda\)</span>? CV to the rescue!</a></li>
   </ul></li>
-  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review"><span class="header-section-number">32.14</span> Review</a></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review"><span class="header-section-number">34.14</span> Review</a></li>
   </ul>
 </nav>
     </div>
@@ -497,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></h1>
+<h1 class="title"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></h1>
 </div>
 
 
@@ -514,8 +556,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>In our discussions of regression the past few weeks, we have encountered many situations in which we needed to make a choice about the model that we fit to data. For example, suppose we have a data set with hundreds or even thousands of predictor variables. This is frequently the case in applications to genetics, where we have thousands of genes, and we want to predict some outcome (e.g., disease status). How do we decide which variables to include in linear regression (or any other prediction model)?</p>
 <p>This is an example of <em>model selection</em>, our subject for this week.</p>
-<section id="learning-objectives" class="level2" data-number="32.1">
-<h2 data-number="32.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">32.1</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2" data-number="34.1">
+<h2 data-number="34.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">34.1</span> Learning objectives</h2>
 <p>After this lecture, you will be able to</p>
 <ul>
 <li>Explain the problem of variable selection in the context of linear regression</li>
@@ -524,19 +566,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Explain and apply regularization and shrinkage methods, including ridge regression and the LASSO.</li>
 </ul>
 </section>
-<section id="model-selection-overview" class="level2" data-number="32.2">
-<h2 data-number="32.2" class="anchored" data-anchor-id="model-selection-overview"><span class="header-section-number">32.2</span> Model selection: overview</h2>
+<section id="model-selection-overview" class="level2" data-number="34.2">
+<h2 data-number="34.2" class="anchored" data-anchor-id="model-selection-overview"><span class="header-section-number">34.2</span> Model selection: overview</h2>
 <p>Our focus this week will be on model selection for regression problems. Still, we should note that similar ideas apply in many other situations. For example, when <em>clustering</em> data, we use model selection to choose how many clusters to group the data into.</p>
 <p>The unifying idea is that we have to choose among many different <em>similar</em> ways of describing the data. That’s what model selection helps us do.</p>
 </section>
-<section id="variable-selection" class="level2" data-number="32.3">
-<h2 data-number="32.3" class="anchored" data-anchor-id="variable-selection"><span class="header-section-number">32.3</span> Variable selection</h2>
+<section id="variable-selection" class="level2" data-number="34.3">
+<h2 data-number="34.3" class="anchored" data-anchor-id="variable-selection"><span class="header-section-number">34.3</span> Variable selection</h2>
 <p>Suppose that we have a collection of <span class="math inline">\(p\)</span> predictors, and that <span class="math inline">\(p\)</span> is very large (say, <span class="math inline">\(p \approx n\)</span>). If we try to fit a model using all of these predictors, we will end up over-fitting to the data, a point that we have discussed briefly a few times this semester.</p>
 <p><strong>If you’ve taken linear algebra (skip this paragraph if not!):</strong> in linear regression (a similar story holds for other prediction models), we have <span class="math inline">\(n\)</span> equations in <span class="math inline">\(p\)</span> unknowns. When <span class="math inline">\(p\)</span> is of a similar size to the number of observations <span class="math inline">\(n\)</span>, the system is over-determined (or close to it)..</p>
 <p>In situations like this, we would like to choose just a few of these predictors for inclusion in a statistical model (e.g., linear regression). This is an example of model selection: we have a bunch of different models under consideration (i.e., a different possible model for each set of variables we might choose), and we want to pick the best one.</p>
 <p>The natural question, then, is: how do we compare models?</p>
-<section id="example-mtcars" class="level3" data-number="32.3.1">
-<h3 data-number="32.3.1" class="anchored" data-anchor-id="example-mtcars"><span class="header-section-number">32.3.1</span> Example: <code>mtcars</code></h3>
+<section id="example-mtcars" class="level3" data-number="34.3.1">
+<h3 data-number="34.3.1" class="anchored" data-anchor-id="example-mtcars"><span class="header-section-number">34.3.1</span> Example: <code>mtcars</code></h3>
 <p>Let’s consider a very simple example, adapted from Section 3.3.2 and Section 5.1 in ISLR, revisiting our old friend the <code>mtcars</code> data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">'mtcars'</span>);</span>
@@ -614,8 +656,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p>-But how do we know if that improvement is worth it?</p>
 <p>One approach to this problem would be to examine the <span class="math inline">\(p\)</span>-values associated to the coefficients (see ISLR Chapter 3 for a discussion of that approach). In these notes, we will see a different, arguably more principled approach.</p>
 </section>
-<section id="overfitting-and-unseen-data" class="level3" data-number="32.3.2">
-<h3 data-number="32.3.2" class="anchored" data-anchor-id="overfitting-and-unseen-data"><span class="header-section-number">32.3.2</span> Overfitting and Unseen Data</h3>
+<section id="overfitting-and-unseen-data" class="level3" data-number="34.3.2">
+<h3 data-number="34.3.2" class="anchored" data-anchor-id="overfitting-and-unseen-data"><span class="header-section-number">34.3.2</span> Overfitting and Unseen Data</h3>
 <p>If we keep adding more predictors to our model, the residuals will continue to decrease, but this will not actually mean that our model is better. Instead, what we will be doing is <em>over-fitting</em> to the data. That is, our model will really just be “memorizing” the data itself rather than learning a model.</p>
 <p>The true test of model quality is how well it does at predicting for data that we <em>didn’t</em> see.</p>
 <p>That is, if we fit our model on data <span class="math inline">\((X_i,Y_i)\)</span> for <span class="math inline">\(i=1,2,\dots,n\)</span>, how well does our model do on a previously unseen data point <span class="math inline">\((X_{n+1},Y_{n+1})\)</span>?</p>
@@ -625,8 +667,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p>where <span class="math inline">\(\hat{Y}_{n+1}\)</span> is our model’s prediction based on coefficients estimated from our <span class="math inline">\(n\)</span> training observations.</p>
 </section>
 </section>
-<section id="validation-sets" class="level2" data-number="32.4">
-<h2 data-number="32.4" class="anchored" data-anchor-id="validation-sets"><span class="header-section-number">32.4</span> Validation Sets</h2>
+<section id="validation-sets" class="level2" data-number="34.4">
+<h2 data-number="34.4" class="anchored" data-anchor-id="validation-sets"><span class="header-section-number">34.4</span> Validation Sets</h2>
 <p>So rather than focusing on how well our model fits our training data, we should be trying to determine how well our model does when it gets applied to data that we haven’t seen before.</p>
 <p>Specifically, we would like to know the mean squared error (MSE), <span class="math display">\[
 \mathbb{E} \left( \hat{Y}_{n+1} - Y_{n+1} \right)^2.
@@ -646,8 +688,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 \]</span></p></li>
 </ol>
 <p>Typically, we call <span class="math inline">\(S_2\)</span>, the set that we make predictions for, the <em>validation set</em>, because it is validating our model’s performance.</p>
-<section id="example-mtcars-revisited" class="level3" data-number="32.4.1">
-<h3 data-number="32.4.1" class="anchored" data-anchor-id="example-mtcars-revisited"><span class="header-section-number">32.4.1</span> Example: <code>mtcars</code> revisited</h3>
+<section id="example-mtcars-revisited" class="level3" data-number="34.4.1">
+<h3 data-number="34.4.1" class="anchored" data-anchor-id="example-mtcars-revisited"><span class="header-section-number">34.4.1</span> Example: <code>mtcars</code> revisited</h3>
 <p>Let’s see this in action on the <code>mtcars</code> data set.</p>
 <p>We randomly split the data set into two groups. For each model order 1, 2, 3, 4 and 5, we fit the model to the training set and then measure the sum of squared residuals of that model when applied to the validation set.</p>
 <p>One run of this experiment is summarized in <code>resids_onerun</code>. For details, refer to <code>mtcars_poly.R</code>, which is included among the supplementary files for this lecture.</p>
@@ -681,8 +723,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p>Looking at the plot, we see that as we add higher-order powers of <code>hp</code>, we don’t really gain much in terms of the error (i.e., sum of squared residuals) beyond order 2. Indeed, past the order-3 model, the error gets worse again!</p>
 <p><strong>Aside:</strong> this deteriorating performance is due largely to the fact that the <code>mtcars</code> data set is so small. Once we split it in half, we are fitting our model to just 16 observations. Estimating four or five coefficients from only about 15 observations is asking for trouble! This is a tell-tale sign of over-fitting of a model. This would be a good occasion for some kind of <em>regularization</em>, but we’ll come back to that.</p>
 </section>
-<section id="variance-in-the-residuals" class="level3" data-number="32.4.2">
-<h3 data-number="32.4.2" class="anchored" data-anchor-id="variance-in-the-residuals"><span class="header-section-number">32.4.2</span> Variance in the residuals</h3>
+<section id="variance-in-the-residuals" class="level3" data-number="34.4.2">
+<h3 data-number="34.4.2" class="anchored" data-anchor-id="variance-in-the-residuals"><span class="header-section-number">34.4.2</span> Variance in the residuals</h3>
 <p>There’s one problem, though, beyond matters of sample size. That plot shows the residuals as a function of model order for one particular random set <span class="math inline">\(S_1\)</span>. Let’s plot the same residuals for a few different random sets.</p>
 <p><strong>Note:</strong> the data frame <code>resids</code> contains multiple replicates of the above experiment. Once again, refer to the code in <code>mtcars_poly.R</code> for details.</p>
 <div class="cell">
@@ -715,8 +757,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p><strong>Question:</strong> How might we reduce that variance?</p>
 </section>
 </section>
-<section id="reducing-the-variance-leave-one-out-cross-validation" class="level2" data-number="32.5">
-<h2 data-number="32.5" class="anchored" data-anchor-id="reducing-the-variance-leave-one-out-cross-validation"><span class="header-section-number">32.5</span> Reducing the variance: Leave-one-out cross-validation</h2>
+<section id="reducing-the-variance-leave-one-out-cross-validation" class="level2" data-number="34.5">
+<h2 data-number="34.5" class="anchored" data-anchor-id="reducing-the-variance-leave-one-out-cross-validation"><span class="header-section-number">34.5</span> Reducing the variance: Leave-one-out cross-validation</h2>
 <p>One source of variance in our cross-validation plots above was the fact that each replicate involved splitting the data in half and training on only one of the two halves.</p>
 <p>That means that on average, from one replicate to another, the data used to train the model changes quite a lot, and hence our estimated model changes a lot. That’s where the variance comes from in the plot we just looked at!</p>
 <p>There is also the related problem that we are training on only half of the available data. As statisticians and/or machine learners, we don’t like not using all of our data!</p>
@@ -855,8 +897,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p><img src="cv_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="recap-single-split-versus-loo-cv" class="level3" data-number="32.5.1">
-<h3 data-number="32.5.1" class="anchored" data-anchor-id="recap-single-split-versus-loo-cv"><span class="header-section-number">32.5.1</span> Recap: single split versus LOO-CV</h3>
+<section id="recap-single-split-versus-loo-cv" class="level3" data-number="34.5.1">
+<h3 data-number="34.5.1" class="anchored" data-anchor-id="recap-single-split-versus-loo-cv"><span class="header-section-number">34.5.1</span> Recap: single split versus LOO-CV</h3>
 <p>So far we have seen two different ways of estimating a model’s performance on unseen data.</p>
 <p>The first was to randomly split the data into two sets, train on one and evaluate on the other.</p>
 <p><strong>Pro:</strong> Only have to fit a model once (or just a few times, if we are going to repeat the operation and average)</p>
@@ -867,8 +909,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <p><strong>Con:</strong> Because any two training sets overlap in all but one of their elements, our fitted models are very highly correlated with one another, so we’re doing a lot of work (<span class="math inline">\(n\)</span> model fits) to get a bunch of highly correlated measurements.</p>
 <p>So, the natural question is: can we bridge the gap between these two extremes.</p>
 </section>
-<section id="the-happy-medium-k-fold-cross-validation" class="level3" data-number="32.5.2">
-<h3 data-number="32.5.2" class="anchored" data-anchor-id="the-happy-medium-k-fold-cross-validation"><span class="header-section-number">32.5.2</span> The happy medium: <span class="math inline">\(K\)</span>-fold cross validation</h3>
+<section id="the-happy-medium-k-fold-cross-validation" class="level3" data-number="34.5.2">
+<h3 data-number="34.5.2" class="anchored" data-anchor-id="the-happy-medium-k-fold-cross-validation"><span class="header-section-number">34.5.2</span> The happy medium: <span class="math inline">\(K\)</span>-fold cross validation</h3>
 <p>Well, there are a few different ways to bridge this gap, for example using Monte Carlo methods. Let’s discuss the most popular one here.</p>
 <p>We’ll borrow a bit from the LOO-CV idea, while lessening the correlatedness of the models fits.</p>
 <p><span class="math inline">\(K\)</span>-fold CV randomly divides the data into <span class="math inline">\(K\)</span> subsets, called <em>folds</em>. Then, one at a time, we hold out one of the folds, train our model on the <span class="math inline">\(K-1\)</span> remaining folds, and evaluate our model’s prediction error on the held-out fold. Then, we can average the errors across the <span class="math inline">\(K\)</span> folds.</p>
@@ -977,8 +1019,8 @@ $`5`
 <p>Once again, the order-2 model, <code>mpg ~ 1 + hp + hp^2</code>, does best (usually, anyway– occasionally the order-3 model is slightly better due to randomness on this small data set).</p>
 </section>
 </section>
-<section id="aside-the-bias-variance-decomposition" class="level2" data-number="32.6">
-<h2 data-number="32.6" class="anchored" data-anchor-id="aside-the-bias-variance-decomposition"><span class="header-section-number">32.6</span> Aside: the bias-variance decomposition</h2>
+<section id="aside-the-bias-variance-decomposition" class="level2" data-number="34.6">
+<h2 data-number="34.6" class="anchored" data-anchor-id="aside-the-bias-variance-decomposition"><span class="header-section-number">34.6</span> Aside: the bias-variance decomposition</h2>
 <p><strong>Note:</strong> This subsection includes a lot of math, including a lot of expectation and variance terms and taking expectations with respect to some variables but not others. You <strong>are not</strong> responsible for these details on an exam. The important thing to take away from this subsection is the <em>concept</em> of the bias-variance decomposition of the means squared error (MSE), in which we can write the MSE as a variance term plus a squared bias.</p>
 <p>Suppose that we have a quantity <span class="math inline">\(\theta\)</span> that we want to estimate, and we have an estimator <span class="math inline">\(\hat{\theta}\)</span>, the <em>mean squared error</em> is defined as <span class="math display">\[
 \operatorname{MSE}(\hat{\theta}, \theta)
@@ -1030,39 +1072,39 @@ $`5`
 \]</span></p>
 <p>In general, there will be many different estimators (i.e., many different choices of <span class="math inline">\(\hat{\theta}\)</span>) that all obtain (approximately) the same MSE. The above equation means that once we are choosing among these different “similar” estimators (i.e., estimators that have similar MSE), we are really just trading off between bias and variance. That is, an estimator with smaller bias will have to “pay” for it with more variance. This is often referred to as the <em>bias-variance tradeoff</em>.</p>
 </section>
-<section id="cv-and-the-bias-variance-tradeoff" class="level2" data-number="32.7">
-<h2 data-number="32.7" class="anchored" data-anchor-id="cv-and-the-bias-variance-tradeoff"><span class="header-section-number">32.7</span> CV and the bias-variance tradeoff</h2>
+<section id="cv-and-the-bias-variance-tradeoff" class="level2" data-number="34.7">
+<h2 data-number="34.7" class="anchored" data-anchor-id="cv-and-the-bias-variance-tradeoff"><span class="header-section-number">34.7</span> CV and the bias-variance tradeoff</h2>
 <p>Now, the purpose of cross-validation is to estimate the model error <span class="math inline">\(\E(\hat{Y}_{n+1}-Y_{n+1})^2\)</span>. The bias-variance tradeoff says that, roughly speaking, different “reasonable” ways of estimating this quantity will all have about the same MSE, but will involve balancing bias against variance.</p>
-<section id="bias-in-cv" class="level3" data-number="32.7.1">
-<h3 data-number="32.7.1" class="anchored" data-anchor-id="bias-in-cv"><span class="header-section-number">32.7.1</span> Bias in CV</h3>
+<section id="bias-in-cv" class="level3" data-number="34.7.1">
+<h3 data-number="34.7.1" class="anchored" data-anchor-id="bias-in-cv"><span class="header-section-number">34.7.1</span> Bias in CV</h3>
 <p>Let’s think back to the “naive” cross-validation approach, in which we split the data into two sets of similar sizes, train on one and evaluate on the other. When we do that, we train our model on a much smaller data set than if we used the full data. The result is that we (accidentally) over-estimate the error of our model, because models trained on less data simply tend to be less accurate.</p>
 <p>That is to say, the “naive” cross-validation approach tends to yield a biased estimate of the true error of the model. Specifically, our estimate is biased upward.</p>
 <p>On the other hand, LOOCV should be approximately unbiased as an estimate of the model error, because the difference between training on <span class="math inline">\(n\)</span> and <span class="math inline">\(n-1\)</span> data points should not be especially large (at least once <span class="math inline">\(n\)</span> is reasonably large).</p>
 <p>It stands to reason that <span class="math inline">\(K\)</span>-fold CV should sit at a kind of “happy medium” level of bias between LOOCV and “naive” CV.</p>
 </section>
-<section id="variance-in-cv" class="level3" data-number="32.7.2">
-<h3 data-number="32.7.2" class="anchored" data-anchor-id="variance-in-cv"><span class="header-section-number">32.7.2</span> Variance in CV</h3>
+<section id="variance-in-cv" class="level3" data-number="34.7.2">
+<h3 data-number="34.7.2" class="anchored" data-anchor-id="variance-in-cv"><span class="header-section-number">34.7.2</span> Variance in CV</h3>
 <p>So LOOCV is the least biased estimate of model error, but the bias-variance trade-off predicts that we must “pay” for this in variance. It turns out that LOOCV has the most variance out of the three methods LOOCV, <span class="math inline">\(K\)</span>-fold CV (for <span class="math inline">\(K &lt; n\)</span>) and “naive” CV.</p>
 <p>Intuitively, the variance in LOOCV comes from the following fact: recall that for each <span class="math inline">\(i=1,2,\dots,n\)</span>, we hold out the <span class="math inline">\(i\)</span>-th data point and train a model on the rest.</p>
 <p>This means that we have <span class="math inline">\(n\)</span> different trained models, each trained on <span class="math inline">\(n-1\)</span> data points, but each pair of training sets overlap in <span class="math inline">\(n-2\)</span> of their data points. The result is that the trained models are highly correlated with one another. Changing just one data point in our data set doesn’t change the fitted model much!</p>
 <p>The result is that these estimated model errors are highly correlated with one another, with the result that our overall estimate of the model error has high variance.</p>
 <p>The <span class="math inline">\(K\)</span> models trained in <span class="math inline">\(K\)</span>-fold CV are less correlated with one another, and hence we have (comparatively) less variance. It turns out in this case that <span class="math inline">\(K\)</span> less-correlated error estimates have smaller correlation than <span class="math inline">\(n\)</span> highly-correlated ones.</p>
 </section>
-<section id="k-fold-cv-the-happy-medium" class="level3" data-number="32.7.3">
-<h3 data-number="32.7.3" class="anchored" data-anchor-id="k-fold-cv-the-happy-medium"><span class="header-section-number">32.7.3</span> <span class="math inline">\(K\)</span>-fold CV: the happy medium</h3>
+<section id="k-fold-cv-the-happy-medium" class="level3" data-number="34.7.3">
+<h3 data-number="34.7.3" class="anchored" data-anchor-id="k-fold-cv-the-happy-medium"><span class="header-section-number">34.7.3</span> <span class="math inline">\(K\)</span>-fold CV: the happy medium</h3>
 <p>Thus, <span class="math inline">\(K\)</span>-fold CV is a popular choice both because it is computationally cheaper than LOOCV (<span class="math inline">\(K\)</span> model fits compared to <span class="math inline">\(n\)</span> of them) and because it strikes a good balance between bias and variance.</p>
 </section>
 </section>
-<section id="variable-selection-for-real-this-time" class="level2" data-number="32.8">
-<h2 data-number="32.8" class="anchored" data-anchor-id="variable-selection-for-real-this-time"><span class="header-section-number">32.8</span> Variable selection, for real this time</h2>
+<section id="variable-selection-for-real-this-time" class="level2" data-number="34.8">
+<h2 data-number="34.8" class="anchored" data-anchor-id="variable-selection-for-real-this-time"><span class="header-section-number">34.8</span> Variable selection, for real this time</h2>
 <p>In our examples above, we concentrated on choosing among a family of linear regression models that varied in their orders, in the sense that they included as predictors all powers of the horsepower variable <code>hp</code>, up to some maximum power, to predict gas mileage. Hopefully it is clear how we could modify our approach to, say, choose which variables we do and don’t include in a model (e.g., as in the Pima diabetes data set that we’ve seen a few times this semester).</p>
 <p>Ultimately, our goal was to choose, from among a set of predictors that we <em>could</em> include in our model (e.g., powers of <code>hp</code>, in the case of the <code>mtcars</code> example), which predictors to actually include in the model. Again, this task is <em>variable selection</em>.</p>
 <p>One thing that might be bugging us so far is that any way we slice it, cross-validation doesn’t use all of the available data: we are always holding <em>something</em> out of our fitted model for the sake of estimating our error on unseen data.</p>
 <p>Let’s look at a few different approaches to variable selection that do not rely on cross-validation. These alternative methods have the advantage of not trying to estimate the unknown model error on unseen data. On the other hand, these methods can be more computationally intensive and tend to come with fewer theoretical guarantees.</p>
 <p>This is not to suggest, however, that these methods are at odds with cross-validation. In actual research papers and in industry applications, you’ll often see both CV and some of the methods presented below used in tandem to select the best model for the job.</p>
 </section>
-<section id="setup-linear-regression-and-fitting" class="level2" data-number="32.9">
-<h2 data-number="32.9" class="anchored" data-anchor-id="setup-linear-regression-and-fitting"><span class="header-section-number">32.9</span> Setup: linear regression and fitting</h2>
+<section id="setup-linear-regression-and-fitting" class="level2" data-number="34.9">
+<h2 data-number="34.9" class="anchored" data-anchor-id="setup-linear-regression-and-fitting"><span class="header-section-number">34.9</span> Setup: linear regression and fitting</h2>
 <p>Let’s continue to focus on linear regression, bearing in mind that the ideas introduced here apply equally well to other regression and prediction methods (e.g., logistic regression). Let’s recall that multiple linear regression models a response <span class="math inline">\(Y \in \mathbb{R}\)</span> as a linear (again, technically affine– linear plus an intercept!) function of a set of <span class="math inline">\(p\)</span> predictors plus normal noise: <span class="math display">\[
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_p X_p + \epsilon.
 \]</span></p>
@@ -1073,8 +1115,8 @@ Y = \beta^T X + \epsilon.
 X_i = (1,X_{i,1},X_{i,2},\dots,X_{i,p}) \in \mathbb{R}^{p+1}.
 \]</span></p>
 <p>Note that here we are including the intercept term <span class="math inline">\(1\)</span> in the vector of predictors for ease of notation. This is a common notational choice, so we’re including it here to get you used to seeing this. Of course, this is not universal– it’s one of those conventions that you have to be careful of and check what you are reading.</p>
-<section id="recap-variable-selection" class="level3" data-number="32.9.1">
-<h3 data-number="32.9.1" class="anchored" data-anchor-id="recap-variable-selection"><span class="header-section-number">32.9.1</span> Recap: variable selection</h3>
+<section id="recap-variable-selection" class="level3" data-number="34.9.1">
+<h3 data-number="34.9.1" class="anchored" data-anchor-id="recap-variable-selection"><span class="header-section-number">34.9.1</span> Recap: variable selection</h3>
 <p>So we have <span class="math inline">\(p\)</span> variables (plus an intercept term), and we want to select which ones to include in our model. There are many reasons to want to do this, but let’s just highlight three of them:</p>
 <ul>
 <li><p>If there are many “useless” variables (i.e., ones that are not good predictors of the response), then including them in the model can make our predictions less accurate. Thus, we would like to proactively identify which variables are not useful, and avoid including them in the model in the first place.</p></li>
@@ -1083,8 +1125,8 @@ X_i = (1,X_{i,1},X_{i,2},\dots,X_{i,p}) \in \mathbb{R}^{p+1}.
 </ul>
 </section>
 </section>
-<section id="best-subset-selection" class="level2" data-number="32.10">
-<h2 data-number="32.10" class="anchored" data-anchor-id="best-subset-selection"><span class="header-section-number">32.10</span> Best subset selection</h2>
+<section id="best-subset-selection" class="level2" data-number="34.10">
+<h2 data-number="34.10" class="anchored" data-anchor-id="best-subset-selection"><span class="header-section-number">34.10</span> Best subset selection</h2>
 <p>So, we have <span class="math inline">\(p\)</span> predictor variables available to us, and we want to choose which of them to actually include in our model.</p>
 <p>Well, the most obvious solution is to just try all possible combinations of features, train a model using each combination, and keep the best one (measured by, say, residual sum of squares).</p>
 <p>This would have an obvious drawback: we have already seen that we can trivially improve the RSS of our model by adding variables. So the models that include more variables would do better, even if those variables did not actually lead to better model error on unseen data.</p>
@@ -1098,13 +1140,13 @@ X_i = (1,X_{i,1},X_{i,2},\dots,X_{i,p}) \in \mathbb{R}^{p+1}.
 <p><strong>Question:</strong> if there are <span class="math inline">\(p\)</span> predictors, how many models does best subset selection fit before it makes a decision?</p>
 <p>So once <span class="math inline">\(p\)</span> is even moderately large, best subset selection is computationally expensive, and we need to do something a little more clever.</p>
 </section>
-<section id="stepwise-selection" class="level2" data-number="32.11">
-<h2 data-number="32.11" class="anchored" data-anchor-id="stepwise-selection"><span class="header-section-number">32.11</span> Stepwise selection</h2>
+<section id="stepwise-selection" class="level2" data-number="34.11">
+<h2 data-number="34.11" class="anchored" data-anchor-id="stepwise-selection"><span class="header-section-number">34.11</span> Stepwise selection</h2>
 <p>So best subset selection is expensive because we have to try every possible model, and then choose among the best “size-<span class="math inline">\(k\)</span>” model for each <span class="math inline">\(k=1,2,\dots,p\)</span>. How might we cut down on the computational expense?</p>
 <p>Stepwise selection methods avoid exhaustively checking all <span class="math inline">\(2^p\)</span> possible models by starting with a particular model and adding or removing one variable at a time (i.e., in “steps”).</p>
 <p>The important part is in how we decide which predictor to add or remove from the model at a particular time.</p>
-<section id="forward-stepwise-selection" class="level3" data-number="32.11.1">
-<h3 data-number="32.11.1" class="anchored" data-anchor-id="forward-stepwise-selection"><span class="header-section-number">32.11.1</span> Forward stepwise selection</h3>
+<section id="forward-stepwise-selection" class="level3" data-number="34.11.1">
+<h3 data-number="34.11.1" class="anchored" data-anchor-id="forward-stepwise-selection"><span class="header-section-number">34.11.1</span> Forward stepwise selection</h3>
 <p>The most obvious (to me, anyway) way to avoid checking every possible model is to start with a “null” model (i.e., no predictors, just an intercept term), then repeatedly add the “best” predictor not already in the model. That is,</p>
 <ol type="1">
 <li>Start by fitting the “null” model, with just an intercept term. Call it <span class="math inline">\(M_0\)</span>.</li>
@@ -1119,43 +1161,43 @@ X_i = (1,X_{i,1},X_{i,2},\dots,X_{i,p}) \in \mathbb{R}^{p+1}.
 <p>To get a sense of what a big improvement this is, when <span class="math inline">\(p\)</span> is large, this right-hand side is approximately <span class="math inline">\(p^2/2\)</span>. Compare that with <span class="math inline">\(2^p\)</span>, which is a MUCH larger number. For example, when <span class="math inline">\(p=10\)</span>, <span class="math inline">\(2^{10} \approx 1000\)</span>, while <span class="math inline">\(10^2/2 \approx 50\)</span>. When <span class="math inline">\(p=20\)</span>, <span class="math inline">\(2^{20} \approx 1,000,000\)</span> while <span class="math inline">\(20^2/2 \approx 200\)</span>.</p>
 <p>Of course, the drawback is that forward stepwise selection might “miss” the optimal model, since it does not exhaustively fit every possible model the way that best subset selection does.</p>
 </section>
-<section id="backward-stepwise-selection" class="level3" data-number="32.11.2">
-<h3 data-number="32.11.2" class="anchored" data-anchor-id="backward-stepwise-selection"><span class="header-section-number">32.11.2</span> Backward stepwise selection</h3>
+<section id="backward-stepwise-selection" class="level3" data-number="34.11.2">
+<h3 data-number="34.11.2" class="anchored" data-anchor-id="backward-stepwise-selection"><span class="header-section-number">34.11.2</span> Backward stepwise selection</h3>
 <p>Well, if we can do forward stepwise selection, why not go backwards?</p>
 <p>In <em>backward stepwise selection</em>, we start with the full model (i.e., a model with all <span class="math inline">\(p\)</span> predictors), and iteratively remove one predictor at a time, always removing the predictor that decreases RSS the least.</p>
 <p>Just like forward stepwise regression, this decreases the number of models we have to fit from <span class="math inline">\(2^p\)</span> to something more like (approximately) <span class="math inline">\(p^2/2\)</span>.</p>
 <p><strong>Cautionary note:</strong> backward selection will only work if the number of observations <span class="math inline">\(n\)</span> is larger than <span class="math inline">\(p\)</span>. If <span class="math inline">\(n &lt; p\)</span>, the “full” model cannot be fit, because we have an <em>overdetermined system of linear equations</em>– <span class="math inline">\(n\)</span> equations in <span class="math inline">\(p\)</span> unknowns, and <span class="math inline">\(p &gt; n\)</span>. This is a setting where <em>regularization</em> can help a lot (see below), but the details are best left to your regression course(s).</p>
 </section>
-<section id="hybrid-approaches-the-best-of-both-worlds" class="level3" data-number="32.11.3">
-<h3 data-number="32.11.3" class="anchored" data-anchor-id="hybrid-approaches-the-best-of-both-worlds"><span class="header-section-number">32.11.3</span> Hybrid approaches: the best of both worlds?</h3>
+<section id="hybrid-approaches-the-best-of-both-worlds" class="level3" data-number="34.11.3">
+<h3 data-number="34.11.3" class="anchored" data-anchor-id="hybrid-approaches-the-best-of-both-worlds"><span class="header-section-number">34.11.3</span> Hybrid approaches: the best of both worlds?</h3>
 <p>It is outside the scope of this course, but there do exist stepwise selection methods that try to combine forward and backward stepwise selection. For example, we can alternately add and remove variables as needed. This can be helpful when, for example, a predictor is useful “early” in the selection process, but becomes a less useful predictor once other predictors have been included.</p>
 </section>
 </section>
-<section id="model-comparison-statistics-adjusted-r2-aic-and-bic" class="level2" data-number="32.12">
-<h2 data-number="32.12" class="anchored" data-anchor-id="model-comparison-statistics-adjusted-r2-aic-and-bic"><span class="header-section-number">32.12</span> Model Comparison Statistics: Adjusted <span class="math inline">\(R^2\)</span>, AIC and BIC</h2>
+<section id="model-comparison-statistics-adjusted-r2-aic-and-bic" class="level2" data-number="34.12">
+<h2 data-number="34.12" class="anchored" data-anchor-id="model-comparison-statistics-adjusted-r2-aic-and-bic"><span class="header-section-number">34.12</span> Model Comparison Statistics: Adjusted <span class="math inline">\(R^2\)</span>, AIC and BIC</h2>
 <p>Rather than comparing the RSS of two models, which only compares the reduction to residuals with no regards to the number of predictors (the complexity) in the model, there are some statistics that are often used. Note that these statistics are relevant when comparing models of <em>different</em> complexity - two models with the same number of predictors would just as well be compared using <span class="math inline">\(RSS\)</span>. These statistics are useful to balance the benefit of reduced <span class="math inline">\(RSS\)</span> with the cost of additional model complexity.</p>
 <p>In each case, <span class="math inline">\(k\)</span> is the number of parameters being estimated - including the intercept.</p>
-<section id="adjusted-r2" class="level3" data-number="32.12.1">
-<h3 data-number="32.12.1" class="anchored" data-anchor-id="adjusted-r2"><span class="header-section-number">32.12.1</span> Adjusted <span class="math inline">\(R^2\)</span></h3>
+<section id="adjusted-r2" class="level3" data-number="34.12.1">
+<h3 data-number="34.12.1" class="anchored" data-anchor-id="adjusted-r2"><span class="header-section-number">34.12.1</span> Adjusted <span class="math inline">\(R^2\)</span></h3>
 <p><span class="math display">\[R^2_{adj} = 1 − \frac{RSS/(n-k)}{TSS/(n-1)}=1-\frac{RSS}{TSS}\left(\frac{n-1}{n-k}\right)\]</span> The fraction multiplied will be <span class="math inline">\(&gt;1\)</span>, and grows with model complexity. In an extreme case, this penalty can result in a negative <span class="math inline">\(R^2_{adj}\)</span>, so it’s important to remember that this statistic is not meaningful by itself, only when used to compare models. Thus <span class="math inline">\(R^2_{adj} &lt; R^2\)</span>, and applies a penalty that grows with the number of predictors. When comparing two models using <span class="math inline">\(R^2_{adj}\)</span> we prefer the model that has the higher value.</p>
 </section>
-<section id="akaike-information-criterion-aic" class="level3" data-number="32.12.2">
-<h3 data-number="32.12.2" class="anchored" data-anchor-id="akaike-information-criterion-aic"><span class="header-section-number">32.12.2</span> Akaike information criterion (AIC)</h3>
+<section id="akaike-information-criterion-aic" class="level3" data-number="34.12.2">
+<h3 data-number="34.12.2" class="anchored" data-anchor-id="akaike-information-criterion-aic"><span class="header-section-number">34.12.2</span> Akaike information criterion (AIC)</h3>
 <p><span class="math display">\[AIC = −2 \ln(L) + 2k\]</span> If you work out the math (we won’t here) for a linear model this can be expressed in terms of <span class="math inline">\(RSS\)</span> <span class="math display">\[AIC = n\ln(RSS/n) + 2k\]</span></p>
 </section>
-<section id="bayesian-information-criterion-bic" class="level3" data-number="32.12.3">
-<h3 data-number="32.12.3" class="anchored" data-anchor-id="bayesian-information-criterion-bic"><span class="header-section-number">32.12.3</span> Bayesian information criterion (BIC)</h3>
+<section id="bayesian-information-criterion-bic" class="level3" data-number="34.12.3">
+<h3 data-number="34.12.3" class="anchored" data-anchor-id="bayesian-information-criterion-bic"><span class="header-section-number">34.12.3</span> Bayesian information criterion (BIC)</h3>
 <p><span class="math display">\[BIC = -2 \ln(L)+\ln(n)k =  n\ln(RSS/n) + \ln(n)k\]</span> The first term in AIC and BIC is the residual deviance, which we want to be as low as possible. While a more complex model will reduce residual deviance, both AIC and BIC add a penalty. BIC adds a more severe penalty per predictor (if <span class="math inline">\(n &gt; e^2\approx7.4\)</span>).</p>
 <p>The bottom line: between these three model comparison statistics, BIC more heavily favors simpler models, <span class="math inline">\(R^2_{adj}\)</span> allows for more complex models and AIC is somewhere in the middle.</p>
 </section>
 </section>
-<section id="shrinkage-and-regularization" class="level2" data-number="32.13">
-<h2 data-number="32.13" class="anchored" data-anchor-id="shrinkage-and-regularization"><span class="header-section-number">32.13</span> Shrinkage and Regularization</h2>
+<section id="shrinkage-and-regularization" class="level2" data-number="34.13">
+<h2 data-number="34.13" class="anchored" data-anchor-id="shrinkage-and-regularization"><span class="header-section-number">34.13</span> Shrinkage and Regularization</h2>
 <p>The variable selection methods we just discussed involved trying out different subsets of the predictors and seeing how the model performance changed as a result.</p>
 <p>Let’s consider an alternative approach. What if instead of trying lots of different models with different numbers of predictors, we went ahead and fit a model with all <span class="math inline">\(p\)</span> available predictors, but we modify our loss function in such a way that we will set the coefficients of “unhelpful” predictors to zero? This is usually called “shrinkage”, because we shrink the coefficients toward zero. You will also often hear the term <em>regularization</em>, which is popular in machine learning, and means more or less the same thing.</p>
 <p>Let’s briefly discuss two such methods, undoubtedly two of the most important tools in the statistical toolbox: ridge regression and the LASSO.</p>
-<section id="ridge-regression" class="level3" data-number="32.13.1">
-<h3 data-number="32.13.1" class="anchored" data-anchor-id="ridge-regression"><span class="header-section-number">32.13.1</span> Ridge regression</h3>
+<section id="ridge-regression" class="level3" data-number="34.13.1">
+<h3 data-number="34.13.1" class="anchored" data-anchor-id="ridge-regression"><span class="header-section-number">34.13.1</span> Ridge regression</h3>
 <p>By now you are bored to death of seeing the linear regression least squares objective, but here it is again: <span class="math display">\[
 \sum_{i=1}^n \left( Y_i - \beta_0 - \sum_{j=1}^p \beta_j X_{i,j} \right)^2
 \]</span></p>
@@ -1174,8 +1216,8 @@ X_i = (1,X_{i,1},X_{i,2},\dots,X_{i,p}) \in \mathbb{R}^{p+1}.
 <p>The tuning parameter <span class="math inline">\(\lambda\)</span> controls how much we care about this shrinkage penalty compared to the RSS term. When <span class="math inline">\(\lambda\)</span> is big, we “pay” more for large coefficients, so we will prefer coefficients closer to zero. When <span class="math inline">\(\lambda=0\)</span>, we recover plain old least squares regression.</p>
 <p>For each value of <span class="math inline">\(\lambda\)</span> that we choose, we get a different solution to our (regularized) regression, say, <span class="math inline">\(\hat{\beta}^{(\lambda)}\)</span>. In this sense, whereas least squares linear regression gives us just one solution <span class="math inline">\(\hat{\beta}\)</span>, shrinkage methods give us a whole family of solutions, corresponding to different choices of <span class="math inline">\(\lambda\)</span>.</p>
 <p>For this reason, choosing the tuning parameter <span class="math inline">\(\lambda\)</span> is crucial, but we will have only a little to say about this matter, owing to time constraints. Luckily, you already know a family of methods for choosing <span class="math inline">\(\lambda\)</span>– cross validation is a very common appraoch!</p>
-<section id="ridge-regression-on-the-mtcars-data-set" class="level4" data-number="32.13.1.1">
-<h4 data-number="32.13.1.1" class="anchored" data-anchor-id="ridge-regression-on-the-mtcars-data-set"><span class="header-section-number">32.13.1.1</span> Ridge regression on the <code>mtcars</code> data set</h4>
+<section id="ridge-regression-on-the-mtcars-data-set" class="level4" data-number="34.13.1.1">
+<h4 data-number="34.13.1.1" class="anchored" data-anchor-id="ridge-regression-on-the-mtcars-data-set"><span class="header-section-number">34.13.1.1</span> Ridge regression on the <code>mtcars</code> data set</h4>
 <p>Let’s try this out on the <code>mtcars</code> data set, trying to predict <code>mpg</code> from all the of the available predictors, this time. One thing to bear in mind: the data set is only 32 observations, so our fits are going to be a little unstable (but this is precisely why we use regularization!).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mtcars);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1235,8 +1277,8 @@ X_i = (1,X_{i,1},X_{i,2},\dots,X_{i,p}) \in \mathbb{R}^{p+1}.
 </div>
 <p>They’re the same, up to several digits of precision, anyway. Good!</p>
 </section>
-<section id="shrinkage-and-rss" class="level4" data-number="32.13.1.2">
-<h4 data-number="32.13.1.2" class="anchored" data-anchor-id="shrinkage-and-rss"><span class="header-section-number">32.13.1.2</span> Shrinkage and RSS</h4>
+<section id="shrinkage-and-rss" class="level4" data-number="34.13.1.2">
+<h4 data-number="34.13.1.2" class="anchored" data-anchor-id="shrinkage-and-rss"><span class="header-section-number">34.13.1.2</span> Shrinkage and RSS</h4>
 <p>Now, for each value of <span class="math inline">\(\lambda\)</span>, we get a different fitted model. How do these different models do in terms of their fit (as measured by RSS)?</p>
 <p>Well, annoyingly, the object returned by <code>lm.ridge</code> does not include a <code>residuals</code> attribute the same way that the <code>lm</code> object does:</p>
 <div class="cell">
@@ -1540,8 +1582,8 @@ Volvo 142E          24.45802 23.71104 22.77794 21.60303</code></pre>
 + \lambda \sum_{j=1}^p \beta_j^2
 \]</span> As <span class="math inline">\(\lambda\)</span> gets bigger, we pay a bigger and bigger penalty for making coefficients non-zero. Thus, as <span class="math inline">\(\lambda\)</span> get bigger, it becomes “harder” or “more expensive” to make the coefficients take the values that would make the RSS term smaller. As a result, for larger values of <span class="math inline">\(\lambda\)</span>, the RSS of our solution is larger.</p>
 </section>
-<section id="why-is-ridge-regression-helpful" class="level4" data-number="32.13.1.3">
-<h4 data-number="32.13.1.3" class="anchored" data-anchor-id="why-is-ridge-regression-helpful"><span class="header-section-number">32.13.1.3</span> Why is ridge regression helpful?</h4>
+<section id="why-is-ridge-regression-helpful" class="level4" data-number="34.13.1.3">
+<h4 data-number="34.13.1.3" class="anchored" data-anchor-id="why-is-ridge-regression-helpful"><span class="header-section-number">34.13.1.3</span> Why is ridge regression helpful?</h4>
 <p>Well, the short answer is that ridge regression (and other shrinkage methods) prevents over-fitting. <span class="math inline">\(\lambda\)</span> makes it more expensive to simply choose whatever coefficients we please, which in turn prevents us from over-fitting to the data.</p>
 <p>In essence, this is the bias-variance tradeoff again! As <span class="math inline">\(\lambda\)</span> increases, our freedom to choose the coefficients becomes more constrained, and the variance decreases (and the bias increases).</p>
 <p>Here’s an example from ISLR.</p>
@@ -1554,8 +1596,8 @@ Volvo 142E          24.45802 23.71104 22.77794 21.60303</code></pre>
 <p>Notice that the variance decreases as <span class="math inline">\(\lambda\)</span> increases, while squares bias increases, but there is a “sweet spot” that minimizes the MSE. The whole point of model selection (CV, AIC, ridge regression, etc.) is to find this sweet spot (or spot close to it).</p>
 </section>
 </section>
-<section id="the-lasso" class="level3" data-number="32.13.2">
-<h3 data-number="32.13.2" class="anchored" data-anchor-id="the-lasso"><span class="header-section-number">32.13.2</span> The LASSO</h3>
+<section id="the-lasso" class="level3" data-number="34.13.2">
+<h3 data-number="34.13.2" class="anchored" data-anchor-id="the-lasso"><span class="header-section-number">34.13.2</span> The LASSO</h3>
 <p>Now, there’s one issue with ridge regression, which becomes evident when we compare it with subset selection methods. Except when <span class="math inline">\(\lambda\)</span> is truly huge (i.e., infinite), ridge regression fits a model that still has all of the coefficients in it (i.e., all of the coefficients are nonzero, though perhaps small). Said another way, we haven’t simplified the model in the sense of reducing the number of predictors or only keeping the “useful” predictors around.</p>
 <p>This isn’t a problem for prediction. After all, more predictors often make prediction better, especially when we have regularization to prevent us from over-fitting.</p>
 <p>But this <em>is</em> a problem if our goal is to simplify our model by selecting only some predictors to include in our model. One way to do this would be to make it so that coefficients that aren’t “pulling their weight” in the sense of helping our prediction error will be set to zero. This is precisely the goal of the LASSO.</p>
@@ -1570,16 +1612,16 @@ Volvo 142E          24.45802 23.71104 22.77794 21.60303</code></pre>
 <p>The important point is that the LASSO performs <em>variable selection</em> for us by setting many coefficients to zero.</p>
 <p>The <code>glmnet</code> package has a very good LASSO implementation. This is generally a very useful package for doing all kinds of different penalized regression, and you’ll likely use it extensively in your regression course(s). You’ll get a bit of practice with it in discussion section.</p>
 </section>
-<section id="how-to-choose-lambda-cv-to-the-rescue" class="level3" data-number="32.13.3">
-<h3 data-number="32.13.3" class="anchored" data-anchor-id="how-to-choose-lambda-cv-to-the-rescue"><span class="header-section-number">32.13.3</span> How to choose <span class="math inline">\(\lambda\)</span>? CV to the rescue!</h3>
+<section id="how-to-choose-lambda-cv-to-the-rescue" class="level3" data-number="34.13.3">
+<h3 data-number="34.13.3" class="anchored" data-anchor-id="how-to-choose-lambda-cv-to-the-rescue"><span class="header-section-number">34.13.3</span> How to choose <span class="math inline">\(\lambda\)</span>? CV to the rescue!</h3>
 <p>A natural question in both ridge and the LASSO concerns how we should choose the term <span class="math inline">\(\lambda\)</span> that controls the “strength” of the penalty term.</p>
 <p>We said a few lectures ago that CV was useful beyond just variable selection, and here’s the payoff.</p>
 <p>CV is also a great way to choose <span class="math inline">\(\lambda\)</span> in these kinds of <em>penalized</em> problems. We choose different values of <span class="math inline">\(\lambda\)</span>, fit the corresponding models, and use CV to select among them!</p>
 <p>Section 6.2.3 has a more detailed discussion of this, using <span class="math inline">\(10\)</span>-fold CV to compare different choices of <span class="math inline">\(\lambda\)</span>.</p>
 </section>
 </section>
-<section id="review" class="level2" data-number="32.14">
-<h2 data-number="32.14" class="anchored" data-anchor-id="review"><span class="header-section-number">32.14</span> Review</h2>
+<section id="review" class="level2" data-number="34.14">
+<h2 data-number="34.14" class="anchored" data-anchor-id="review"><span class="header-section-number">34.14</span> Review</h2>
 <p>In these notes we covered</p>
 <ul>
 <li>The concept of over-fitting to training data</li>
@@ -1837,8 +1879,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./cv_practice.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./R11_cv-MSEcomparison.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">cv-extra</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

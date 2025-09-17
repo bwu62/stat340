@@ -8,7 +8,7 @@
 
 <meta name="author" content="Brian Powers">
 
-<title>STAT 340: Data Science II - 19&nbsp; Estimation Examples</title>
+<title>STAT 340: Data Science II - 21&nbsp; Estimation Examples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./estimation1_practice.html">Estimation</a></li><li class="breadcrumb-item"><a href="./R06_More_Estimation_Examples.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Estimation Examples</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./estimation1.html">Estimation</a></li><li class="breadcrumb-item"><a href="./R06_More_Estimation_Examples.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Estimation Examples</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,14 +164,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
+  <a href="./probability_rv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability and Random Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R01_RandomVariables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Random Variables R Examples</span></span></a>
+  <a href="./R01_Prob_RVs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability and Random Variable R Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -183,14 +183,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cov.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Independence, Conditional Probability and Bayes’ Rule</span></span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variable Distributions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R02_IndepCondBayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Independence, Conditional Probability and Bayes Theorem R Examples</span></span></a>
+  <a href="./R02_Distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Random Variable Distributions R Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -256,14 +256,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./testing2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Statistical Testing, Continued</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./R05_testing_Additional_Examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Monte Carlo Testing: Additional Examples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Monte Carlo Testing: Additional Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./testing2_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testing and Power Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Testing and Power Practice</span></span></a>
   </div>
 </li>
       </ul>
@@ -279,27 +285,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./estimation1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Estimation Part 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./estimation1_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R06_More_Estimation_Examples.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Estimation Examples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Estimation Examples</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./estimation2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Estimation Part 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./estimation2_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Interval Estimation Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interval Estimation Practice</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R07_More_Estimation_and_CI_Examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Interval Estimation Examples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Interval Estimation Examples</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,55 +333,138 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./prediction1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Prediction (Simple Linear Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./slr_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R08_prediction_examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prediction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Prediction (Multiple Linear Regression)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R09_Multiple_Regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">R10 multiple regression further concepts</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlr_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R10_LogisticReg_Extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Logistic Regression - Extended Examples</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_cv-MSEcomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">cv-extra</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Bias_Variance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Bias Variance Tradeoff</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Model_Selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">R11 Model Selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Ridge_LASSO.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">R11: Ridge and Lasso</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cv_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Bootstrapping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bootstrap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Bootstrapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R12_Bootstrap_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">R13_Bootstrap</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bootstrap_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./RV_summary.html" class="sidebar-item-text sidebar-link">
@@ -382,14 +483,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#trying-to-achieve-a-2-margin-of-error" id="toc-trying-to-achieve-a-2-margin-of-error" class="nav-link active" data-scroll-target="#trying-to-achieve-a-2-margin-of-error"><span class="header-section-number">19.1</span> Trying to achieve a 2% margin of error</a></li>
-  <li><a href="#estimate-of-lambda-for-an-exponential-distribution" id="toc-estimate-of-lambda-for-an-exponential-distribution" class="nav-link" data-scroll-target="#estimate-of-lambda-for-an-exponential-distribution"><span class="header-section-number">19.2</span> Estimate of <span class="math inline">\(\lambda\)</span> for an exponential distribution</a></li>
-  <li><a href="#experiments-with-estimator-bias" id="toc-experiments-with-estimator-bias" class="nav-link" data-scroll-target="#experiments-with-estimator-bias"><span class="header-section-number">19.3</span> Experiments with Estimator Bias</a></li>
-  <li><a href="#bias-of-sample-maximum" id="toc-bias-of-sample-maximum" class="nav-link" data-scroll-target="#bias-of-sample-maximum"><span class="header-section-number">19.4</span> Bias of Sample Maximum</a>
+  <li><a href="#trying-to-achieve-a-2-margin-of-error" id="toc-trying-to-achieve-a-2-margin-of-error" class="nav-link active" data-scroll-target="#trying-to-achieve-a-2-margin-of-error"><span class="header-section-number">21.1</span> Trying to achieve a 2% margin of error</a></li>
+  <li><a href="#estimate-of-lambda-for-an-exponential-distribution" id="toc-estimate-of-lambda-for-an-exponential-distribution" class="nav-link" data-scroll-target="#estimate-of-lambda-for-an-exponential-distribution"><span class="header-section-number">21.2</span> Estimate of <span class="math inline">\(\lambda\)</span> for an exponential distribution</a></li>
+  <li><a href="#experiments-with-estimator-bias" id="toc-experiments-with-estimator-bias" class="nav-link" data-scroll-target="#experiments-with-estimator-bias"><span class="header-section-number">21.3</span> Experiments with Estimator Bias</a></li>
+  <li><a href="#bias-of-sample-maximum" id="toc-bias-of-sample-maximum" class="nav-link" data-scroll-target="#bias-of-sample-maximum"><span class="header-section-number">21.4</span> Bias of Sample Maximum</a>
   <ul class="collapse">
-  <li><a href="#german-tank-example" id="toc-german-tank-example" class="nav-link" data-scroll-target="#german-tank-example"><span class="header-section-number">19.4.1</span> German Tank Example</a></li>
-  <li><a href="#capture---recapture-population-estimation" id="toc-capture---recapture-population-estimation" class="nav-link" data-scroll-target="#capture---recapture-population-estimation"><span class="header-section-number">19.4.2</span> Capture - Recapture population estimation</a></li>
-  <li><a href="#example-estimating-the-rate-parameter-in-the-exponential-distribution." id="toc-example-estimating-the-rate-parameter-in-the-exponential-distribution." class="nav-link" data-scroll-target="#example-estimating-the-rate-parameter-in-the-exponential-distribution."><span class="header-section-number">19.4.3</span> Example: Estimating the rate parameter in the exponential distribution.</a></li>
+  <li><a href="#german-tank-example" id="toc-german-tank-example" class="nav-link" data-scroll-target="#german-tank-example"><span class="header-section-number">21.4.1</span> German Tank Example</a></li>
+  <li><a href="#capture---recapture-population-estimation" id="toc-capture---recapture-population-estimation" class="nav-link" data-scroll-target="#capture---recapture-population-estimation"><span class="header-section-number">21.4.2</span> Capture - Recapture population estimation</a></li>
+  <li><a href="#example-estimating-the-rate-parameter-in-the-exponential-distribution." id="toc-example-estimating-the-rate-parameter-in-the-exponential-distribution." class="nav-link" data-scroll-target="#example-estimating-the-rate-parameter-in-the-exponential-distribution."><span class="header-section-number">21.4.3</span> Example: Estimating the rate parameter in the exponential distribution.</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -399,7 +500,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Estimation Examples</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Estimation Examples</span></h1>
 </div>
 
 
@@ -420,8 +521,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="trying-to-achieve-a-2-margin-of-error" class="level2" data-number="19.1">
-<h2 data-number="19.1" class="anchored" data-anchor-id="trying-to-achieve-a-2-margin-of-error"><span class="header-section-number">19.1</span> Trying to achieve a 2% margin of error</h2>
+<section id="trying-to-achieve-a-2-margin-of-error" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="trying-to-achieve-a-2-margin-of-error"><span class="header-section-number">21.1</span> Trying to achieve a 2% margin of error</h2>
 <p>Play around with <span class="math inline">\(n\)</span> in the above code to find how large our sample size has to be so that <span class="math inline">\(\Pr[ |S-p| &lt; 0.02 ] \approx 0.95\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the exact same setup except we're changing n from 200 to 400.</span></span>
@@ -447,8 +548,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>By changing the margin from 2% to 1% or up to 4% we are changing the precision of our estimate.</p>
 <p>Whether or not our estimate is within the margin (yes/no) can be seen as the accuracy of our estimate.</p>
 </section>
-<section id="estimate-of-lambda-for-an-exponential-distribution" class="level2" data-number="19.2">
-<h2 data-number="19.2" class="anchored" data-anchor-id="estimate-of-lambda-for-an-exponential-distribution"><span class="header-section-number">19.2</span> Estimate of <span class="math inline">\(\lambda\)</span> for an exponential distribution</h2>
+<section id="estimate-of-lambda-for-an-exponential-distribution" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="estimate-of-lambda-for-an-exponential-distribution"><span class="header-section-number">21.2</span> Estimate of <span class="math inline">\(\lambda\)</span> for an exponential distribution</h2>
 <p>As per the slides, we are using <span class="math inline">\(1/\bar{X}\)</span> as our estimate of <span class="math inline">\(\lambda\)</span> since this makes sense from a “method of moments” perspective. Is the estimate biased?</p>
 <p>When using estimator <span class="math inline">\(\hat{\theta}\)</span> to estimate parameter <span class="math inline">\(\theta\)</span>, bias is defined as <span class="math inline">\(E(\hat{\theta})-\theta\)</span></p>
 <div class="cell">
@@ -470,8 +571,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this case the bias is positive, and it decreases (gets closer to zero) as sample size increases (not as NMC increases. NMC just gives us a better estimate of the bias, n gives us a better estimate of lambda)</p>
 <p>This property - bias goes to zero as sample size increases - is called being “asymptotically unbiased”. It is closely related to a concept called “consistency.”</p>
 </section>
-<section id="experiments-with-estimator-bias" class="level2" data-number="19.3">
-<h2 data-number="19.3" class="anchored" data-anchor-id="experiments-with-estimator-bias"><span class="header-section-number">19.3</span> Experiments with Estimator Bias</h2>
+<section id="experiments-with-estimator-bias" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="experiments-with-estimator-bias"><span class="header-section-number">21.3</span> Experiments with Estimator Bias</h2>
 <p>Let’s consider <span class="math inline">\(S^2\)</span>, the sample variance.</p>
 <p>Let’s consider a population that is normally distributed, say <span class="math inline">\(N(100, 5^2)\)</span>, so <span class="math inline">\(\sigma=5\)</span>. Let’s look at samples of size 20.</p>
 <div class="cell">
@@ -541,8 +642,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="bias-of-sample-maximum" class="level2" data-number="19.4">
-<h2 data-number="19.4" class="anchored" data-anchor-id="bias-of-sample-maximum"><span class="header-section-number">19.4</span> Bias of Sample Maximum</h2>
+<section id="bias-of-sample-maximum" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="bias-of-sample-maximum"><span class="header-section-number">21.4</span> Bias of Sample Maximum</h2>
 <p>Let’s look at the sample maximum as an estimate of the population maximum. Let’s sample data from a uniform(0, 1), and we’ll look at a sample of size 20.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>NMC <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
@@ -575,8 +676,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="R06_More_Estimation_Examples_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="german-tank-example" class="level3" data-number="19.4.1">
-<h3 data-number="19.4.1" class="anchored" data-anchor-id="german-tank-example"><span class="header-section-number">19.4.1</span> German Tank Example</h3>
+<section id="german-tank-example" class="level3" data-number="21.4.1">
+<h3 data-number="21.4.1" class="anchored" data-anchor-id="german-tank-example"><span class="header-section-number">21.4.1</span> German Tank Example</h3>
 <p>Suppose we have tanks produced each with a serial number from 1 up to N. We are able to capture and observe the serial numbers on a sample of say 5 tanks. Can we estimate the population size of tanks (get an estimate for N)???</p>
 <p>By the same logic from above, one might guess that <span class="math inline">\(\frac{n+1}{n} \max(X)\)</span> would be a good estimate of N. Let’s imagine that there are 100 tanks in the population.</p>
 <div class="cell">
@@ -613,8 +714,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="capture---recapture-population-estimation" class="level3" data-number="19.4.2">
-<h3 data-number="19.4.2" class="anchored" data-anchor-id="capture---recapture-population-estimation"><span class="header-section-number">19.4.2</span> Capture - Recapture population estimation</h3>
+<section id="capture---recapture-population-estimation" class="level3" data-number="21.4.2">
+<h3 data-number="21.4.2" class="anchored" data-anchor-id="capture---recapture-population-estimation"><span class="header-section-number">21.4.2</span> Capture - Recapture population estimation</h3>
 <p>Suppose that a population is of size N. One day you capture and tag a random sample of <span class="math inline">\(n_1\)</span> individuals and release them back into the wild. Several weeks later you capture a new batch of size <span class="math inline">\(n_2\)</span> and <span class="math inline">\(k\)</span> of the new sample are tagged. How can we estimate the population size from this?</p>
 <p>Suppose the population is of size 400 and we tag and release 25. Suppose our second sample is of size 20. How many would we expect to see in the second sample?</p>
 <div class="cell">
@@ -654,8 +755,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="example-estimating-the-rate-parameter-in-the-exponential-distribution." class="level3" data-number="19.4.3">
-<h3 data-number="19.4.3" class="anchored" data-anchor-id="example-estimating-the-rate-parameter-in-the-exponential-distribution."><span class="header-section-number">19.4.3</span> Example: Estimating the rate parameter in the exponential distribution.</h3>
+<section id="example-estimating-the-rate-parameter-in-the-exponential-distribution." class="level3" data-number="21.4.3">
+<h3 data-number="21.4.3" class="anchored" data-anchor-id="example-estimating-the-rate-parameter-in-the-exponential-distribution."><span class="header-section-number">21.4.3</span> Example: Estimating the rate parameter in the exponential distribution.</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>run_exprate_expt <span class="ot">&lt;-</span> <span class="cf">function</span>( n, rate ) {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="at">n=</span>n, <span class="at">rate=</span>rate);</span>
@@ -950,7 +1051,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./estimation1_practice.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

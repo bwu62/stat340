@@ -59,13 +59,23 @@ rbinom(10, size=n, prob=p)
 
 #Calculate P(X=3)
 dbinom(x=3, size=n, prob=p)
+choose(n, 3)*p^3*(1-p)^(n-3)
 
 #Calculate all probabilities
 dbinom(x=0:8, size=n, prob=p)
+sum(dbinom(x=0:8, size=n, prob=p))
 
 #Calculate P(X <= 3)
 pbinom(q=3, size=n, prob=p)
 ```
+Visualize the binomial probability mass function:
+```{r}
+k <- 0:8
+pk <- dbinom(x=0:8, size=n, prob=p)
+barplot(height=pk, names=k, main=paste0("pmf of Binom(",n,",",p,")"))
+
+```
+
 Expected value is $$\sum_k k\cdot Pr[X=k]$$
 ```{r}
 #All possible values
@@ -139,6 +149,17 @@ points(x = k[-1], y = cdfx[-n], pch=1)
 for(i in 1:(n-1)) points(x=k[i+0:1], y=cdfx[c(i,i)], type="l")
 ```
 
+To calculate probabilities from a geometric rv, use the `pgeom` function
+```{r}
+#Pr(X <= 3)
+pgeom(3, prob=p)
+
+```
+To get individual probabilities at k
+```{r}
+#Pr(X=3)
+dgeom(3, prob=p)
+```
 
 But it's probably faster to just use a step type plot. 
 The vertical lines are not technically part of the plot though.

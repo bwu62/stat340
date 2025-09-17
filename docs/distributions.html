@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STAT 340: Data Science II - 6&nbsp; Random Variable Distributions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./R02_Distributions.html" rel="next">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability_rv.html">Sampling</a></li><li class="breadcrumb-item"><a href="./distributions.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variable Distributions</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">STAT 340: Data Science II</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">STAT 340 Index</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Sampling</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./probability_rv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability and Random Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R01_Prob_RVs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability and Random Variable R Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rv_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probability and Random Variables Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variable Distributions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R02_Distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Random Variable Distributions R Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cov_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Independence and Conditional Probability Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Monte Carlo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R03_MonteCarloExamples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Monte Carlo Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monte Carlo Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_MonteCarlo_Battleship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Monte Carlo Battleship</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Testing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction to Statistical Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R04_Monte_Carlo_Testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing1_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Monte Carlo Testing Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Statistical Testing, Continued</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R05_testing_Additional_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Monte Carlo Testing: Additional Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing2_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Testing and Power Practice</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Estimation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimation1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Estimation Part 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimation1_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R06_More_Estimation_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Estimation Examples</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimation2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Estimation Part 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimation2_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interval Estimation Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R07_More_Estimation_and_CI_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Interval Estimation Examples</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Prediction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prediction1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Prediction (Simple Linear Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slr_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R08_prediction_examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prediction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Prediction (Multiple Linear Regression)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R09_Multiple_Regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">R10 multiple regression further concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlr_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R10_LogisticReg_Extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Logistic Regression - Extended Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_cv-MSEcomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">cv-extra</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Bias_Variance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Bias Variance Tradeoff</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Model_Selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">R11 Model Selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Ridge_LASSO.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">R11: Ridge and Lasso</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cv_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Bootstrapping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bootstrap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Bootstrapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R12_Bootstrap_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">R13_Bootstrap</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bootstrap_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RV_summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Random Variable Summary</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">6.1</span> Learning objectives</a></li>
+  <li><a href="#families-of-discrete-random-variables" id="toc-families-of-discrete-random-variables" class="nav-link" data-scroll-target="#families-of-discrete-random-variables"><span class="header-section-number">6.2</span> Families of Discrete Random Variables</a>
+  <ul class="collapse">
+  <li><a href="#bernoulli" id="toc-bernoulli" class="nav-link" data-scroll-target="#bernoulli"><span class="header-section-number">6.2.1</span> Bernoulli</a></li>
+  <li><a href="#binomial" id="toc-binomial" class="nav-link" data-scroll-target="#binomial"><span class="header-section-number">6.2.2</span> Binomial</a></li>
+  <li><a href="#geometric" id="toc-geometric" class="nav-link" data-scroll-target="#geometric"><span class="header-section-number">6.2.3</span> Geometric</a></li>
+  <li><a href="#poisson" id="toc-poisson" class="nav-link" data-scroll-target="#poisson"><span class="header-section-number">6.2.4</span> Poisson</a></li>
+  <li><a href="#the-discrete-uniform" id="toc-the-discrete-uniform" class="nav-link" data-scroll-target="#the-discrete-uniform"><span class="header-section-number">6.2.5</span> The Discrete uniform</a></li>
+  </ul></li>
+  <li><a href="#aside-approximating-one-random-variable-with-another" id="toc-aside-approximating-one-random-variable-with-another" class="nav-link" data-scroll-target="#aside-approximating-one-random-variable-with-another"><span class="header-section-number">6.3</span> Aside: approximating one random variable with another</a>
+  <ul class="collapse">
+  <li><a href="#illustration" id="toc-illustration" class="nav-link" data-scroll-target="#illustration"><span class="header-section-number">6.3.1</span> Illustration</a></li>
+  <li><a href="#why-approximate" id="toc-why-approximate" class="nav-link" data-scroll-target="#why-approximate"><span class="header-section-number">6.3.2</span> Why Approximate?</a></li>
+  </ul></li>
+  <li><a href="#continuous-random-variable-distributions" id="toc-continuous-random-variable-distributions" class="nav-link" data-scroll-target="#continuous-random-variable-distributions"><span class="header-section-number">6.4</span> Continuous Random Variable Distributions</a>
+  <ul class="collapse">
+  <li><a href="#normal" id="toc-normal" class="nav-link" data-scroll-target="#normal"><span class="header-section-number">6.4.1</span> Normal</a></li>
+  <li><a href="#uniform" id="toc-uniform" class="nav-link" data-scroll-target="#uniform"><span class="header-section-number">6.4.2</span> Uniform</a></li>
+  <li><a href="#exponential" id="toc-exponential" class="nav-link" data-scroll-target="#exponential"><span class="header-section-number">6.4.3</span> Exponential</a></li>
+  </ul></li>
+  <li><a href="#building-bigger-models" id="toc-building-bigger-models" class="nav-link" data-scroll-target="#building-bigger-models"><span class="header-section-number">6.5</span> Building Bigger Models</a>
+  <ul class="collapse">
+  <li><a href="#social-network-models" id="toc-social-network-models" class="nav-link" data-scroll-target="#social-network-models"><span class="header-section-number">6.5.1</span> Social network models</a></li>
+  <li><a href="#binomial-asset-pricing-model" id="toc-binomial-asset-pricing-model" class="nav-link" data-scroll-target="#binomial-asset-pricing-model"><span class="header-section-number">6.5.2</span> Binomial asset pricing model</a></li>
+  <li><a href="#election-models" id="toc-election-models" class="nav-link" data-scroll-target="#election-models"><span class="header-section-number">6.5.3</span> Election models</a></li>
+  </ul></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review"><span class="header-section-number">6.6</span> Review:</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variable Distributions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>We use random variables to model how our data came to be.</p>
+<p>There are a number of very important families of random variables that are useful for modeling different types of random populations and this week we will focus on these different random variables and their properties.</p>
+<section id="learning-objectives" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">6.1</span> Learning objectives</h2>
+<p>After this lesson, you will be able to</p>
+<ul>
+<li>Identify appropriate random variables for modeling different real-world events and explain why one choice might be better or worse than another</li>
+<li>Combine random variables to build simple models of real-world phenomena</li>
+<li>Compute the probabilities of simple events under different probability distributions using R.</li>
+</ul>
+</section>
+<section id="families-of-discrete-random-variables" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="families-of-discrete-random-variables"><span class="header-section-number">6.2</span> Families of Discrete Random Variables</h2>
+<p>Let’s look at some commonly-used random variables and real-world phenomena to which they are well-suited.</p>
+<section id="bernoulli" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="bernoulli"><span class="header-section-number">6.2.1</span> Bernoulli</h3>
+<p>A Bernoulli random variable has outcome set <span class="math inline">\(\Omega = \{0,1\}\)</span>.</p>
+<p>To specify a probability on this set it is enough for us to specify <span class="math inline">\(\Pr[ \{0 \} ]\)</span> and <span class="math inline">\(\Pr[ \{1\} ]\)</span>.</p>
+<p>Typically, we do this by specifying the <em>success probability</em> <span class="math inline">\(p = \Pr[ \{1\} ] \in [0,1]\)</span>. Once we have done this, it is immediate that (check!) <span class="math inline">\(\Pr[ \{0\} ] = 1-p\)</span>.</p>
+<p>Note that we can check that this gives us a probability by verifying that it sums to 1: <span class="math display">\[\Pr[ \Omega ] = \Pr[ \{0\} \cup \{1\} ] = \Pr[ \{0\} ] + \Pr[ \{1\} ] = 1-p + p = 1.\]</span></p>
+<section id="expectation-and-variance-of-a-bernoulli" class="level4" data-number="6.2.1.1">
+<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="expectation-and-variance-of-a-bernoulli"><span class="header-section-number">6.2.1.1</span> Expectation and Variance of a Bernoulli</h4>
+<p>If <span class="math inline">\(X\sim Bern(p)\)</span> it is not hard to prove that <span class="math inline">\(E(X)=p\)</span></p>
+<p>The variance is <span class="math inline">\(Var(X) = E(X^2)-E^2(X) = (1-p)0^2 + p\cdot 1^2 - p^2 = p-p^2=p(1-p)\)</span></p>
+</section>
+<section id="bernoulli-examples" class="level4" data-number="6.2.1.2">
+<h4 data-number="6.2.1.2" class="anchored" data-anchor-id="bernoulli-examples"><span class="header-section-number">6.2.1.2</span> Bernoulli examples</h4>
+<p>Bernoulli random variables are commonly used to model “yes or no” events. That is, events of the form “whether or not event <span class="math inline">\(A\)</span> happens”. Common examples:</p>
+<ul>
+<li>Coin flips</li>
+<li>whether or not a person gets sick with a disease</li>
+<li>whether or not a team wins a game.</li>
+</ul>
+<p>If <span class="math inline">\(X\)</span> is a Bernoulli random variable with probability of success <span class="math inline">\(p\)</span>, then we write <span class="math inline">\(X \sim \operatorname{Bernoulli}(p)\)</span>.</p>
+<p>We read this as something like “<span class="math inline">\(X\)</span> is distributed as Bernoulli <span class="math inline">\(p\)</span>”.</p>
+</section>
+</section>
+<section id="binomial" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="binomial"><span class="header-section-number">6.2.2</span> Binomial</h3>
+<p>What if we flip many coins, all with the same probability of coming up heads?</p>
+<p>Then the total number of heads is distributed as a <em>binomial</em> random variable.</p>
+<p>In particular, we describe a binomial distribution by specifying two <em>parameters</em>:</p>
+<ol type="1">
+<li>the number of trials (i.e., coins flipped) <span class="math inline">\(n\)</span>, often called the <em>size</em> parameter and</li>
+<li>the success probability <span class="math inline">\(p\)</span> (i.e., the probability that an individual coin lands heads).</li>
+</ol>
+<p>Often we will write <span class="math inline">\(\operatorname{Binomial}(n,p)\)</span> to denote this distribution.</p>
+<p>So if <span class="math inline">\(X\)</span> is a Binomial random variable with <span class="math inline">\(n\)</span> trials and success probability <span class="math inline">\(p\)</span>, we write <span class="math inline">\(X \sim \operatorname{Binomial}(n,p)\)</span>.</p>
+<section id="example-modeling-infection" class="level4" data-number="6.2.2.1">
+<h4 data-number="6.2.2.1" class="anchored" data-anchor-id="example-modeling-infection"><span class="header-section-number">6.2.2.1</span> Example: modeling Infection</h4>
+<p>In a population of 250,000 people (approximately the population of Madison), we may imagine that each person has some probability <span class="math inline">\(p\)</span> of becoming seriously ill with the flu this winter.</p>
+<p>Then, in a sense, the total number of people in Madison who become seriously ill with the flu is like the total number of probability-<span class="math inline">\(p\)</span> coin flips that land heads when we flip <span class="math inline">\(250,000\)</span> coins.</p>
+<p>We might then model the number ill with the flu by a binomial random variable with <span class="math inline">\(n=250,000\)</span> and <span class="math inline">\(p=0.01\)</span> (just to be clear, we are completely making up this choice of <span class="math inline">\(p\)</span> here, just for the sake of example!).</p>
+</section>
+<section id="generating-random-binomial-rvs" class="level4 allowframebreaks" data-number="6.2.2.2">
+<h4 class="allowframebreaks anchored" data-number="6.2.2.2" data-anchor-id="generating-random-binomial-rvs"><span class="header-section-number">6.2.2.2</span> Generating random binomial RVs</h4>
+<p>We can generate binomial random variables using the <code>rbinom</code> function. Think “<code>r</code> for random”.</p>
+<p><code>rbinom</code> takes three arguments. - The first is the number of random values we want to generate (confusingly, this is called n in the R docs). - The size argument specifies the number of coins to flip (<span class="math inline">\(n\)</span> in our notation above) - The prob argument specifies the probability that one coin lands heads (<span class="math inline">\(p\)</span> in our notation above).</p>
+<p>The code below produces a random number from {0,1,2,…,10}, with 2,3,4 being most common (because <span class="math inline">\(np = 3\)</span> is the expected value; we’ll come back to this!)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>If we repeat the experiment a few times, we get different random values.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.3</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.3</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.3</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>We can also use the binomial to generate Bernoulli random variables, by setting the <code>size</code> argument to 1 (i.e., flip 1 coin):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="at">size=</span><span class="dv">1</span>, <span class="at">prob=</span><span class="fl">0.5</span>); <span class="do">## 1 is "heads", 0 is "tails"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<p><strong>Important note:</strong> if you read the R documentation, there is a possible notational confusion waiting for you, alluded to in the comments of the code above. The <a href="https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function">signature</a> of the <code>rbinom</code> function is given as <code>rbinom(n, size, prob)</code>. Based on the <span class="math inline">\(\operatorname{Binomial}(n,p)\)</span> notation we used above, you might expect that <code>n</code> in the <code>rbinom</code> function is the number of coins and <code>prob</code> is the success probability. Unfortunately, that isn’t quite right. <code>n</code> is the number of Binomial random variables to generate. <code>size</code> specifies the size parameter (<span class="math inline">\(n\)</span> in our math notation above).</p>
+<p>Compare the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n=</span><span class="dv">3</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>); <span class="do">## 3 draws from a Binomial(10,0.5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6 5 5</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="at">n=</span><span class="dv">10</span>, <span class="at">size=</span><span class="dv">3</span>, <span class="at">prob=</span><span class="fl">0.5</span>); <span class="do">## 10 draws from a Binomial(3,0.5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 2 2 0 2 2 3 1 2 0 2</code></pre>
+</div>
+</div>
+<p>All of the R functions for generating random variables take <code>n</code> as the number of draws from the distribution. This is in keeping with the convention in most of probability and statistics that <span class="math inline">\(n\)</span> is a sample size.</p>
+</section>
+<section id="expected-value-and-variance-of-a-binomial" class="level4" data-number="6.2.2.3">
+<h4 data-number="6.2.2.3" class="anchored" data-anchor-id="expected-value-and-variance-of-a-binomial"><span class="header-section-number">6.2.2.3</span> Expected value and Variance of a Binomial</h4>
+<p>Using rules of combining random variables, we can easily derive the expected value and variance formulas. Because if <span class="math inline">\(Y\sim Binomial(n,p)\)</span> we could write <span class="math inline">\(Y=X_1+X_2+\cdots X_n\)</span> where <span class="math inline">\(X_i\)</span> are iid <span class="math inline">\(Bern(p)\)</span>.</p>
+<p><span class="math display">\[E(Y)=E(X_1+\cdots X_n) = E(X_1)+\cdots+E(X_n) = p + \cdots + p = np\]</span> And because the <span class="math inline">\(X_i\)</span>s are independent,</p>
+<p><span class="math display">\[Var(Y)=Var(X_1)+\cdots +Var(X_n)=n(1-p)p\]</span></p>
+</section>
+</section>
+<section id="geometric" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="geometric"><span class="header-section-number">6.2.3</span> Geometric</h3>
+<p>Let’s consider a different coin-flipping experiment. We flip a coin repeatedly and we count how many flips it takes before it lands heads.</p>
+<p>So perhaps we flip the coin and it comes up heads immediately, in which case we would count zero (because there were no flips before the one where the coin landed heads). If we flipped the coin and it came up heads for the first time on the fourth toss, then we would count three, and so on.</p>
+<p>This game describes the geometric distribution.</p>
+<p>Its behavior is controlled by a single parameter, the probability <span class="math inline">\(p\)</span> of landing heads.</p>
+<p>The geometric distribution is a natural model for “time to failure” experiments.</p>
+<section id="generating-geometric-values" class="level4" data-number="6.2.3.1">
+<h4 data-number="6.2.3.1" class="anchored" data-anchor-id="generating-geometric-values"><span class="header-section-number">6.2.3.1</span> Generating geometric values</h4>
+<p>We can generate random geometric random variables using the <code>rgeom</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate one geometric random variable with p=0.5. </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Most likely outcomes: 0,1,2</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rgeom</span>(<span class="dv">1</span>, <span class="at">prob=</span><span class="fl">0.5</span>); </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+</section>
+<section id="geometric-pmf" class="level4 allowframebreaks" data-number="6.2.3.2">
+<h4 class="allowframebreaks anchored" data-number="6.2.3.2" data-anchor-id="geometric-pmf"><span class="header-section-number">6.2.3.2</span> Geometric PMF</h4>
+<p>The probability that a <span class="math inline">\(\operatorname{Geom}(p)\)</span> random variable <span class="math inline">\(X\)</span> takes a particular value <span class="math inline">\(k\)</span> (<span class="math inline">\(k=0,1,2,\dots\)</span>) is given by <span class="math inline">\(\Pr[ X = k ] = (1-p)^k p.\)</span></p>
+<p>Let’s plot this as a function of <span class="math inline">\(k\)</span>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">15</span>); p <span class="ot">&lt;-</span> <span class="fl">0.3</span>;</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">'k'</span><span class="ot">=</span>k,<span class="st">'Probk'</span><span class="ot">=</span>p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">^</span>k );</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>(pp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x=</span>k, <span class="at">y=</span>Probk) ) <span class="sc">+</span> <span class="fu">geom_col</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Looking at the plot, we see that the geometric distribution puts most of its probability close to zero– the most likely outcomes are 0, then 1, then 2, and so on.</p>
+<p>We plotted the distribution only up to <span class="math inline">\(k=15\)</span>, but a geometric random variable can, technically, take any non-negative integer as a value.</p>
+<p>For any value of <span class="math inline">\(k\)</span>, <span class="math inline">\(Pr[ X = k ] = p(1-p)^k\)</span> is non-zero (as long as <span class="math inline">\(0 &lt; p &lt; 1\)</span>).</p>
+<p>So for any non-negative integer, there is a small but non-zero probability that a geometric random variable takes that integer as a value.</p>
+<p>We say that the geometric random variable has <em>infinite support</em>.</p>
+<p>The support of a discrete random variable is the set of values that have non-zero probability mass. A random variable has <em>infinite</em> support if this set is infinite.</p>
+<p><strong>Exercise:</strong> verify that this is a bona fide probability by checking that <span class="math inline">\(\sum_{k=0}^\infty p(1-p)^k = 1\)</span>.</p>
+<p><strong>Note:</strong> some resources follow a slightly different convention, whereby a geometric random variable counts the total number of attempts (i.e., coin flips) before success, so the support is <span class="math inline">\(\{1,2,\dots\}\)</span>. Our discussion above follows the convention of most textbooks and research papers (and the convention followed by R– see <code>?rgeom</code>), but this is an important thing to be aware of!</p>
+</section>
+<section id="expectation-and-variance-of-a-geometric" class="level4" data-number="6.2.3.3">
+<h4 data-number="6.2.3.3" class="anchored" data-anchor-id="expectation-and-variance-of-a-geometric"><span class="header-section-number">6.2.3.3</span> Expectation and Variance of a Geometric</h4>
+<p>Deriving the expected value and variance requires using some summation tricks so we won’t do that here. It’s enough to state the formulas:</p>
+<p>If <span class="math inline">\(X\sim Geom(p)\)</span></p>
+<p><span class="math display">\[E(X) = \frac{1-p}{p}=\frac1p-1\]</span> And <span class="math display">\[Var(X)=\frac{1-p}{p^2}\]</span></p>
+</section>
+</section>
+<section id="poisson" class="level3 allowframebreaks" data-number="6.2.4">
+<h3 class="allowframebreaks anchored" data-number="6.2.4" data-anchor-id="poisson"><span class="header-section-number">6.2.4</span> Poisson</h3>
+<p>Suppose we are going fishing on lake Mendota, and we want to model how many fish we catch in an hour.</p>
+<p>A common choice for this situation is the <em>Poisson</em> distribution.</p>
+<p>The Poisson distribution is a common choice for modeling “arrivals” or other events that happen per unit time. Common examples include</p>
+<ul>
+<li>customers arriving to a store on a given day</li>
+<li>calls to a phone line between 2pm and 3pm</li>
+<li>photons or other particles hitting a detector during an experiment</li>
+<li>cars arriving at an intersection</li>
+</ul>
+<p>The Poisson distribution has probability mass function <span class="math display">\[
+\Pr[ X=k ] = \frac{ \lambda^k e^{-\lambda} }{ k! }, ~ ~ ~ ~ ~ ~ k=0,1,2,\dots
+\]</span> The parameter <span class="math inline">\(\lambda &gt; 0\)</span>, often called the “rate parameter”, controls the average behavior of the random variable– larger choices of <span class="math inline">\(\lambda\)</span> mean that the resulting random variable is larger, on average. That is, the larger <span class="math inline">\(\lambda\)</span> is, the more arrivals happen per unit time– the larger <span class="math inline">\(\lambda\)</span> is, the higher the rate!</p>
+<p>We can generate Poisson random variables using <code>rpois</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate Poisson RV with lambda=10.5; most likely value is 10.</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rpois</span>(<span class="dv">1</span>, <span class="at">lambda=</span><span class="fl">10.5</span>); </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+</div>
+<p>The first argument (<code>n</code>) to <code>rpois</code> (and all the other random variable generation functions) specifies a number of variables to generate.</p>
+<p>So, for example, to get ten random Poisson values, we can write</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 10 Poisson random values with the same parameter lambda=10.5</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rpois</span>(<span class="dv">10</span>, <span class="at">lambda=</span><span class="fl">10.5</span>); </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 12  9 11  8 10 11 15 11 13 11</code></pre>
+</div>
+</div>
+<section id="poisson-pmf-plot" class="level4 allowframebreaks" data-number="6.2.4.1">
+<h4 class="allowframebreaks anchored" data-number="6.2.4.1" data-anchor-id="poisson-pmf-plot"><span class="header-section-number">6.2.4.1</span> Poisson PMF plot</h4>
+<p>The Poisson distribution has infinite support, since <span class="math inline">\(\Pr[X=k] &gt; 0\)</span> for all <span class="math inline">\(k=0,1,2,\dots\)</span> (check this!), but let’s plot its first few values.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">30</span>); </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">10.5</span>; <span class="do">## On average, we should get back the value 10.5,</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">'k'</span><span class="ot">=</span>k,<span class="st">'Probk'</span><span class="ot">=</span><span class="fu">dpois</span>(k, lambda) );</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>(pp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x=</span>k, <span class="at">y=</span>Probk) ) <span class="sc">+</span> <span class="fu">geom_col</span>());</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>The function <code>dpois</code> above evaluates the Poisson probability mass function.</p>
+<p>The R documentation calls this a density, which is technically correct - this is how dense the probability is per unit, which is equal to mass for a discrete random variable taking integer values.</p>
+<p>Remember “<code>r</code> for random”, “<code>d</code> for density”. <code>rpois</code> generates random Poisson variables, <code>dpois</code> evaluates its probability mass function.</p>
+</section>
+<section id="expected-value-and-variance-of-a-poisson" class="level4" data-number="6.2.4.2">
+<h4 data-number="6.2.4.2" class="anchored" data-anchor-id="expected-value-and-variance-of-a-poisson"><span class="header-section-number">6.2.4.2</span> Expected Value and Variance of a Poisson</h4>
+<p>Like the geometric distribution, deriving these properties is a little tricky so we’ll just state the fact that if <span class="math inline">\(X\sim Pois(\lambda)\)</span> that <span class="math inline">\(E(X)=Var(X)=\lambda\)</span>. That’s right - both properties are equal to <span class="math inline">\(\lambda\)</span>.</p>
+</section>
+</section>
+<section id="the-discrete-uniform" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="the-discrete-uniform"><span class="header-section-number">6.2.5</span> The Discrete uniform</h3>
+<p>The roll of a fair 6 sided die (or any <span class="math inline">\(n\)</span>-sided die) can be modeled using a discrete uniform random variable. We will more often refer to the continuous uniform random variable, (which we’ll talk about shortly), but it’s worth mentioning that the roll of a die can be modeled easily.</p>
+<section id="generating-discrete-random-values" class="level4" data-number="6.2.5.1">
+<h4 data-number="6.2.5.1" class="anchored" data-anchor-id="generating-discrete-random-values"><span class="header-section-number">6.2.5.1</span> Generating Discrete random values</h4>
+<p>In <code>R</code>, however, the discrete uniform is not a named distribution. Instead we would use the <code>sample</code> function. For example, suppose we wanted to simulate rolling a 6-sided die 20 times.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="at">x=</span><span class="dv">6</span>, <span class="at">size=</span><span class="dv">20</span>, <span class="at">replace=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 4 1 6 1 2 5 5 4 2 3 3 2 5 6 2 5 6 2 1 2</code></pre>
+</div>
+</div>
+<p>The sample function takes 3 important parameters.</p>
+<ul>
+<li><code>x</code> : this can either be a vector of values to sample from or in this case simply the upper limit; R will automatically create a vector from 1 to this value to sample from</li>
+<li><code>size</code> : how many samples to generate</li>
+<li><code>replace</code>: this indicates whether we are able to re-sample the same value more than once. Careful, the default value is FALSE</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="aside-approximating-one-random-variable-with-another" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="aside-approximating-one-random-variable-with-another"><span class="header-section-number">6.3</span> Aside: approximating one random variable with another</h2>
+<p>We can obtain the Poisson distribution from the binomial distribution.</p>
+<p>Let’s make two assumptions about our fish population:</p>
+<ul>
+<li>There are many fish in the lake. Let’s call the number of fish <span class="math inline">\(N\)</span>, which is a large number.</li>
+<li>For each fish, there is a <em>small</em> probability <span class="math inline">\(p\)</span> that we catch it (the same probability for each fish, for the sake of simplicity)</li>
+</ul>
+<p>If we let <span class="math inline">\(N\)</span> get arbitrarily large (“infinite”; a limit like you remember from calculus) while <span class="math inline">\(p\)</span> stays “small”, the Binomial distribution comes to be equal to the Poisson distribution with rate <span class="math inline">\(Np\)</span>.</p>
+<p>For this reason, the Poisson is often a good approximation to the Bernoulli when <span class="math inline">\(N\)</span> is large and <span class="math inline">\(p\)</span> is small.</p>
+<section id="illustration" class="level3 allowframebreaks" data-number="6.3.1">
+<h3 class="allowframebreaks anchored" data-number="6.3.1" data-anchor-id="illustration"><span class="header-section-number">6.3.1</span> Illustration</h3>
+<p>Just to illustrate, let’s plot the density of the binomial with <span class="math inline">\(N\)</span> really large and <span class="math inline">\(p\)</span> really small, but chosen so that <span class="math inline">\(Np = 10.5\)</span> to match <span class="math inline">\(\lambda = 10.5\)</span> above.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">30</span>); lambda <span class="ot">&lt;-</span> <span class="fl">10.5</span>;</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fl">1e6</span>; </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> lambda<span class="sc">/</span>N; <span class="co"># On average, we should get back the value lambda</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>poisprob <span class="ot">&lt;-</span> <span class="fu">dpois</span>(k, lambda); <span class="co"># Vector of Poisson probabilities</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>binomprob <span class="ot">&lt;-</span> <span class="fu">dbinom</span>( k, <span class="at">size=</span>N, <span class="at">prob=</span>p ); <span class="co"># Binomial probs.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We need a column in our data frame encoding which of the two distributions a number comes from. This isn’t the only way to do this, but it is the easiest way to get things to play nice with the <code>ggplot2</code> <code>facet_wrap</code>, which displays separate plots for different values in a particular column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>dist <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="fu">rep</span>(<span class="st">'Poisson'</span>, <span class="fu">length</span>(k)), <span class="fu">rep</span>(<span class="st">'Binom'</span>, <span class="fu">length</span>(k)) );</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct our data frame. Note that we have to repeat the k column,</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># because our data frame is going to look like</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribution  k  Probk</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Poisson       0  dpois( 0, lambda )</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Poisson       1  dpois( 1, lambda )</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ...           ...</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Poisson       30 dpois( 30, lambda )</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Binomial      0  dbinom( 0, N, p )</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ...</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Binomial      30  dbinom( 30, N, p )</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">'dist'</span><span class="ot">=</span>dist, <span class="st">'k'</span><span class="ot">=</span><span class="fu">rep</span>(k,<span class="dv">2</span>), </span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'Probk'</span><span class="ot">=</span><span class="fu">c</span>(poisprob,binomprob) );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>facet_wrap tells ggplot to create a separate plot for each group (i.e., value) in the dist column.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>(pp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x=</span>k, <span class="at">y=</span>Probk) ) <span class="sc">+</span> <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>dist));</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="why-approximate" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="why-approximate"><span class="header-section-number">6.3.2</span> Why Approximate?</h3>
+<p>The main benefit of approximating binomial probabilities using a Poisson, especially when <span class="math inline">\(N\)</span> is large, is that the Poisson probability calculations avoid massive factorial coefficients. If <span class="math inline">\(N\)</span> is large and cdf calculations need to be made often, you can improve code efficiency by approximating a binomial distribution with a Poisson without sacrificing much accuracy.</p>
+</section>
+</section>
+<section id="continuous-random-variable-distributions" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="continuous-random-variable-distributions"><span class="header-section-number">6.4</span> Continuous Random Variable Distributions</h2>
+<p>We will not take a look at a few important continuous distributions.</p>
+<section id="normal" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="normal"><span class="header-section-number">6.4.1</span> Normal</h3>
+<p>The normal or <em>Gaussian</em> (after <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</a>) random variable is undoubtedly the most fundamental in all of statistics.</p>
+<p>You have likely heard of it before both in your previous courses and just… well, everywhere, in the form of the famous <em>bell curve</em>.</p>
+<p>The normal distribution is controlled by two parameters: a mean <span class="math inline">\(\mu \in \mathbb{R}\)</span> and a variance <span class="math inline">\(\sigma^2 &gt; 0\)</span>.</p>
+<section id="the-standard-normal" class="level4 allowframebreaks" data-number="6.4.1.1">
+<h4 class="allowframebreaks anchored" data-number="6.4.1.1" data-anchor-id="the-standard-normal"><span class="header-section-number">6.4.1.1</span> The standard normal</h4>
+<p>The <em>standard</em> normal has <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma^2 = 1\)</span>, and it “looks like” this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">4</span>,<span class="fl">0.1</span>); </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># eval density at x values, mean mu=0, standard deviation sigma=1.</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">0</span>,<span class="dv">1</span>); </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">'x'</span><span class="ot">=</span>x, <span class="st">'density'</span><span class="ot">=</span>f)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>(pp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>( df, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>density) ) <span class="sc">+</span> <span class="fu">geom_line</span>( <span class="at">linewidth=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This is a probability <em>density</em>, not a mass function, because to evaluate something like the probability that a normal random variable <span class="math inline">\(X\)</span> falls between, say, <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>, we have to integrate the area under this curve between these two endpoints.</p>
+<p>This is why we refer to this as a density– recall from physics that integrating a density over a region (i.e., a volume) gives us a mass (compare to the discrete case, where we did call it a probability mass function).</p>
+<p>Said another way, integrating the density over a region gives us the probability of that region.</p>
+</section>
+<section id="nonstandard-normal-distribution" class="level4 allowframebreaks" data-number="6.4.1.2">
+<h4 class="allowframebreaks anchored" data-number="6.4.1.2" data-anchor-id="nonstandard-normal-distribution"><span class="header-section-number">6.4.1.2</span> Nonstandard normal distribution</h4>
+<p>So if <span class="math inline">\(X\)</span> is a normal random variable with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, <span class="math display">\[
+\Pr[ -1 \le X \le 1 ] = \int_{-1}^1 f(t; \mu, \sigma^2) dt,
+\]</span> where <span class="math inline">\(f(t; \mu, \sigma^2)\)</span> is the density function of the normal distribution, <span class="math display">\[
+f(t ; \mu, \sigma^2) = \frac{1}{\sqrt{ 2\pi \sigma^2 } } \exp\left\{ \frac{ -(t-\mu)^2 }{ 2\sigma^2 } \right \}.
+\]</span> The semicolon notation is to emphasize that the density is a function of <span class="math inline">\(t\)</span>, but its shape depends on parameters <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Changing <span class="math inline">\(\mu\)</span> while keeping <span class="math inline">\(\sigma^2\)</span> fixed just shifts the distribution:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">6</span>,<span class="dv">6</span>,<span class="fl">0.1</span>); <span class="do">## Some x values to evaluate at</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="sc">-</span><span class="dv">2</span>,<span class="dv">1</span>); <span class="do">## mean mu=-2, standard deviation sigma=1.</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="fl">0.5</span>,<span class="dv">1</span>); <span class="do">## mean mu=0.5, standard deviation sigma=1.</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="fl">1.5</span>,<span class="dv">1</span>); <span class="do">## mean mu=1.5, standard deviation sigma=1.</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">=</span> <span class="fu">c</span>( <span class="fu">rep</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="fu">length</span>(x)), <span class="fu">rep</span>(<span class="fl">0.5</span>, <span class="fu">length</span>(x)), <span class="fu">rep</span>(<span class="fl">1.5</span>, <span class="fu">length</span>(x)));</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">'x'</span><span class="ot">=</span><span class="fu">rep</span>(x,<span class="dv">3</span>), <span class="st">'density'</span><span class="ot">=</span><span class="fu">c</span>(f1,f2,f3), </span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'mean'</span><span class="ot">=</span><span class="fu">as.factor</span>(mu) )</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>pp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>( df, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>density, <span class="at">color=</span>mean) ) <span class="sc">+</span> </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="at">linewidth=</span><span class="dv">1</span>)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>pp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Changing <span class="math inline">\(\sigma\)</span> changes the standard deviation (and hence also the variance, <span class="math inline">\(\sigma^2\)</span>). Larger <span class="math inline">\(\sigma\)</span> means higher variance, which means a “wider” distribution:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">6</span>,<span class="dv">6</span>,<span class="fl">0.1</span>); <span class="do">## Some x values to evaluate at</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">0</span>,<span class="fl">0.5</span>); <span class="do">## mean 0, standard deviation sigma=.5</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">0</span>,<span class="dv">1</span>); <span class="do">## mean 0, standard deviation sigma=1</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(x, <span class="dv">0</span>,<span class="dv">2</span>); <span class="do">## mean 0, standard deviation sigma=2.</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>variance <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"0.5^2"</span>, <span class="fu">length</span>(x)), <span class="fu">rep</span>(<span class="st">"1^2"</span>, <span class="fu">length</span>(x)), <span class="fu">rep</span>(<span class="st">"2^2"</span>, <span class="fu">length</span>(x)));</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">'x'</span><span class="ot">=</span><span class="fu">rep</span>(x,<span class="dv">3</span>), <span class="st">'density'</span><span class="ot">=</span><span class="fu">c</span>(f1,f2,f3), </span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'variance'</span><span class="ot">=</span><span class="fu">as.factor</span>(variance) )</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>pp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>( df, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>density, <span class="at">color=</span>variance) ) <span class="sc">+</span> </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>( <span class="at">linewidth=</span><span class="dv">1</span>)</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>pp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="generating-normal-random-data" class="level4 allowframebreaks" data-number="6.4.1.3">
+<h4 class="allowframebreaks anchored" data-number="6.4.1.3" data-anchor-id="generating-normal-random-data"><span class="header-section-number">6.4.1.3</span> Generating Normal random data</h4>
+<p>We can generate normal random variables in R using the <code>rnorm</code> function. Note that we pass the standard deviation (sd), not the variance (sigma^2).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean=</span><span class="dv">1</span>, <span class="at">sd=</span><span class="dv">2</span>); </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.244427</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If we don't specify a mean and sd they default to 0 and 1</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">1</span>); </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1304695</code></pre>
+</div>
+</div>
+<p>Let’s generate a bunch of normal RVs and plot their (normalized) histogram:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reminder: if mu, sigma unspecified, they default to mu=0, sigma=1</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e6</span>); <span class="co"># 1e6 = 1.0x10^6 = one million standard normal RVs</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>pp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>( <span class="fu">data.frame</span>(<span class="st">'x'</span><span class="ot">=</span>data ), <span class="fu">aes</span>(<span class="at">x=</span>data) );</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>pp <span class="ot">&lt;-</span> pp <span class="sc">+</span> <span class="fu">geom_histogram</span>( <span class="fu">aes</span>(<span class="at">y=</span><span class="fu">after_stat</span>(density)), <span class="at">binwidth=</span><span class="fl">0.25</span>, </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">color=</span><span class="st">"black"</span>, <span class="at">fill=</span><span class="st">"white"</span>);</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>pp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Note that this is a normalized histogram– it is scaled so that the areas of the rectangles sums to 1, like a probability distribution.</p>
+<p>Now, let’s overlay the normal density function on this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="fl">0.1</span>); f <span class="ot">&lt;-</span> <span class="fu">dnorm</span>( x, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span> ); </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>df_dnorm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">'x'</span><span class="ot">=</span>x, <span class="st">'f'</span><span class="ot">=</span>f);</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>pp <span class="ot">&lt;-</span> pp <span class="sc">+</span> <span class="fu">geom_line</span>(<span class="at">data=</span>df_dnorm, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>f), <span class="at">linewidth=</span><span class="dv">1</span>, </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color=</span><span class="st">'red'</span>);</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>pp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="the-empirical-rule" class="level4 allowframebreaks" data-number="6.4.1.4">
+<h4 class="allowframebreaks anchored" data-number="6.4.1.4" data-anchor-id="the-empirical-rule"><span class="header-section-number">6.4.1.4</span> The Empirical Rule</h4>
+<p>You will hopefully recall from any previous statistics courses that a normal random variable falls</p>
+<ul>
+<li>within one standard deviation of the mean (i.e., between -1 and 1 in the plot above) with probability about 0.68,</li>
+<li>within two standard deviations of the mean (i.e., between -2 and 2 in the plot above) with probability about 0.9545</li>
+<li>within three standard deviations of the mean (i.e., between -3 and 3 in the plot above) with probability about 0.997.</li>
+</ul>
+<p>(Note - The empirical rule is a much stronger version of Chebychev’s inequality. Look that up!) </p>
+<p>We can approximately check this by counting how many of our simulated values fall in these ranges. What fraction of these data points fell within one standard deviation of the mean?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( data <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">1</span> <span class="sc">&amp;</span> data <span class="sc">&lt;</span> <span class="dv">1</span>)<span class="sc">/</span><span class="fu">length</span>(data); <span class="do">## Should be about 0.68</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.68291</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( data <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">2</span> <span class="sc">&amp;</span> data <span class="sc">&lt;</span> <span class="dv">2</span>)<span class="sc">/</span><span class="fu">length</span>(data); <span class="do">## should be about 0.9545</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.954518</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( data <span class="sc">&gt;</span> <span class="sc">-</span><span class="dv">3</span> <span class="sc">&amp;</span> data <span class="sc">&lt;</span> <span class="dv">3</span>)<span class="sc">/</span><span class="fu">length</span>(data); <span class="do">## should be about 0.997</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.997269</code></pre>
+</div>
+</div>
+<p>Of course, because the data is random, the proportions are not exactly equal to their predicted values, but they are quite close.</p>
+<p>This is a nice illustration of the law of large numbers!</p>
+</section>
+<section id="computing-probabilities" class="level4 allowframebreaks" data-number="6.4.1.5">
+<h4 class="allowframebreaks anchored" data-number="6.4.1.5" data-anchor-id="computing-probabilities"><span class="header-section-number">6.4.1.5</span> Computing probabilities</h4>
+<p>Now, let’s check this fact by using R to compute probabilities of the form <span class="math inline">\(\Pr[ a \le X \le b ]\)</span> for a normal RV <span class="math inline">\(X\)</span>, where <span class="math inline">\(a \ge b\)</span>. How can we compute this probability?</p>
+<p>Let’s start by writing something slightly different: <span class="math display">\[
+\Pr[ X \le b ] = \Pr[ X \le a ] + \Pr[ a \le X \le b].
+\]</span></p>
+<p><strong>Question:</strong> why is this true? What “rule” of probability are we using?</p>
+<p>Now, let’s rearrange that expression: <span class="math display">\[
+\Pr[ a \le X \le b] = \Pr[ X \le b ] - \Pr[ X \le a ].
+\]</span></p>
+<p>How exactly does this help us? R makes it very easy to compute probabilities of the form <span class="math inline">\(\Pr[ X \le a]\)</span>.</p>
+</section>
+<section id="the-cumulative-distribution-function" class="level4" data-number="6.4.1.6">
+<h4 data-number="6.4.1.6" class="anchored" data-anchor-id="the-cumulative-distribution-function"><span class="header-section-number">6.4.1.6</span> The Cumulative Distribution Function</h4>
+<p>The function <span class="math display">\[F_X(t) = \Pr[ X \le t]\]</span> is called the <em>cumulative distribution function</em> (CDF) of <span class="math inline">\(X\)</span>.</p>
+<p>We compute the CDF of the normal in R with <code>pnorm</code>. So, for example, to compute the probability that a standard normal random variable is <span class="math inline">\(\le 0\)</span>, we can write</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">0</span>) <span class="do">## Once again, mu, sigma default to 0,1.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5</code></pre>
+</div>
+</div>
+</section>
+<section id="asideexercise" class="level4" data-number="6.4.1.7">
+<h4 data-number="6.4.1.7" class="anchored" data-anchor-id="asideexercise"><span class="header-section-number">6.4.1.7</span> Aside/exercise:</h4>
+<p>You might enjoy spending some time thinking on why it is “obvious” that a normal random variable is less than or equal to its mean with probability one half. Remember (look at the density function above, or just look at our plots) that the normal density is symmetric about the mean <span class="math inline">\(\mu\)</span>. If you’re feeling up to it (warning: calculus ahead!), you can try computing the appropriate integrals to show that under the normal, <span class="math inline">\(\Pr[ X \le \mu ] = \Pr[ X &gt; \mu ] = 1/2\)</span>.</p>
+</section>
+<section id="normal-probability-examples" class="level4 allowframebreaks" data-number="6.4.1.8">
+<h4 class="allowframebreaks anchored" data-number="6.4.1.8" data-anchor-id="normal-probability-examples"><span class="header-section-number">6.4.1.8</span> Normal probability examples</h4>
+<p>So suppose that we want to compute the probability that a standard normal random variable is less or equal to 1. This would be</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">1</span>) <span class="do">## again, recall the default behavior.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8413447</code></pre>
+</div>
+</div>
+<p>And to compute the probability that we are within one standard deviation of the mean, we need to compute <span class="math display">\[\Pr[ -1 \le X \le 1] = \Pr[ X \le 1 ] - \Pr[ X \le -1 ] = \texttt{ pnorm(1) - pnorm(-1) }\]</span></p>
+<p>That is,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">1</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6826895</code></pre>
+</div>
+</div>
+<p>which matches our 0.68-.9545-0.997 rule so far. Let’s check the other two.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">2</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9544997</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">3</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="sc">-</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9973002</code></pre>
+</div>
+</div>
+</section>
+<section id="recap-rvs-in-r-so-far" class="level4" data-number="6.4.1.9">
+<h4 data-number="6.4.1.9" class="anchored" data-anchor-id="recap-rvs-in-r-so-far"><span class="header-section-number">6.4.1.9</span> Recap: RVs in R (so far)</h4>
+<p>So far, we have seen three functions for working with different distributions.</p>
+<p>For the normal, we have <code>rnorm</code>, <code>dnorm</code> and <code>pnorm</code>, corresponding to random variable generation, the density function and cumulative distribution function (CDF), respectively.</p>
+<p>Other RVs have similar patterns. For example, with the geometric random variable, we have <code>rgeom</code>, <code>dgeom</code> and <code>pgeom</code>, which work analogously to the normal case.</p>
+<p>There is one more of these functions yet to come, but we aren’t quite ready to introduce it.</p>
+</section>
+<section id="example-sums-of-independent-normals" class="level4 allowframebreaks" data-number="6.4.1.10">
+<h4 class="allowframebreaks anchored" data-number="6.4.1.10" data-anchor-id="example-sums-of-independent-normals"><span class="header-section-number">6.4.1.10</span> Example: sums of independent normals</h4>
+<p>Let’s consider two <em>independent</em> normals: <span class="math display">\[
+X_1 \sim \operatorname{Normal}(1,\sqrt1^2)
+~\text{ and }~
+X_2 \sim \operatorname{Normal}(2,\sqrt2^2).
+\]</span></p>
+<p>Since <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are independent,</p>
+<ol type="1">
+<li>the variance of their sum should be the sum of their variances, and</li>
+<li>their correlation should be zero</li>
+</ol>
+<p>Let’s check both of those facts in simulation. We’ll generate lots of copies of <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, and then we’ll compute their</p>
+<ol type="1">
+<li>(sample) variances separately,</li>
+<li>(sample) variance of their sum, and</li>
+<li>(sample) correlation</li>
+</ol>
+<p>Of course, all three of these quantities will be <em>estimated</em> from samples. The law of large numbers tells us that these sample statistics will be close to (but not preceisely equal to) the true quantities.</p>
+<p>Okay, let’s generate data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">&lt;-</span> <span class="fl">1e5</span>; <span class="co"># Generate 100K Monte Carlo samples</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>X1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>( <span class="at">n=</span>M, <span class="at">mean=</span><span class="dv">1</span>, <span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">1</span>) );</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>X2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>( <span class="at">n=</span>M, <span class="at">mean=</span><span class="dv">2</span>, <span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">2</span>) );</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the (sample) variances of the copies of X1 and X2.</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">var</span>(X1);</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">var</span>(X2);</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="co"># v1 should be close to 1=Var X_1, v2 close to 2=Var X_2.</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>( v1, v2 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9948949 1.9842868</code></pre>
+</div>
+</div>
+<p>And let’s check that these two independent variables have correlation (approximately) zero.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cor( x, y) computes the (sample) correlation between</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the entries of vectors x and y.</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># See ?cor for details.</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>( X1, X2 );</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.002365443</code></pre>
+</div>
+</div>
+<p>Again, those <em>sample-based</em> quantities will never be precisely equal to 1, 2, and 0, but they will be very close!</p>
+<p>Finally, let’s check that the variance of the <em>sum</em> <span class="math inline">\(X_1 + X_2\)</span> is the sum of variances, as it should be if the RVs are independent. So we should see <span class="math display">\[\operatorname{Var}(X_1 + X_2) = \operatorname{Var} X_1 + \operatorname{Var} X_2 = 1 + 2 = 3.\]</span></p>
+<p>Okay, let’s check.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(X1 <span class="sc">+</span> X2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.985829</code></pre>
+</div>
+</div>
+<p>As we predicted!</p>
+</section>
+<section id="example-multivariate-normal" class="level4 allowframebreaks" data-number="6.4.1.11">
+<h4 class="allowframebreaks anchored" data-number="6.4.1.11" data-anchor-id="example-multivariate-normal"><span class="header-section-number">6.4.1.11</span> Example: multivariate normal</h4>
+<p>The multivariate normal is a way of modeling multiple normal random variables that are correlated with one another.</p>
+<p>Here’s an example for modeling correlated normals <span class="math inline">\(W\)</span> and <span class="math inline">\(M\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>); <span class="co"># Vector of means; both W and M have mean 1/2.</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a two-by-two symmetric matrix.</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>CovMx <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(.<span class="dv">05</span><span class="sc">^</span><span class="dv">2</span>,.<span class="dv">04</span><span class="sc">^</span><span class="dv">2</span>,.<span class="dv">04</span><span class="sc">^</span><span class="dv">2</span>,.<span class="dv">05</span><span class="sc">^</span><span class="dv">2</span>), <span class="at">nrow =</span> <span class="dv">2</span>); </span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>CovMx;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       [,1]   [,2]
+[1,] 0.0025 0.0016
+[2,] 0.0016 0.0025</code></pre>
+</div>
+</div>
+<p>The variances and covariance between the two normals is encoded by <code>CovMx</code>.</p>
+<p>The covariance matrix in this case looks like <span class="math display">\[
+\Sigma = \begin{bmatrix}
+0.05^2 &amp; 0.04^2 \\
+0.04^2 &amp; 0.05^2
+\end{bmatrix}.
+\]</span> That <span class="math inline">\(0.4^2\)</span> in the off-diagonal entries is the <em>covariance</em> of the two normals.</p>
+<p>So we will model two normal random variables, both having mean <span class="math inline">\(0.5\)</span>, and variance <span class="math inline">\(0.05^2\)</span>, but these two normals will be correlated, with covariance <span class="math inline">\(0.04^2\)</span>.</p>
+<p>Let’s have a look:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS); <span class="co"># This library includes a multivariate normal</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'MASS' was built under R version 4.2.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">#mvrnorm is the multivariate version of rnorm.</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>WpMp <span class="ot">=</span> <span class="fu">mvrnorm</span>(<span class="at">n=</span><span class="dv">2000</span>, <span class="at">mu=</span>mu, <span class="at">Sigma=</span>CovMx); </span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(WpMp, <span class="at">xlab =</span> <span class="st">"Wisconsin proportion"</span>, </span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Michigan proportion"</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>It’s clear that the Wisconsin and Michigan voter shares are correlated– we can see it in the plot!</p>
+<p>But just to be sure:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># WpMp is an array with two columns and 500 rows.</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co"># If we call cov on it directly, we get something shaped</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co"># like our covariance matrix.</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cov</span>(WpMp )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            [,1]        [,2]
+[1,] 0.002377299 0.001563176
+[2,] 0.001563176 0.002454908</code></pre>
+</div>
+</div>
+<p>The diagonal entries are the (sample) variances computed along the columns. The off-diagonal entries (note that they are both the same) tell us the (sample) covariance. Unsurprisingly, the off-diagonal is close to the true covariance <span class="math inline">\(0.0016\)</span>.</p>
+<p>Also worth noting is the fact that the on-diagonal entries are (approximately) 0.025. The on-diagonal entries are computing covariances of our two columns of data <em>with themselves</em>. That is, these are computing something like <span class="math inline">\(\operatorname{Cov}(X,X)\)</span>.</p>
+</section>
+<section id="exercise-find-the-mean-of-the-normal-distribution" class="level4" data-number="6.4.1.12">
+<h4 data-number="6.4.1.12" class="anchored" data-anchor-id="exercise-find-the-mean-of-the-normal-distribution"><span class="header-section-number">6.4.1.12</span> Exercise: find the mean of the normal distribution</h4>
+<p>Check that the mean of a normal with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span> is indeed <span class="math inline">\(\mu\)</span>. That is, check that <span class="math display">\[
+\int_{-\infty}^\infty \frac{ t }{ \sqrt{ 2\pi \sigma^2}} \exp\left\{ \frac{ -(t-\mu)^2 }{ 2\sigma^2 } \right\} dt = \mu.
+\]</span></p>
+<p><strong>Hint:</strong> Make the substitution <span class="math inline">\(u=t-\mu\)</span> and use the facts that</p>
+<ol type="1">
+<li><span class="math inline">\(f(t) = e^{-(t-\mu)^2/2\sigma^2}/\sqrt{2\pi \sigma^2}\)</span> integrates to <span class="math inline">\(1\)</span> (because it is a probability density), and</li>
+<li><span class="math inline">\(g(u) = u \exp\{ -u^2/2\sigma^2 \}\)</span> is symmetric about zero (and thus integrates to zero).</li>
+</ol>
+</section>
+</section>
+<section id="uniform" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="uniform"><span class="header-section-number">6.4.2</span> Uniform</h3>
+<p>The uniform distribution is a continuous random variable whose density is constant on its outcome space.</p>
+<p>That is, for continuous set <span class="math inline">\(\Omega \subseteq \mathbb{R}\)</span>, the density is identically <span class="math inline">\(f(t) = c\)</span>.</p>
+<p>Remember that our probability has to sum to 1, but since we have a continuous support, this sum becomes an integral:</p>
+<p><span class="math display">\[
+\int_{\Omega} f(t) dt = \int_{\Omega} c dt = c \int_{\Omega} 1 dt.
+\]</span></p>
+<p>So to make the probability integrate to <span class="math inline">\(1\)</span>, we need <span class="math inline">\(c = \int_{\Omega} 1 dt\)</span>.</p>
+<section id="uniform01" class="level4" data-number="6.4.2.1">
+<h4 data-number="6.4.2.1" class="anchored" data-anchor-id="uniform01"><span class="header-section-number">6.4.2.1</span> Uniform(0,1)</h4>
+<p>Most commonly, we take <span class="math inline">\(\Omega = [0,1]\)</span>, and call the resulting random variable “uniform 0-1”, written <span class="math inline">\(\operatorname{Unif(0,1)}\)</span>.</p>
+<p>The density function of <span class="math inline">\(\operatorname{Unif(0,1)}\)</span> is then given by <span class="math display">\[
+f(t) = \begin{cases}
+  1 &amp;\mbox{ if } 0 \le t \le 1 \\
+  0 &amp;\mbox{ otherwise. } \end{cases}
+\]</span></p>
+<p><strong>Exercise:</strong> check that this indeed integrates to <span class="math inline">\(1\)</span>, i.e., that it is a valid probability density. The support is <span class="math inline">\([0,1]\)</span>, so we need to check that <span class="math inline">\(\int_0^1 1 dt = 1\)</span>.</p>
+</section>
+<section id="applications-of-the-uniform-rv" class="level4" data-number="6.4.2.2">
+<h4 data-number="6.4.2.2" class="anchored" data-anchor-id="applications-of-the-uniform-rv"><span class="header-section-number">6.4.2.2</span> Applications of the Uniform RV</h4>
+<p>The most common application of uniform random variables is in simulations when we need to make a random decision.</p>
+<p>For example, suppose we didn’t have the Bernoulli distribution available to us for some reason, but we still wanted to generate random coin flips.</p>
+<p>To generate a <span class="math inline">\(\operatorname{Bernoulli}(p)\)</span> random variable, we could first draw a uniform random variable <span class="math inline">\(U \sim \operatorname{Unif}(0,1)\)</span> and then output <span class="math inline">\(1\)</span> (or “heads” or “true”) if <span class="math inline">\(U \le p\)</span> and out put <span class="math inline">\(0\)</span> (or “tails” or “false”) otherwise.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span>.<span class="dv">5</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>U <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">1</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>U</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9286836</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(U <span class="sc">&lt;=</span> p, <span class="st">"heads"</span>, <span class="st">"tails"</span>)</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tails"</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="exponential" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="exponential"><span class="header-section-number">6.4.3</span> Exponential</h3>
+<p>The exponential distribution is most commonly used to model “waiting times”, like how long until the bus arrives.</p>
+<p>The exponential distribution is like the continuous version of the geometric distribution.</p>
+<p>The exponential distribution is non-negative and is controlled by a single parameter <span class="math inline">\(\lambda &gt; 0\)</span>, called the <em>rate</em> (because larger <span class="math inline">\(\lambda\)</span> means less time before the event, hence more events per unit time, i.e., a higher rate of events).</p>
+<p>The density is given by <span class="math display">\[f(t ; \lambda ) = \begin{cases}
+  \lambda \exp\{ - \lambda t \} &amp;\mbox{ if } t \ge 0 \\
+  0 &amp;\mbox{ otherwise. }
+  \end{cases}\]</span></p>
+<p><strong>Exercise:</strong> check that this defines a probability distribution by checking that for any <span class="math inline">\(\lambda &gt; 0\)</span>, (1) <span class="math inline">\(f(t; \lambda) \ge 0\)</span> and (2) <span class="math inline">\(\int_0^\infty f(t; \lambda) dt = 1\)</span>.</p>
+<section id="exponential-pdf-plot" class="level4 allowframebreaks" data-number="6.4.3.1">
+<h4 class="allowframebreaks anchored" data-number="6.4.3.1" data-anchor-id="exponential-pdf-plot"><span class="header-section-number">6.4.3.1</span> Exponential PDF plot</h4>
+<p>Let’s plot this density as a function of <span class="math inline">\(t\)</span> for <span class="math inline">\(\lambda = 1\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="fl">0.1</span>); f <span class="ot">=</span> <span class="fu">dexp</span>(x, <span class="at">rate=</span><span class="dv">1</span>);</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>df_exp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">'x'</span><span class="ot">=</span>x, <span class="st">'density'</span><span class="ot">=</span>f);</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>pp <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_exp, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>density)) <span class="sc">+</span> <span class="fu">geom_line</span>( <span class="at">linewidth=</span><span class="dv">2</span>);</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>pp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Looking at the density, we see that most of the probability is near zero.</p>
+<p>Roughly, it looks like the vast majority of the time, <span class="math inline">\(X \sim \operatorname{Exp}(1)\)</span> should be less than 5. Let’s check!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="at">n=</span><span class="fl">1e6</span>, <span class="at">rate=</span><span class="dv">1</span>); <span class="co"># rexp to generate random exponentials.</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="co"># something like 99% of the generated points should be below 5.</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>( data <span class="sc">&lt;</span> <span class="dv">5</span>)<span class="sc">/</span><span class="fu">length</span>(data); </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.993199</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="building-bigger-models" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="building-bigger-models"><span class="header-section-number">6.5</span> Building Bigger Models</h2>
+<p>There are plenty more named distributions out there. See <a href="https://en.wikipedia.org/wiki/List_of_probability_distributions">here</a>.</p>
+<p>Indeed, we can make all sorts of distributions– ultimately we just need to specify a support and a density or mass function, depending on whether we want a discrete or continuous variable.</p>
+<p>More often, though, the processes out in the world that we want to model require that we build more complicated models from simple ones.</p>
+<section id="social-network-models" class="level3 allowframebreaks" data-number="6.5.1">
+<h3 class="allowframebreaks anchored" data-number="6.5.1" data-anchor-id="social-network-models"><span class="header-section-number">6.5.1</span> Social network models</h3>
+<p>Several professors in the statistics department study networks. A common example of these are social networks (e.g., Facebook and twitter).</p>
+<p>These data usually take the form of a list specifying who is friends with whom.</p>
+<p>In most models for social networks, each pair of people <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> become friends, independently, with some probability <span class="math inline">\(p_{ij}\)</span>.</p>
+<p>Often, these probabilities depend on other random variables.</p>
+<ul>
+<li>For example, we might have a (random) number for every person that describes how much that person likes sports, and pairs of people who both have a high “sports score” are more likely to be friends (i.e., <span class="math inline">\(p_{ij}\)</span> is higher).</li>
+</ul>
+<p>In this way, we combine different elementary random variables (e.g., Bernoullis and normals) to yield more complicated distributions (say, a probability distribution over “possible social networks”).</p>
+<p>Having obtained a network from Twitter or Facebook data, we apply all sorts of different functions to it that describe the network’s structure (e.g., compute shortest paths or eigenvectors, if you know what those are).</p>
+<p>It is really difficult to do the math out exactly to determine analytically how these different functions behave.</p>
+<p>Instead, we often appeal to Monte Carlo methods, which we will discuss in the next lecture.</p>
+</section>
+<section id="binomial-asset-pricing-model" class="level3 allowframebreaks" data-number="6.5.2">
+<h3 class="allowframebreaks anchored" data-number="6.5.2" data-anchor-id="binomial-asset-pricing-model"><span class="header-section-number">6.5.2</span> Binomial asset pricing model</h3>
+<p>Another way to create new random variables is to take a function of another random variable. This is what happens in the pricing of “options” in finance.</p>
+<p>Suppose that <span class="math inline">\(X\)</span> is the price of stock XYZ one month from today.</p>
+<p>An “option” pays you <span class="math inline">\(f(X)\)</span> on that day for some function <span class="math inline">\(f\)</span>.</p>
+<p>For example, suppose stock XYZ costs $120 today and the function is <span class="math display">\[f(X)=
+\begin{cases} 120-X &amp;\mbox{ if } X&lt;120 \\
+    0 &amp;\mbox{ otherwise. } \end{cases}
+\]</span></p>
+<p>This is often referred to as a <a href="https://en.wikipedia.org/wiki/Put_option">put option</a>. It is essentially giving you the option to purchase the stock in one month and sell it at today’s price.</p>
+<ul>
+<li>If the price goes up, you would not use that option and you would make zero (but not lose any additional money, such as the cost of buying the option in the first place).</li>
+<li>Otherwise, you would make <span class="math inline">\(120-X\)</span>.</li>
+<li>In effect, you are betting that the price will go down.</li>
+</ul>
+<p>Suppose you are a bank and someone wants to purchase this put option. You need to determine the price.</p>
+<p><strong>What would be the fair price to charge them?</strong></p>
+<p>To make a good guess, we need a model for the asset price <span class="math inline">\(X\)</span>.</p>
+<p>Once we have such a model, we can derive analytical expressions for <span class="math inline">\(f(X)\)</span> or use Monte Carlo methods, which we will discuss soon.</p>
+<p>One of the simplest models for <span class="math inline">\(X\)</span> is the <a href="https://en.wikipedia.org/wiki/Binomial_options_pricing_model">Binomial Asset Pricing Model</a>, which says that at every time step (e.g., every minute), the price goes up by one penny with probability <span class="math inline">\(p\)</span>, or down by one penny with probability <span class="math inline">\(1-p\)</span>.</p>
+<p>In this example, both <span class="math inline">\(X\)</span> and <span class="math inline">\(f(X)\)</span> are random variables.</p>
+<p><strong>Question:</strong> The Binomial Asset Pricing Model is a very simple model, especially given how complicated the stock market is. Can you think of any possible problems with the model?</p>
+</section>
+<section id="election-models" class="level3 allowframebreaks" data-number="6.5.3">
+<h3 class="allowframebreaks anchored" data-number="6.5.3" data-anchor-id="election-models"><span class="header-section-number">6.5.3</span> Election models</h3>
+<p>Will the Democratic (D) or Republican (R) presidential candidate win Wisconsin in the next election?</p>
+<p>What is the distribution of this random variable <span class="math inline">\(W\)</span>, where <span class="math inline">\(W=-1\)</span> if D and <span class="math inline">\(W=1\)</span> if R?</p>
+<p>What about neighboring Michigan <span class="math inline">\(M \in \{-1,1\}\)</span>?</p>
+<p>Wisconsin and Michigan are not so different, so if we find out that the Republican candidate won Michigan (i.e., we learn about <span class="math inline">\(M\)</span>), then that certainly tells us something about <span class="math inline">\(W\)</span>.</p>
+<p>That is to say, <span class="math inline">\(W\)</span> and <span class="math inline">\(M\)</span> are <em>not</em> independent.</p>
+<p>What if we wanted to model both Wisconsin and Michigan together?</p>
+<p>We usually write this as a pair <span class="math inline">\((W,M)\)</span>.</p>
+<p>One thing you could do is model the proportion of votes for D vs R in Wisconsin (ignoring third parties) as normally distributed.</p>
+<ul>
+<li>Perhaps you consider this to be <span class="math inline">\(W_p \sim \operatorname{Normal}(1/2,.05)\)</span>.</li>
+<li>Then, <span class="math inline">\(W\)</span> is 1 if <span class="math inline">\(W_p&gt;.5\)</span> and $W=-1 if <span class="math inline">\(W_p&lt;.5\)</span>.</li>
+</ul>
+<p>This helps because we can do the same thing for <span class="math inline">\(M\)</span>, based on and <span class="math inline">\(M_p\)</span>.</p>
+<p>We can model <span class="math inline">\((W_p,M_p)\)</span> as being correlated via the <a href="https://en.wikipedia.org/wiki/Multivariate_normal_distribution">multivariate normal</a>.</p>
+<p>To simulate these, you need to specify both the mean, which is now a two-dimensional “vector” and a covariance matrix <span class="math inline">\(\Sigma \in \mathbb{R}^{2 \times 2}\)</span>.</p>
+<p>The diagonal of the matrix <span class="math inline">\(\Sigma\)</span> specifies the variances of <span class="math inline">\(W_p\)</span> and <span class="math inline">\(M_p\)</span> respectively, and the off-diagonal <span class="math inline">\(\Sigma_{1,2}\)</span> specifies the covariance between <span class="math inline">\(W_p\)</span> and <span class="math inline">\(M_p\)</span>.</p>
+<p>Covariance is similar to correlation, a measure of how closely two variables track one another.</p>
+<ul>
+<li>When the covariance is large and positive, the two variables tend to track one another.</li>
+<li>If the covariance is large and negative, the two variables are inversely related to one another.</li>
+</ul>
+<p>Let’s try simulating some election results.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>); <span class="do">## Vector of means; both W_p and M_p are mean 1/2.</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a two-by-two symmetric matrix.</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>CovMx <span class="ot">&lt;-</span> <span class="fu">matrix</span>( <span class="fu">c</span>(.<span class="dv">05</span><span class="sc">^</span><span class="dv">2</span>,.<span class="dv">04</span><span class="sc">^</span><span class="dv">2</span>,.<span class="dv">04</span><span class="sc">^</span><span class="dv">2</span>,.<span class="dv">05</span><span class="sc">^</span><span class="dv">2</span>), <span class="at">nrow =</span> <span class="dv">2</span>); </span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>CovMx;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       [,1]   [,2]
+[1,] 0.0025 0.0016
+[2,] 0.0016 0.0025</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS); <span class="do">## This library includes a multivariate normal</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="co">#mvrnorm is the multivariate version of rnorm.</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>WpMp <span class="ot">=</span> <span class="fu">mvrnorm</span>(<span class="at">n=</span><span class="dv">2000</span>, <span class="at">mu=</span>mu, <span class="at">Sigma=</span>CovMx); </span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(WpMp, <span class="at">xlab =</span> <span class="st">"Wisconsin proportion"</span>, <span class="at">ylab =</span> <span class="st">"Michigan proportion"</span>);</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span>.<span class="dv">5</span>, <span class="at">col=</span><span class="st">"red"</span>); <span class="fu">abline</span>(<span class="at">v=</span>.<span class="dv">5</span>, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="distributions_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Each point in this plot corresponds to one simulated election.</p>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>What region of this plot corresponds to <span class="math inline">\(W=-1\)</span> and <span class="math inline">\(M=+1\)</span>?</li>
+<li>Does it make sense that there are fewer points in the top left compared to the top right?</li>
+<li>Are Michigan and Wisconsin positively or negatively correlated (based on this plot, anyway)?</li>
+</ul>
+</section>
+</section>
+<section id="review" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="review"><span class="header-section-number">6.6</span> Review:</h2>
+<p>In these notes we covered:</p>
+<ul>
+<li>Families of discrete random variables: Bernoulli, binomial, geometric, Poisson and uniform</li>
+<li>Families of continuous random variables: Gaussian (normal), exponential and uniform</li>
+<li>Computing probabilities</li>
+<li>Some applications of random variables</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./R02_Distributions.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Random Variable Distributions R Examples</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

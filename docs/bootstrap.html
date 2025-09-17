@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 340: Data Science II - 34&nbsp; Bootstrapping</title>
+<title>STAT 340: Data Science II - 40&nbsp; Bootstrapping</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./bootstrap_practice.html" rel="next">
+<link href="./R12_Bootstrap_Examples.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bootstrap.html">Bootstrapping</a></li><li class="breadcrumb-item"><a href="./bootstrap.html"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Bootstrapping</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bootstrap.html">Bootstrapping</a></li><li class="breadcrumb-item"><a href="./bootstrap.html"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Bootstrapping</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -163,14 +163,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
+  <a href="./probability_rv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability and Random Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R01_RandomVariables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Random Variables R Examples</span></span></a>
+  <a href="./R01_Prob_RVs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability and Random Variable R Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -182,14 +182,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cov.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Independence, Conditional Probability and Bayes’ Rule</span></span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variable Distributions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R02_IndepCondBayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Independence, Conditional Probability and Bayes Theorem R Examples</span></span></a>
+  <a href="./R02_Distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Random Variable Distributions R Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -357,34 +357,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./R09_Multiple_Regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">R10 multiple regression further concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./mlr_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R10_LogisticReg_Extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Logistic Regression - Extended Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_cv-MSEcomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">cv-extra</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Bias_Variance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Bias Variance Tradeoff</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Model_Selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">R11 Model Selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Ridge_LASSO.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">R11: Ridge and Lasso</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cv_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -402,13 +438,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bootstrap.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Bootstrapping</span></span></a>
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Bootstrapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R12_Bootstrap_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">R13_Bootstrap</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bootstrap_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
   </div>
 </li>
       </ul>
@@ -440,29 +482,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">34.1</span> Learning objectives</a></li>
-  <li><a href="#estimating-variance" id="toc-estimating-variance" class="nav-link" data-scroll-target="#estimating-variance"><span class="header-section-number">34.2</span> Estimating Variance</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">40.1</span> Learning objectives</a></li>
+  <li><a href="#estimating-variance" id="toc-estimating-variance" class="nav-link" data-scroll-target="#estimating-variance"><span class="header-section-number">40.2</span> Estimating Variance</a>
   <ul class="collapse">
-  <li><a href="#tricky-variance-computations" id="toc-tricky-variance-computations" class="nav-link" data-scroll-target="#tricky-variance-computations"><span class="header-section-number">34.2.1</span> Tricky variance computations</a></li>
+  <li><a href="#tricky-variance-computations" id="toc-tricky-variance-computations" class="nav-link" data-scroll-target="#tricky-variance-computations"><span class="header-section-number">40.2.1</span> Tricky variance computations</a></li>
   </ul></li>
-  <li><a href="#refresher-simulation-based-methods" id="toc-refresher-simulation-based-methods" class="nav-link" data-scroll-target="#refresher-simulation-based-methods"><span class="header-section-number">34.3</span> Refresher: simulation-based methods</a></li>
-  <li><a href="#what-if-we-dont-have-a-model" id="toc-what-if-we-dont-have-a-model" class="nav-link" data-scroll-target="#what-if-we-dont-have-a-model"><span class="header-section-number">34.4</span> What if we don’t have a model?</a></li>
-  <li><a href="#introducing-the-bootstrap" id="toc-introducing-the-bootstrap" class="nav-link" data-scroll-target="#introducing-the-bootstrap"><span class="header-section-number">34.5</span> Introducing the Bootstrap</a>
+  <li><a href="#refresher-simulation-based-methods" id="toc-refresher-simulation-based-methods" class="nav-link" data-scroll-target="#refresher-simulation-based-methods"><span class="header-section-number">40.3</span> Refresher: simulation-based methods</a></li>
+  <li><a href="#what-if-we-dont-have-a-model" id="toc-what-if-we-dont-have-a-model" class="nav-link" data-scroll-target="#what-if-we-dont-have-a-model"><span class="header-section-number">40.4</span> What if we don’t have a model?</a></li>
+  <li><a href="#introducing-the-bootstrap" id="toc-introducing-the-bootstrap" class="nav-link" data-scroll-target="#introducing-the-bootstrap"><span class="header-section-number">40.5</span> Introducing the Bootstrap</a>
   <ul class="collapse">
-  <li><a href="#wait-how-can-this-possibly-work" id="toc-wait-how-can-this-possibly-work" class="nav-link" data-scroll-target="#wait-how-can-this-possibly-work"><span class="header-section-number">34.5.1</span> Wait, how can this possibly work?!</a></li>
-  <li><a href="#example-estimating-the-poisson-rate-parameter" id="toc-example-estimating-the-poisson-rate-parameter" class="nav-link" data-scroll-target="#example-estimating-the-poisson-rate-parameter"><span class="header-section-number">34.5.2</span> Example: estimating the Poisson rate parameter</a></li>
-  <li><a href="#recap-general-recipe-for-the-bootstrap" id="toc-recap-general-recipe-for-the-bootstrap" class="nav-link" data-scroll-target="#recap-general-recipe-for-the-bootstrap"><span class="header-section-number">34.5.3</span> Recap: general recipe for the bootstrap</a></li>
+  <li><a href="#wait-how-can-this-possibly-work" id="toc-wait-how-can-this-possibly-work" class="nav-link" data-scroll-target="#wait-how-can-this-possibly-work"><span class="header-section-number">40.5.1</span> Wait, how can this possibly work?!</a></li>
+  <li><a href="#example-estimating-the-poisson-rate-parameter" id="toc-example-estimating-the-poisson-rate-parameter" class="nav-link" data-scroll-target="#example-estimating-the-poisson-rate-parameter"><span class="header-section-number">40.5.2</span> Example: estimating the Poisson rate parameter</a></li>
+  <li><a href="#recap-general-recipe-for-the-bootstrap" id="toc-recap-general-recipe-for-the-bootstrap" class="nav-link" data-scroll-target="#recap-general-recipe-for-the-bootstrap"><span class="header-section-number">40.5.3</span> Recap: general recipe for the bootstrap</a></li>
   </ul></li>
-  <li><a href="#bootstrapping-for-more-complicated-statistics" id="toc-bootstrapping-for-more-complicated-statistics" class="nav-link" data-scroll-target="#bootstrapping-for-more-complicated-statistics"><span class="header-section-number">34.6</span> Bootstrapping for more complicated statistics</a>
+  <li><a href="#bootstrapping-for-more-complicated-statistics" id="toc-bootstrapping-for-more-complicated-statistics" class="nav-link" data-scroll-target="#bootstrapping-for-more-complicated-statistics"><span class="header-section-number">40.6</span> Bootstrapping for more complicated statistics</a>
   <ul class="collapse">
-  <li><a href="#demo-applying-the-bootstrap-to-financial-data" id="toc-demo-applying-the-bootstrap-to-financial-data" class="nav-link" data-scroll-target="#demo-applying-the-bootstrap-to-financial-data"><span class="header-section-number">34.6.1</span> Demo: applying the bootstrap to financial data</a></li>
+  <li><a href="#demo-applying-the-bootstrap-to-financial-data" id="toc-demo-applying-the-bootstrap-to-financial-data" class="nav-link" data-scroll-target="#demo-applying-the-bootstrap-to-financial-data"><span class="header-section-number">40.6.1</span> Demo: applying the bootstrap to financial data</a></li>
   </ul></li>
-  <li><a href="#limitations-and-extensions-of-the-bootstrap" id="toc-limitations-and-extensions-of-the-bootstrap" class="nav-link" data-scroll-target="#limitations-and-extensions-of-the-bootstrap"><span class="header-section-number">34.7</span> Limitations and extensions of the bootstrap</a>
+  <li><a href="#limitations-and-extensions-of-the-bootstrap" id="toc-limitations-and-extensions-of-the-bootstrap" class="nav-link" data-scroll-target="#limitations-and-extensions-of-the-bootstrap"><span class="header-section-number">40.7</span> Limitations and extensions of the bootstrap</a>
   <ul class="collapse">
-  <li><a href="#example-estimating-the-distribution-of-the-maximum" id="toc-example-estimating-the-distribution-of-the-maximum" class="nav-link" data-scroll-target="#example-estimating-the-distribution-of-the-maximum"><span class="header-section-number">34.7.1</span> Example: estimating the distribution of the maximum</a></li>
-  <li><a href="#a-cautionary-tale" id="toc-a-cautionary-tale" class="nav-link" data-scroll-target="#a-cautionary-tale"><span class="header-section-number">34.7.2</span> A cautionary tale</a></li>
+  <li><a href="#example-estimating-the-distribution-of-the-maximum" id="toc-example-estimating-the-distribution-of-the-maximum" class="nav-link" data-scroll-target="#example-estimating-the-distribution-of-the-maximum"><span class="header-section-number">40.7.1</span> Example: estimating the distribution of the maximum</a></li>
+  <li><a href="#a-cautionary-tale" id="toc-a-cautionary-tale" class="nav-link" data-scroll-target="#a-cautionary-tale"><span class="header-section-number">40.7.2</span> A cautionary tale</a></li>
   </ul></li>
-  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review"><span class="header-section-number">34.8</span> Review</a></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review"><span class="header-section-number">40.8</span> Review</a></li>
   </ul>
 </nav>
     </div>
@@ -471,7 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Bootstrapping</span></h1>
+<h1 class="title"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Bootstrapping</span></h1>
 </div>
 
 
@@ -488,16 +530,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><strong>Readings:</strong> ISLR Section 5.2</p>
 <p>In previous lectures throughout the semester, we have looked at different ways of quantifying uncertainty in our data and our resulting estimates. Among the most fundamental tools in statistics for quantifying uncertainty is the bootstrap. Ultimately, the bootstrap amounts to resampling our data as though it were the population itself. Rather surprisingly, this can actually help us estimate certain quantities related to variances (i.e., uncertainty).</p>
-<section id="learning-objectives" class="level2" data-number="34.1">
-<h2 data-number="34.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">34.1</span> Learning objectives</h2>
+<section id="learning-objectives" class="level2" data-number="40.1">
+<h2 data-number="40.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">40.1</span> Learning objectives</h2>
 <p>After this lecture, you will be able to</p>
 <ul>
 <li>Explain the bootstrap and its applicability.</li>
 <li>Implement and apply the bootstrap to estimate variance in simple models.</li>
 </ul>
 </section>
-<section id="estimating-variance" class="level2" data-number="34.2">
-<h2 data-number="34.2" class="anchored" data-anchor-id="estimating-variance"><span class="header-section-number">34.2</span> Estimating Variance</h2>
+<section id="estimating-variance" class="level2" data-number="40.2">
+<h2 data-number="40.2" class="anchored" data-anchor-id="estimating-variance"><span class="header-section-number">40.2</span> Estimating Variance</h2>
 <p>In a wide range of applications, we need to estimate the variance of our data.</p>
 <p><strong>Example: confidence intervals</strong></p>
 <p>Given data <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> drawn from some distribution, we are often interested in constructing a confidence interval for some parameter <span class="math inline">\(\theta\)</span>. For example, <span class="math inline">\(\theta\)</span> might be the mean of our distribution. If an estimator <span class="math inline">\(\hat{\theta}\)</span> is approximately normal about <span class="math inline">\(\theta\)</span>, we could construct an approximate CI for <span class="math inline">\(\theta\)</span> if only we knew the standard deviation of <span class="math inline">\(\hat{\theta}\)</span>, <span class="math display">\[
@@ -508,8 +550,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Y_i = \beta_0 + \beta_1 X_i + \epsilon_i,~~~i=1,2,\dots,n
 \]</span> where <span class="math inline">\(\epsilon_1,\epsilon_2,\dots,\epsilon_n\)</span> are drawn iid according to a normal with mean zero and unknown variance <span class="math inline">\(\sigma^2 &gt; 0\)</span>.</p>
 <p>During our discussions of linear regression in the last few weeks, we saw situations where we were interested in the sampling distribution of the estimated coefficients <span class="math inline">\(\hat{\beta}_0, \hat{\beta}_1\)</span> (e.g., in adjusted <span class="math inline">\(R^2\)</span> or in interpreting the p-values associated to different coefficients). Often, we need to know <span class="math inline">\(\sigma^2\)</span> or at least have a good estimate of it. How might we estimate <span class="math inline">\(\sigma^2\)</span>?</p>
-<section id="tricky-variance-computations" class="level3" data-number="34.2.1">
-<h3 data-number="34.2.1" class="anchored" data-anchor-id="tricky-variance-computations"><span class="header-section-number">34.2.1</span> Tricky variance computations</h3>
+<section id="tricky-variance-computations" class="level3" data-number="40.2.1">
+<h3 data-number="40.2.1" class="anchored" data-anchor-id="tricky-variance-computations"><span class="header-section-number">40.2.1</span> Tricky variance computations</h3>
 <p>In situations like the above, we had central limit theorems or similar results that allowed us to estimate the variance of the quantities we cared about. Unfortunately, this isn’t always the case. Here’s a simple example, adapted from ISLR (beginning of Section 5.2):</p>
 <p><strong>Example: allocating investments</strong></p>
 <p>Suppose that we have two different stocks we can invest in, which yield returns <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. So, we invest a single dollar (just to keep things simple!), and we need to split between these two different stocks. Let’s say we put <span class="math inline">\(\alpha\)</span> dollars into the first stock (with return <span class="math inline">\(X\)</span>) and <span class="math inline">\(1-\alpha\)</span> (i.e., the rest) into the second stock (with return <span class="math inline">\(Y\)</span>).</p>
@@ -545,8 +587,8 @@ Y_i = \beta_0 + \beta_1 X_i + \epsilon_i,~~~i=1,2,\dots,n
 <p>But <span class="math inline">\(\hat{\alpha}\)</span> depends on the data <span class="math inline">\(\{ (X_i,Y_i) : i=1,2,\dots,n \}\)</span> in a fairly complicated way, so it’s not obvious what <span class="math inline">\(\operatorname{Var} \hat{ \alpha}\)</span> should actually be.</p>
 </section>
 </section>
-<section id="refresher-simulation-based-methods" class="level2" data-number="34.3">
-<h2 data-number="34.3" class="anchored" data-anchor-id="refresher-simulation-based-methods"><span class="header-section-number">34.3</span> Refresher: simulation-based methods</h2>
+<section id="refresher-simulation-based-methods" class="level2" data-number="40.3">
+<h2 data-number="40.3" class="anchored" data-anchor-id="refresher-simulation-based-methods"><span class="header-section-number">40.3</span> Refresher: simulation-based methods</h2>
 <p>In our discussion of estimation and confidence intervals earlier in the semester, we obtained simulation-based confidence intervals by</p>
 <ol type="1">
 <li>Assuming a model for our data (e.g., assuming the data came from a Poisson distribution)</li>
@@ -559,8 +601,8 @@ Y_i = \beta_0 + \beta_1 X_i + \epsilon_i,~~~i=1,2,\dots,n
 \hat{\alpha}\left( (X'_1,Y'_1),(X'_2,Y'_2),\dots,(X'_n,Y'_n) \right).
 \]</span> Doing this many times, we would get multiple random variables that approximate the distribution of <span class="math inline">\(\hat{\alpha}\)</span> (i.e., the statistic computed on our original data).</p>
 </section>
-<section id="what-if-we-dont-have-a-model" class="level2" data-number="34.4">
-<h2 data-number="34.4" class="anchored" data-anchor-id="what-if-we-dont-have-a-model"><span class="header-section-number">34.4</span> What if we don’t have a model?</h2>
+<section id="what-if-we-dont-have-a-model" class="level2" data-number="40.4">
+<h2 data-number="40.4" class="anchored" data-anchor-id="what-if-we-dont-have-a-model"><span class="header-section-number">40.4</span> What if we don’t have a model?</h2>
 <p>Simulation-based approaches like the one discussed above work because we have made a model assumption about our data. If we assumed our data came from a Poisson distribution, then we could just estimate the Poisson parameters and generate new samples.</p>
 <p>But often we don’t want to make such assumptions about our data. Because, for example</p>
 <ul>
@@ -571,8 +613,8 @@ Y_i = \beta_0 + \beta_1 X_i + \epsilon_i,~~~i=1,2,\dots,n
 <p>This last concern gives rise to what we call <em>non-parametric statistics</em>. That is, doing statistics while avoiding assumptions of the form “We assume that the data are generated according to a normal (or Poisson or Binomial or…)”.</p>
 <p>The details of non-parametric statistics will have to wait for your later courses, but these concerns lead us to try and come up with a different way to “resample” copies of our statistic.</p>
 </section>
-<section id="introducing-the-bootstrap" class="level2" data-number="34.5">
-<h2 data-number="34.5" class="anchored" data-anchor-id="introducing-the-bootstrap"><span class="header-section-number">34.5</span> Introducing the Bootstrap</h2>
+<section id="introducing-the-bootstrap" class="level2" data-number="40.5">
+<h2 data-number="40.5" class="anchored" data-anchor-id="introducing-the-bootstrap"><span class="header-section-number">40.5</span> Introducing the Bootstrap</h2>
 <p>So, let’s try something a little weird.</p>
 <p>What we want to do is to draw new samples from the same population (i.e., distribution) as our data came from. In the simulation-based approach, we estimate the parameter(s) to get an approximation to that true distribution.</p>
 <p>The bootstrap takes a different tack. The data, <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> is a sample from the <em>actual</em> population that we care about (i.e., not an approximation!). The bootstrap says, “let’s just sample from <span class="math inline">\(X_1,X_2,\dots,X_n\)</span>.”</p>
@@ -587,16 +629,16 @@ X^*_1, X^*_2, \dots, X^*_n.
 \]</span> Repeating this many times (say, <span class="math inline">\(B\)</span> times), we can use these resampled replicates of our original estimator, say <span class="math display">\[
 \hat{\theta}_1, \hat{\theta}_2, \dots, \hat{\theta}_B.
 \]</span> The intuition is that these <span class="math inline">\(B\)</span> random variables, each based on a sample with replacement from the original data, are a good approximation to the true distribution of our estimate <span class="math inline">\(\hat{\theta}(X_1,X_2,\dots,X_n)\)</span>, and we can use them to do things like estimating the variance.</p>
-<section id="wait-how-can-this-possibly-work" class="level3" data-number="34.5.1">
-<h3 data-number="34.5.1" class="anchored" data-anchor-id="wait-how-can-this-possibly-work"><span class="header-section-number">34.5.1</span> Wait, how can this possibly work?!</h3>
+<section id="wait-how-can-this-possibly-work" class="level3" data-number="40.5.1">
+<h3 data-number="40.5.1" class="anchored" data-anchor-id="wait-how-can-this-possibly-work"><span class="header-section-number">40.5.1</span> Wait, how can this possibly work?!</h3>
 <p>Yes, this is just as crazy as it sounds, and yet, it works (for certain problems, anyway).</p>
 <p>The intuition is something like this: when <span class="math inline">\(n\)</span> is suitably large, the “point cloud” formed by <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> looks a lot like the true population distribution.</p>
 <p>As a result, resampling from the observed sample <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> and resampling from the true population distribution are not actually so different!</p>
 <p>The careful mathematical proof of this intuition is beyond the scope of this course. But I agree that on a first glance this should not work at all. And yet it does!</p>
 <p>I have been studying statistics for more than 15 years, and I am still pretty sure the bootstrap is magic…</p>
 </section>
-<section id="example-estimating-the-poisson-rate-parameter" class="level3" data-number="34.5.2">
-<h3 data-number="34.5.2" class="anchored" data-anchor-id="example-estimating-the-poisson-rate-parameter"><span class="header-section-number">34.5.2</span> Example: estimating the Poisson rate parameter</h3>
+<section id="example-estimating-the-poisson-rate-parameter" class="level3" data-number="40.5.2">
+<h3 data-number="40.5.2" class="anchored" data-anchor-id="example-estimating-the-poisson-rate-parameter"><span class="header-section-number">40.5.2</span> Example: estimating the Poisson rate parameter</h3>
 <p>Let’s start by illustrating on a simple data example that we have seen multiple times before. Let’s suppose that <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> are drawn iid from a Poisson distribution with rate parameter <span class="math inline">\(\lambda = 5\)</span>.</p>
 <p>Our goal is to construct a confidence interval for the rate parameter <span class="math inline">\(\lambda\)</span>.</p>
 <p>Now, we’ve already seen ways to do this– we could construct a CLT-based confidence interval or use a simulation-based approach. The point here is just to illustrate how the bootstrap applies in a setting that we are already familiar with. The claim is <em>not</em> that this the bootstrap is the best solution to this particular problem.</p>
@@ -691,8 +733,8 @@ X^*_1, X^*_2, \dots, X^*_n.
 </div>
 <p>That number should be between 0.93 and 0.97 (of course, we are always subject to randomness in our experiments…).</p>
 </section>
-<section id="recap-general-recipe-for-the-bootstrap" class="level3" data-number="34.5.3">
-<h3 data-number="34.5.3" class="anchored" data-anchor-id="recap-general-recipe-for-the-bootstrap"><span class="header-section-number">34.5.3</span> Recap: general recipe for the bootstrap</h3>
+<section id="recap-general-recipe-for-the-bootstrap" class="level3" data-number="40.5.3">
+<h3 data-number="40.5.3" class="anchored" data-anchor-id="recap-general-recipe-for-the-bootstrap"><span class="header-section-number">40.5.3</span> Recap: general recipe for the bootstrap</h3>
 <p>Just to drive things home, let’s walk through the “recipe” for the bootstrap again, this time at a slightly more abstract level. Then we’ll come back and do a more complicated example.</p>
 <p>Suppose that we have data <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> drawn iid from some unknown distribution. We wish to estimate a parameter <span class="math inline">\(\theta\)</span>, and we have an estimator <span class="math inline">\(\hat{\theta} = \hat{\theta}(X_1,X_2,\dots,X_n)\)</span> for <span class="math inline">\(\theta\)</span>.</p>
 <p>The basic idea behind the bootstrap is to resample from the data <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> with replacement, evaluate <span class="math inline">\(\hat{\theta}\)</span> on each resample, and use those <em>replicates</em> of <span class="math inline">\(\hat{\theta}(X_1,X_2,\dots,X_n)\)</span> to approximate its true distribution (usually we are specifically interested in variance, but we’ll come back to this point).</p>
@@ -713,8 +755,8 @@ X^*_1, X^*_2, \dots, X^*_n.
 </ol>
 </section>
 </section>
-<section id="bootstrapping-for-more-complicated-statistics" class="level2" data-number="34.6">
-<h2 data-number="34.6" class="anchored" data-anchor-id="bootstrapping-for-more-complicated-statistics"><span class="header-section-number">34.6</span> Bootstrapping for more complicated statistics</h2>
+<section id="bootstrapping-for-more-complicated-statistics" class="level2" data-number="40.6">
+<h2 data-number="40.6" class="anchored" data-anchor-id="bootstrapping-for-more-complicated-statistics"><span class="header-section-number">40.6</span> Bootstrapping for more complicated statistics</h2>
 <p>Now, our example above is kind of silly– we already know multiple different ways to construct confidence intervals for the Poisson parameter!</p>
 <p>But what about more complicated functions of our data? That is often where the bootstrap really shines.</p>
 <p>To see this, let’s return to our example of financial returns <span class="math inline">\((X_i,Y_i)\)</span></p>
@@ -733,8 +775,8 @@ X^*_1, X^*_2, \dots, X^*_n.
 \frac{1}{B-1}\sum_{r=1}^B \left( \alpha^*_r - \frac{1}{B} \sum_{b=1}^B \alpha^*_b \right)^2.
 \]</span></p>
 <p>Notice that this <em>looks</em> like a variance, except that we are using <span class="math inline">\(\hat{\alpha}\)</span>, the statistic computed on the original data sample, as our estimate of the mean.</p>
-<section id="demo-applying-the-bootstrap-to-financial-data" class="level3" data-number="34.6.1">
-<h3 data-number="34.6.1" class="anchored" data-anchor-id="demo-applying-the-bootstrap-to-financial-data"><span class="header-section-number">34.6.1</span> Demo: applying the bootstrap to financial data</h3>
+<section id="demo-applying-the-bootstrap-to-financial-data" class="level3" data-number="40.6.1">
+<h3 data-number="40.6.1" class="anchored" data-anchor-id="demo-applying-the-bootstrap-to-financial-data"><span class="header-section-number">40.6.1</span> Demo: applying the bootstrap to financial data</h3>
 <p>The following chunk contains code for generating <span class="math inline">\((X_i,Y_i)\)</span> pairs like those discussed in our financial example above.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -915,13 +957,13 @@ Y -0.481378  1.711926</code></pre>
 <p>Once again, this should be approximately 0.95, up to the randomness in our experiment.</p>
 </section>
 </section>
-<section id="limitations-and-extensions-of-the-bootstrap" class="level2" data-number="34.7">
-<h2 data-number="34.7" class="anchored" data-anchor-id="limitations-and-extensions-of-the-bootstrap"><span class="header-section-number">34.7</span> Limitations and extensions of the bootstrap</h2>
+<section id="limitations-and-extensions-of-the-bootstrap" class="level2" data-number="40.7">
+<h2 data-number="40.7" class="anchored" data-anchor-id="limitations-and-extensions-of-the-bootstrap"><span class="header-section-number">40.7</span> Limitations and extensions of the bootstrap</h2>
 <p>Now, the bootstrap is magic, at least when it works.</p>
 <p>But the set of problems for which the “classical” bootstrap (i.e., the version of the bootstrap outlined above) works, is pretty limited.</p>
 <p>Here’s a simple example of where the bootstrap can fail.</p>
-<section id="example-estimating-the-distribution-of-the-maximum" class="level3" data-number="34.7.1">
-<h3 data-number="34.7.1" class="anchored" data-anchor-id="example-estimating-the-distribution-of-the-maximum"><span class="header-section-number">34.7.1</span> Example: estimating the distribution of the maximum</h3>
+<section id="example-estimating-the-distribution-of-the-maximum" class="level3" data-number="40.7.1">
+<h3 data-number="40.7.1" class="anchored" data-anchor-id="example-estimating-the-distribution-of-the-maximum"><span class="header-section-number">40.7.1</span> Example: estimating the distribution of the maximum</h3>
 <p>Suppose that we see data <span class="math inline">\(X_1,X_2,\dots,X_n\)</span> drawn iid from some distribution, and we are interested in the distribution of <span class="math display">\[
 M = \max\{ X_1, X_2, \dots, X_n \}.
 \]</span> In particular, suppose we want to estimate <span class="math inline">\(\mathbb{E} M\)</span>.</p>
@@ -1036,15 +1078,15 @@ M^* = \max\{ X_1^*, X_2^*, \dots, X_n^* \}.
 <p>Generally speaking, the bootstrap only works well when the statistic we are trying to work with is approximately normal about its expectation. The maximum of a collection of variables does obey a central limit theorem, but its limiting distribution is <em>not</em> a normal!</p>
 <p>See <a href="https://en.wikipedia.org/wiki/Extreme_value_theory">here</a> if you’re curious to learn more.</p>
 </section>
-<section id="a-cautionary-tale" class="level3" data-number="34.7.2">
-<h3 data-number="34.7.2" class="anchored" data-anchor-id="a-cautionary-tale"><span class="header-section-number">34.7.2</span> A cautionary tale</h3>
+<section id="a-cautionary-tale" class="level3" data-number="40.7.2">
+<h3 data-number="40.7.2" class="anchored" data-anchor-id="a-cautionary-tale"><span class="header-section-number">40.7.2</span> A cautionary tale</h3>
 <p>There are, in fact, ways to modify the bootstrap to handle issues like resampling “challenging” functions like the maximum, but those are going to have to wait for your more advanced courses.</p>
 <p>The above example is just a cautionary tale of how important it is to know the limitations of the methods that you are using. The bootstrap works amazingly for the problems that it is “right” for, but it is also demonstrably bad for certain other problems.</p>
 <p>Generally speaking, it’s important to know what tool is right for what job!</p>
 </section>
 </section>
-<section id="review" class="level2" data-number="34.8">
-<h2 data-number="34.8" class="anchored" data-anchor-id="review"><span class="header-section-number">34.8</span> Review</h2>
+<section id="review" class="level2" data-number="40.8">
+<h2 data-number="40.8" class="anchored" data-anchor-id="review"><span class="header-section-number">40.8</span> Review</h2>
 <p>In these notes we covered</p>
 <ul>
 <li>Situations where Parametric Estimation is inadequate</li>
@@ -1295,8 +1337,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./bootstrap_practice.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./R12_Bootstrap_Examples.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">R13_Bootstrap</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

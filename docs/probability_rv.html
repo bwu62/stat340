@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STAT 340: Data Science II - 3&nbsp; Probability and Random Variables</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./R01_Prob_RVs.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability_rv.html">Sampling</a></li><li class="breadcrumb-item"><a href="./probability_rv.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability and Random Variables</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">STAT 340: Data Science II</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">STAT 340 Index</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Sampling</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./probability_rv.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability and Random Variables</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R01_Prob_RVs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability and Random Variable R Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rv_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Probability and Random Variables Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variable Distributions</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R02_Distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Random Variable Distributions R Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cov_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Independence and Conditional Probability Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Monte Carlo</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R03_MonteCarloExamples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Monte Carlo Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monte Carlo Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R_MonteCarlo_Battleship.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Monte Carlo Battleship</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Testing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Introduction to Statistical Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R04_Monte_Carlo_Testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing1_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Monte Carlo Testing Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Statistical Testing, Continued</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R05_testing_Additional_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Monte Carlo Testing: Additional Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./testing2_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Testing and Power Practice</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Estimation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimation1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Estimation Part 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimation1_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R06_More_Estimation_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Estimation Examples</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimation2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Estimation Part 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./estimation2_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interval Estimation Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R07_More_Estimation_and_CI_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Interval Estimation Examples</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Prediction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prediction1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Prediction (Simple Linear Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slr_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R08_prediction_examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prediction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Prediction (Multiple Linear Regression)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R09_Multiple_Regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">R10 multiple regression further concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mlr_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R10_LogisticReg_Extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Logistic Regression - Extended Examples</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_cv-MSEcomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">cv-extra</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Bias_Variance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Bias Variance Tradeoff</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Model_Selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">R11 Model Selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Ridge_LASSO.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">R11: Ridge and Lasso</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cv_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
+  </div>
+</li>
+          <li class="px-0"><hr class="sidebar-divider hi "></li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Bootstrapping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bootstrap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Bootstrapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R12_Bootstrap_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">R13_Bootstrap</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bootstrap_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RV_summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Random Variable Summary</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">3.1</span> Learning objectives</a></li>
+  <li><a href="#probability-refresher" id="toc-probability-refresher" class="nav-link" data-scroll-target="#probability-refresher"><span class="header-section-number">3.2</span> Probability refresher</a>
+  <ul class="collapse">
+  <li><a href="#example-coin-flipping" id="toc-example-coin-flipping" class="nav-link" data-scroll-target="#example-coin-flipping"><span class="header-section-number">3.2.1</span> Example: Coin flipping</a></li>
+  <li><a href="#example-six-sided-die" id="toc-example-six-sided-die" class="nav-link" data-scroll-target="#example-six-sided-die"><span class="header-section-number">3.2.2</span> Example: Six-sided die</a></li>
+  <li><a href="#example-human-heights" id="toc-example-human-heights" class="nav-link" data-scroll-target="#example-human-heights"><span class="header-section-number">3.2.3</span> Example: Human heights</a></li>
+  <li><a href="#a-note-on-models-assumptions-and-approximations" id="toc-a-note-on-models-assumptions-and-approximations" class="nav-link" data-scroll-target="#a-note-on-models-assumptions-and-approximations"><span class="header-section-number">3.2.4</span> A note on models, assumptions and approximations</a></li>
+  </ul></li>
+  <li><a href="#events-and-independence." id="toc-events-and-independence." class="nav-link" data-scroll-target="#events-and-independence."><span class="header-section-number">3.3</span> Events and independence.</a>
+  <ul class="collapse">
+  <li><a href="#example-dice-and-coins" id="toc-example-dice-and-coins" class="nav-link" data-scroll-target="#example-dice-and-coins"><span class="header-section-number">3.3.1</span> Example: dice and coins</a></li>
+  <li><a href="#example-more-dice" id="toc-example-more-dice" class="nav-link" data-scroll-target="#example-more-dice"><span class="header-section-number">3.3.2</span> Example: more dice</a></li>
+  <li><a href="#mutually-exclusive-vs-independent" id="toc-mutually-exclusive-vs-independent" class="nav-link" data-scroll-target="#mutually-exclusive-vs-independent"><span class="header-section-number">3.3.3</span> Mutually Exclusive vs Independent</a></li>
+  </ul></li>
+  <li><a href="#conditional-probability" id="toc-conditional-probability" class="nav-link" data-scroll-target="#conditional-probability"><span class="header-section-number">3.4</span> Conditional probability</a>
+  <ul class="collapse">
+  <li><a href="#example-disease-screening" id="toc-example-disease-screening" class="nav-link" data-scroll-target="#example-disease-screening"><span class="header-section-number">3.4.1</span> Example: disease screening</a></li>
+  <li><a href="#introducing-conditional-probability" id="toc-introducing-conditional-probability" class="nav-link" data-scroll-target="#introducing-conditional-probability"><span class="header-section-number">3.4.2</span> Introducing conditional probability</a></li>
+  <li><a href="#example-disease-screening-continued" id="toc-example-disease-screening-continued" class="nav-link" data-scroll-target="#example-disease-screening-continued"><span class="header-section-number">3.4.3</span> Example: disease screening (continued)</a></li>
+  <li><a href="#bayes-rule" id="toc-bayes-rule" class="nav-link" data-scroll-target="#bayes-rule"><span class="header-section-number">3.4.4</span> Bayes’ rule</a></li>
+  <li><a href="#example-testing-for-a-rare-disease" id="toc-example-testing-for-a-rare-disease" class="nav-link" data-scroll-target="#example-testing-for-a-rare-disease"><span class="header-section-number">3.4.5</span> Example: testing for a rare disease</a></li>
+  <li><a href="#calculating-the-denominator-in-bayes-rule" id="toc-calculating-the-denominator-in-bayes-rule" class="nav-link" data-scroll-target="#calculating-the-denominator-in-bayes-rule"><span class="header-section-number">3.4.6</span> Calculating the denominator in Bayes’ Rule</a></li>
+  <li><a href="#dependent-free-throw-shots" id="toc-dependent-free-throw-shots" class="nav-link" data-scroll-target="#dependent-free-throw-shots"><span class="header-section-number">3.4.7</span> Dependent free throw shots</a></li>
+  </ul></li>
+  <li><a href="#random-variables" id="toc-random-variables" class="nav-link" data-scroll-target="#random-variables"><span class="header-section-number">3.5</span> Random Variables</a>
+  <ul class="collapse">
+  <li><a href="#random-variables-formal-definition" id="toc-random-variables-formal-definition" class="nav-link" data-scroll-target="#random-variables-formal-definition"><span class="header-section-number">3.5.1</span> Random variables (formal definition)</a></li>
+  <li><a href="#discrete-random-variables" id="toc-discrete-random-variables" class="nav-link" data-scroll-target="#discrete-random-variables"><span class="header-section-number">3.5.2</span> Discrete Random Variables</a></li>
+  </ul></li>
+  <li><a href="#expectation" id="toc-expectation" class="nav-link" data-scroll-target="#expectation"><span class="header-section-number">3.6</span> Expectation</a>
+  <ul class="collapse">
+  <li><a href="#expected-value-and-the-law-of-large-numbers-first-peek" id="toc-expected-value-and-the-law-of-large-numbers-first-peek" class="nav-link" data-scroll-target="#expected-value-and-the-law-of-large-numbers-first-peek"><span class="header-section-number">3.6.1</span> Expected value and the Law of Large Numbers (first peek)</a></li>
+  <li><a href="#expectation-formal-definition" id="toc-expectation-formal-definition" class="nav-link" data-scroll-target="#expectation-formal-definition"><span class="header-section-number">3.6.2</span> Expectation: formal definition</a></li>
+  <li><a href="#example-calculating-expectation" id="toc-example-calculating-expectation" class="nav-link" data-scroll-target="#example-calculating-expectation"><span class="header-section-number">3.6.3</span> Example: Calculating Expectation</a></li>
+  <li><a href="#lln-important-take-away" id="toc-lln-important-take-away" class="nav-link" data-scroll-target="#lln-important-take-away"><span class="header-section-number">3.6.4</span> LLN Important take-away</a></li>
+  </ul></li>
+  <li><a href="#continuous-random-variables" id="toc-continuous-random-variables" class="nav-link" data-scroll-target="#continuous-random-variables"><span class="header-section-number">3.7</span> Continuous random variables</a>
+  <ul class="collapse">
+  <li><a href="#the-probability-density-function" id="toc-the-probability-density-function" class="nav-link" data-scroll-target="#the-probability-density-function"><span class="header-section-number">3.7.1</span> The probability density function</a></li>
+  <li><a href="#pdf-example" id="toc-pdf-example" class="nav-link" data-scroll-target="#pdf-example"><span class="header-section-number">3.7.2</span> PDF Example</a></li>
+  <li><a href="#calculating-probabilities-for-continuous-rvs" id="toc-calculating-probabilities-for-continuous-rvs" class="nav-link" data-scroll-target="#calculating-probabilities-for-continuous-rvs"><span class="header-section-number">3.7.3</span> Calculating probabilities for continuous RVs</a></li>
+  <li><a href="#probability-that-xk" id="toc-probability-that-xk" class="nav-link" data-scroll-target="#probability-that-xk"><span class="header-section-number">3.7.4</span> Probability that X=k?</a></li>
+  <li><a href="#cdf-for-a-continuous-random-variable" id="toc-cdf-for-a-continuous-random-variable" class="nav-link" data-scroll-target="#cdf-for-a-continuous-random-variable"><span class="header-section-number">3.7.5</span> CDF for a continuous random variable</a></li>
+  <li><a href="#expectation-for-continuous-random-variables" id="toc-expectation-for-continuous-random-variables" class="nav-link" data-scroll-target="#expectation-for-continuous-random-variables"><span class="header-section-number">3.7.6</span> Expectation for continuous random variables</a></li>
+  </ul></li>
+  <li><a href="#random-variables-and-independence" id="toc-random-variables-and-independence" class="nav-link" data-scroll-target="#random-variables-and-independence"><span class="header-section-number">3.8</span> Random Variables and Independence</a>
+  <ul class="collapse">
+  <li><a href="#independent-random-variables" id="toc-independent-random-variables" class="nav-link" data-scroll-target="#independent-random-variables"><span class="header-section-number">3.8.1</span> Independent Random Variables</a></li>
+  <li><a href="#how-reasonable-is-independence" id="toc-how-reasonable-is-independence" class="nav-link" data-scroll-target="#how-reasonable-is-independence"><span class="header-section-number">3.8.2</span> How reasonable is independence?</a></li>
+  <li><a href="#independence-expectation-and-variance" id="toc-independence-expectation-and-variance" class="nav-link" data-scroll-target="#independence-expectation-and-variance"><span class="header-section-number">3.8.3</span> (in)dependence, expectation and variance</a></li>
+  <li><a href="#uncorrelation-and-independence" id="toc-uncorrelation-and-independence" class="nav-link" data-scroll-target="#uncorrelation-and-independence"><span class="header-section-number">3.8.4</span> (Un)correlation and independence</a></li>
+  <li><a href="#example-uncorrelated-but-not-independent" id="toc-example-uncorrelated-but-not-independent" class="nav-link" data-scroll-target="#example-uncorrelated-but-not-independent"><span class="header-section-number">3.8.5</span> Example: Uncorrelated but not independent</a></li>
+  </ul></li>
+  <li><a href="#review" id="toc-review" class="nav-link" data-scroll-target="#review"><span class="header-section-number">3.9</span> Review:</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability and Random Variables</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>These notes will discuss the most fundamental object in statistics: random variables.</p>
+<p>We use random variables, within the framework of probability theory, to model how our data came to be.</p>
+<p>We will first introduce the idea of a random variable (and its associated distribution) and review probability theory.</p>
+<p>We also explore the concept of independence of random variables. We will discuss in more detail what it means for variables to be independent, and we will discuss the related notion of correlation.</p>
+<p>We will also see how independence relates to “conditional probability”, and how we can use this different “kind” of probability to answer questions that frequently arise in statistics (especially in medical trials) by appealing to Bayes’ rule.</p>
+<section id="learning-objectives" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">3.1</span> Learning objectives</h2>
+<p>After this lesson, you will be able to</p>
+<ul>
+<li>Compute the probabilities of simple events under different probability distributions using R.</li>
+<li>Explain what a random variable is</li>
+<li>Explain what it means for variables to be dependent or independent and assess how reasonable independence assumptions are in simple statistical models.</li>
+<li>Explain expectations and variances of sums of variables are influenced by the dependence or independence of those random variables.</li>
+<li>Explain correlation, compute the correlation of two random variables, and explain the difference between correlation and dependence.</li>
+<li>Define the conditional probability of an event <span class="math inline">\(A\)</span> given an event <span class="math inline">\(B\)</span> and calculate this probability given the appropriate joint distribution.</li>
+<li>Use Bayes’ rule to compute <span class="math inline">\(\Pr[B \mid A]\)</span> in terms of <span class="math inline">\(\Pr[A \mid B]\)</span>, <span class="math inline">\(\Pr[A]\)</span> and <span class="math inline">\(\Pr[B]\)</span>.</li>
+</ul>
+</section>
+<section id="probability-refresher" class="level2 allowframebreaks" data-number="3.2">
+<h2 class="allowframebreaks anchored" data-number="3.2" data-anchor-id="probability-refresher"><span class="header-section-number">3.2</span> Probability refresher</h2>
+<p>A <em>random experiment</em> (or <em>random process</em>) is a procedure which produces an uncertain outcome. The set of possible <em>outcomes</em> is often denoted <span class="math inline">\(\Omega\)</span>.</p>
+<ul>
+<li>When we flip a coin, it can land either heads (<span class="math inline">\(H\)</span>) or tails (<span class="math inline">\(T\)</span>), so the outcomes are <span class="math inline">\(\Omega = \{H, T\}\)</span>.</li>
+<li>When we roll a six-sided die, there are six possible outcomes, <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>.</li>
+<li>In other settings, the outcomes might be an infinite set.
+<ul>
+<li>Ex: if we measure the depth of Lake Mendota, the outcome may be any positive real number (theoretically)</li>
+</ul></li>
+</ul>
+<p>Usually <span class="math inline">\(\Omega\)</span> will is discrete (e.g., <span class="math inline">\(\{1,2,\dots\}\)</span>) or continuous (e.g., <span class="math inline">\([0,1]\)</span>). We call the associated random variable discrete or continuous, respectively.</p>
+<p>A subset <span class="math inline">\(E \subseteq \Omega\)</span> of the outcome space is called an <em>event</em>.</p>
+<p>A <em>probability</em> is a function that maps events to numbers, with the properties that</p>
+<ul>
+<li><span class="math inline">\(\Pr[ E ] \in [0,1]\)</span> for all events <span class="math inline">\(E\)</span></li>
+<li><span class="math inline">\(\Pr[ \Omega ] = 1\)</span></li>
+<li>For <span class="math inline">\(E_1,E_2 \in \Omega\)</span> with <span class="math inline">\(E_1 \cap E_2 = \emptyset\)</span>, <span class="math inline">\(\Pr[ E_1 \cup E_2 ] = \Pr[ E_1 ] + \Pr[ E_2 ]\)</span></li>
+</ul>
+<p>If <span class="math inline">\(\Pr[E_1 \cap E_2]=0\)</span>, we say that <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> are <em>mutually exclusive</em> (or <em>disjoint</em>)</p>
+<p>Two events <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> are <em>independent</em> if <span class="math inline">\(\Pr[ E_1 \cap E_2 ] = \Pr[ E_1 ] \Pr[ E_2 ]\)</span>.</p>
+<section id="example-coin-flipping" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="example-coin-flipping"><span class="header-section-number">3.2.1</span> Example: Coin flipping</h3>
+<p>Consider a coin toss, in which the possible outcomes are <span class="math inline">\(\Omega = \{ H, T \}\)</span>.</p>
+<p>This is a discrete random experiment. If we have a fair coin, then it is sensible that <span class="math inline">\(\Pr[ X=1 ] = \Pr[ X=0 ] = 1/2\)</span>.</p>
+<p><strong>Exercise (optional):</strong> verify that this probability satisfies the above properties!</p>
+<p>We will see in a later lecture that this is a special case of a Bernoulli random variable, which you are probably already familiar with.</p>
+</section>
+<section id="example-six-sided-die" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="example-six-sided-die"><span class="header-section-number">3.2.2</span> Example: Six-sided die</h3>
+<p>If we roll a die, the outcome space is <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>, and the events are all the subsets of this six-element set.</p>
+<p>So, for example, we can talk about the event that we roll an odd number <span class="math inline">\(E_{\text{odd}} = \{1,3,5\}\)</span> or the event that we roll a number larger than <span class="math inline">\(4\)</span>, <span class="math inline">\(E_{&gt;4} = \{5,6\}\)</span>.</p>
+</section>
+<section id="example-human-heights" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="example-human-heights"><span class="header-section-number">3.2.3</span> Example: Human heights</h3>
+<p>We pick a random person and measure their height in, say, centimeters. <strong>What is the outcome space?</strong></p>
+<ul>
+<li>One option: the outcome space is the set of positive reals, in which case this is a <em>continuous random variable</em>.</li>
+<li>Alternatively, we could assume that the outcome space is the set of all real numbers.</li>
+</ul>
+<p>Highlight: the importance of specifying our assumptions and the outcome space we are working with in a particular problem.</p>
+</section>
+<section id="a-note-on-models-assumptions-and-approximations" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="a-note-on-models-assumptions-and-approximations"><span class="header-section-number">3.2.4</span> A note on models, assumptions and approximations</h3>
+<p>Note that we are already making an approximation– our outcome sets aren’t really exhaustive, here.</p>
+<ul>
+<li>When you toss a coin, there are possible outcomes other than heads and tails: it is technically possible to land on the edge.</li>
+<li>Similarly, perhaps the die lands on its edge.</li>
+</ul>
+<p>Human heights:</p>
+<ul>
+<li>We can only measure a height to some finite precision (say, two decimal places), so it is a bit silly to take the outcome space to be the real numbers.</li>
+<li>After all, if we can only measure a height to two decimal places, then there is no way to ever obtain the event, “height is 160.3333333… centimeters”.</li>
+</ul>
+<p>Good to be aware of these approximations - but they usually won’t bother us.</p>
+</section>
+</section>
+<section id="events-and-independence." class="level2 allowframebreaks" data-number="3.3">
+<h2 class="allowframebreaks anchored" data-number="3.3" data-anchor-id="events-and-independence."><span class="header-section-number">3.3</span> Events and independence.</h2>
+<p>Two events <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> are <em>independent</em> if <span class="math inline">\(\Pr[ E_1 \cap E_2 ] = \Pr[ E_1 ] \Pr[ E_2 ]\)</span>.</p>
+<p>We may write <span class="math inline">\(\Pr[ E_1, E_2]\)</span> to mean <span class="math inline">\(\Pr[ E_1 \cap E_2 ]\)</span>, read as “the probability of events <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span>” or “the probability that <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> occur”.</p>
+<ul>
+<li>For example, if each of us flip a coin, it is reasonable to model them as being independent.</li>
+<li>Learning whether my coin landed heads or tails doesn’t tell us anything about your coin.</li>
+</ul>
+<section id="example-dice-and-coins" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="example-dice-and-coins"><span class="header-section-number">3.3.1</span> Example: dice and coins</h3>
+<p>Suppose that you roll a die and I flip a coin. Let <span class="math inline">\(D\)</span> denote the (random) outcome of the die roll, and let <span class="math inline">\(C\)</span> denote the (random) outcome of the coin flip. So <span class="math inline">\(D \in \{1,2,3,4,5,6\}\)</span> and <span class="math inline">\(C \in \{1,0\}\)</span>. Suppose that for all <span class="math inline">\(d \in \{1,2,3,4,5,6\}\)</span> and all <span class="math inline">\(c \in \{1,0\}\)</span>, <span class="math inline">\(\Pr[ D=d, C=c ] = 1/12\)</span>.</p>
+<p><strong>Question:</strong> Verify that the random variables <span class="math inline">\(D\)</span> and <span class="math inline">\(C\)</span> are independent, or at least check that it’s true for two particular events <span class="math inline">\(E_1 \subseteq \{1,2,3,4,5,6\}\)</span> and <span class="math inline">\(E_2 \subseteq \{1,0\}\)</span>.</p>
+</section>
+<section id="example-more-dice" class="level3 allowframebreaks" data-number="3.3.2">
+<h3 class="allowframebreaks anchored" data-number="3.3.2" data-anchor-id="example-more-dice"><span class="header-section-number">3.3.2</span> Example: more dice</h3>
+<p>Suppose that we roll a fair six-sided die. Consider the following two events: <span class="math display">\[
+\begin{aligned}
+E_1 &amp;= \{ \text{The die lands on an even number} \} \\
+E_2 &amp;= \{ \text{The die lands showing 3} \}.
+\end{aligned}
+\]</span></p>
+<p>Are these two events independent? If I tell you that the die landed on an even number, then it’s certainly impossible that it landed showing a 3, since 3 isn’t even. These events should not be independent.</p>
+<p>Let’s verify that <span class="math display">\[
+\Pr[ E_1 \cap E_2 ] \neq \Pr[ E_1 ] \Pr[ E_2 ].
+\]</span></p>
+<p>There are six sides on our die, numbered 1, 2, 3, 4, 5, 6, and three of those sides are even numbers, so <span class="math inline">\(\Pr[ E_1 ] = 1/2\)</span>.</p>
+<p>The probability that the die lands showing 3 is exactly <span class="math inline">\(\Pr[ E_2 ] = 1/6\)</span>.</p>
+<p>Putting these together, <span class="math inline">\(\Pr[E_1] \Pr[E_2] = 1/12\)</span>.</p>
+<p>On the other hand, let’s consider <span class="math inline">\(E_1 \cap E_2\)</span> (the die is even <em>and</em> it lands showing three). These two events cannot both happen!</p>
+<p>That means that <span class="math inline">\(E_1 \cap E_2 = \emptyset\)</span>. Thus <span class="math inline">\(\Pr[ \emptyset ] = 0.\)</span></p>
+<p>(<strong>Aside:</strong> why? <strong>Hint:</strong> <span class="math inline">\(\Pr[ \Omega ] = 1\)</span> and <span class="math inline">\(\emptyset \cap \Omega = \emptyset\)</span>; now use the fact that the probability of the union of disjoint events is the sum of their probabilities).</p>
+<p>So we have <span class="math display">\[
+\Pr[ E_1 \cap E_2 ] = 0 \neq \frac{1}{12} =\Pr[ E_1 ] \Pr[ E_2 ].
+\]</span></p>
+<p>Our two events are indeed not independent.</p>
+</section>
+<section id="mutually-exclusive-vs-independent" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="mutually-exclusive-vs-independent"><span class="header-section-number">3.3.3</span> Mutually Exclusive vs Independent</h3>
+<p>Two events <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> are <em>mutually exclusive</em> if the probability of both occurring simultaneously is zero <span class="math display">\[P(E_1 \cap E_2) = 0\]</span></p>
+<p>Could two events <span class="math inline">\(E_1\)</span> and <span class="math inline">\(E_2\)</span> with non-zero probabilities be mutually exclusive <em>and</em> independent? Think about it!</p>
+</section>
+</section>
+<section id="conditional-probability" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="conditional-probability"><span class="header-section-number">3.4</span> Conditional probability</h2>
+<p>We can’t talk about events and independence without discussing <em>conditional probability</em>.</p>
+<p>To motivate this, consider the following: suppose I roll a six-sided die. What is the probability that the die lands showing 2?</p>
+<p>Now, suppose that I don’t tell you the number on the die, but I <em>do</em> tell you that the die landed on an even number (i.e., one of 2, 4 or 6). Now what is the probability that the die is showing 2?</p>
+<p>We can work out the probabilities by simply counting possible outcomes. Are the probabilities the same?</p>
+<section id="example-disease-screening" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="example-disease-screening"><span class="header-section-number">3.4.1</span> Example: disease screening</h3>
+<p>Here’s a more real-world (and more consequential example): suppose we are screening for a rare disease. A patient takes the screening test, and tests positive. What is the probability that the patient has the disease, <em>given</em> that they have tested positive for it?</p>
+<p>We will need to establish the rules of conditional probability before we can tackle a problem such as this.</p>
+</section>
+<section id="introducing-conditional-probability" class="level3 allowframebreaks" data-number="3.4.2">
+<h3 class="allowframebreaks anchored" data-number="3.4.2" data-anchor-id="introducing-conditional-probability"><span class="header-section-number">3.4.2</span> Introducing conditional probability</h3>
+<p>These kinds of questions, in which we want to ask about the probability of an event <em>given</em> that something else has happened, require that we be able to define a “new kind” of probability, called <em>conditional probability</em>.</p>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events.</p>
+<ul>
+<li>Example: <span class="math inline">\(A\)</span> could be the event that a die lands showing 2 and <span class="math inline">\(B\)</span> is the event that the die landed on an even number.</li>
+<li>Example: <span class="math inline">\(A\)</span> could be the event that our patient has a disease and <span class="math inline">\(B\)</span> is the event that the patient tests positive on a screening test.</li>
+</ul>
+<p>Provided that <span class="math inline">\(\Pr[ B ] &gt; 0\)</span>, we define the <em>conditional probability</em> of <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>, written <span class="math inline">\(\Pr[ A \mid B]\)</span>, according to <span class="math display">\[
+\Pr[ A \mid B ] = \frac{ \Pr[ A \cap B ] }{ \Pr[ B ] }.
+\]</span> Note that if <span class="math inline">\(\Pr[B] = 0\)</span>, then the ratio on the right-hand side is not defined, hence why we demanded that <span class="math inline">\(\Pr[B] &gt; 0\)</span>.</p>
+<p>Let’s try computing one of these conditional probabilities: what is the probability that the die is showing 2 <em>conditional on the fact</em> that it landed on an even number?</p>
+<p>Well,</p>
+<ul>
+<li><span class="math inline">\(\Pr[ \text{ even } ] = 1/2\)</span>, because there are three even numbers on the die, and all six numbers are equally likely: <span class="math inline">\(3/6 = 1/2\)</span>.</li>
+<li><span class="math inline">\(\Pr[ \text{ die lands 2 } \cap \text{even} ] = \Pr[ \text{ die lands 2 }]\)</span>, since <span class="math inline">\(2\)</span> is an even number.</li>
+</ul>
+<p>So the conditional probability is <span class="math display">\[
+\begin{aligned}
+\Pr[ \text{ die lands 2 } \mid \text{ even }]
+&amp;= \frac{ \Pr[ \text{ die lands 2 } \cap \text{even} ] }{ \Pr[ \text{ even } ] } \\
+&amp;= \frac{ \Pr[ \text{ die lands 2 }]}
+    { \Pr[ \text{ even } ] } \\
+&amp;= \frac{ 1/6 }{ 1/2 } = 1/3.
+\end{aligned}
+\]</span> This makes sense– <em>given</em> that the die lands on an even number, we are choosing from among three outcomes: <span class="math inline">\(\{2,4,6\}\)</span>. The probability that we choose <span class="math inline">\(2\)</span> from among these three possible equally-likely outcomes is <span class="math inline">\(1/3\)</span>.</p>
+</section>
+<section id="example-disease-screening-continued" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="example-disease-screening-continued"><span class="header-section-number">3.4.3</span> Example: disease screening (continued)</h3>
+<p>What about our disease testing example? What is the probability that our patient has the disease given that they tested positive?</p>
+<p>Well, applying the definition of conditional probability, <span class="math display">\[
+\Pr[ \text{ disease} \mid \text{ positive test }]
+= \frac{ \Pr[ \text{ disease} \cap \text{ positive test }] }{ \Pr[ \text{positive test} ] }
+\]</span></p>
+<p>Okay, but what is <span class="math inline">\(\Pr[ \text{ positive test} ]\)</span>? I guess it’s just the probability that a random person (with the disease or not) tests positive? For that matter, what is <span class="math inline">\(\Pr[ \text{ disease} \cap \text{ positive test }]\)</span>? These can be hard events to assign probabilities to! Luckily, there is a famous equation that often gives us a way forward.</p>
+</section>
+<section id="bayes-rule" class="level3 allowframebreaks" data-number="3.4.4">
+<h3 class="allowframebreaks anchored" data-number="3.4.4" data-anchor-id="bayes-rule"><span class="header-section-number">3.4.4</span> Bayes’ rule</h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Thomas_Bayes">Reverend Thomas Bayes</a> was the first to suggest an answer to this issue. Bayes’ rule, as it is now called, tells us how to relate <span class="math inline">\(\Pr[ A \mid B]\)</span> to <span class="math inline">\(\Pr[ B \mid A]\)</span>: <span class="math display">\[
+\Pr[ A \mid B ] = \frac{ \Pr[ B \mid A ] \Pr[ A ]}{ \Pr[ B ]}.
+\]</span></p>
+<p>This is useful, because it is often easier to write one or the other of these two probabilities.</p>
+<p>Applying this to our disease screening example, <span class="math display">\[
+\Pr[ \text{ disease} \mid \text{ positive test }]
+=
+\frac{ \Pr[\text{ positive test } \mid \text{ disease}]
+        \Pr[ \text{ disease}]}
+        { \Pr[ \text{ positive test } ]  }
+\]</span></p>
+<p>The advantage of using Bayes’ rule in this context is that the probabilities appearing on the right-hand side are all straight-forward to think about (and estimate!).</p>
+<ul>
+<li><span class="math inline">\(\Pr[ \text{ disease}]\)</span> is the just the probability that a randomly-selected person has the disease. This is known as the <em>prevelance</em> of the diseases in the population. We could estimate this probability by randomly selecting a random group of people and determining if they have the disease (hopefully not using the screening test we are already using…).</li>
+<li><span class="math inline">\(\Pr[\text{ positive test } \mid \text{ disease}]\)</span> is the probability that when we give our screening test to a patient who has the disease in question, the test returns positive. This is often called the <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">sensitivity</a> of a test, a term you may recall hearing frequently in the early days of the COVID-19 pandemic.</li>
+<li><span class="math inline">\(\Pr[ \text{ positive test } ]\)</span> is just the probability that a test given to a (presumably randomly selected) person returns a positive result. We just said about that this is the hard thing to estimate.</li>
+</ul>
+</section>
+<section id="example-testing-for-a-rare-disease" class="level3 allowframebreaks" data-number="3.4.5">
+<h3 class="allowframebreaks anchored" data-number="3.4.5" data-anchor-id="example-testing-for-a-rare-disease"><span class="header-section-number">3.4.5</span> Example: testing for a rare disease</h3>
+<p>Suppose that we are testing for a rare disease, say, <span class="math display">\[
+\Pr[ \text{ disease}] = \frac{1}{10^6},
+\]</span></p>
+<p>and suppose that a positive test is also rare, in keeping with the fact that our disease is rare and our test presumably has a low false positive rate: <span class="math display">\[
+\Pr[ \text{ positive test} ] = 1.999*10^{-6}
+\]</span> Note that this probability actually depends on the <em>sensitivity</em> <span class="math inline">\(\Pr[\text{ positive test } \mid \text{ disease}]\)</span> and the <em>specificity</em> <span class="math inline">\(1-\Pr[\text{ positive test } \mid \text{ healthy}]\)</span> of our test. You’ll explore this part more on your homework, but we’re just going to take this number as given for now.</p>
+<p>Finally, let’s suppose that our test is 99.99% accurate: <span class="math display">\[
+\Pr[\text{ positive test } \mid \text{ disease}]
+= 0.9999 = 1-10^{-4}
+\]</span></p>
+<p>To recap, <span class="math display">\[
+\begin{aligned}
+\Pr[ \text{ disease}] &amp;= \frac{1}{10^6} \\
+\Pr[ \text{ positive test} ] &amp;= 1.999*10^{-6} \\
+\Pr[\text{ positive test } \mid \text{ disease}]
+&amp;= 0.9999.
+\end{aligned}
+\]</span></p>
+<p>Now, suppose that a patient is given the screening test and receives a positive result. Bayes’ rule tells us <span class="math display">\[
+\begin{aligned}
+\Pr[ \text{ disease} \mid \text{ positive test }]
+&amp;=
+\frac{ \Pr[\text{ positive test } \mid \text{ disease}]
+        \Pr[ \text{ disease}]}
+        { \Pr[ \text{ positive test } ]  }
+= \frac{ 0.9999 * 10^{-6} }{ 1.999*10^{-6} } \\
+&amp;= 0.5002001.
+\end{aligned}
+\]</span></p>
+<p>So even in light of our positive screening test result, the probability that our patient has the disease in question is still only about 50%!</p>
+<p>This is part of why, especially early on in the pandemic when COVID-19 was especially rare, testing for the disease in the absence of symptoms was not considered especially useful.</p>
+<p>More generally, this is why most screenings for rare diseases are not done routinely– doctors typically screen for rare diseases only if they have a reason to think a patient is more likely to have that disease for other reasons (e.g., family history of a genetic condition or recent exposure to an infectious disease).</p>
+</section>
+<section id="calculating-the-denominator-in-bayes-rule" class="level3 allowframebreaks" data-number="3.4.6">
+<h3 class="allowframebreaks anchored" data-number="3.4.6" data-anchor-id="calculating-the-denominator-in-bayes-rule"><span class="header-section-number">3.4.6</span> Calculating the denominator in Bayes’ Rule</h3>
+<p>The denominator can be decomposed into two parts using a property known as the Law of Total Probability.</p>
+<p><span class="math display">\[
+\Pr[ \text{ positive test} ] = \Pr[ \text{ positive test} \cap \text{disease}]+\Pr[ \text{ positive test} \cap \text{no disease}]
+\]</span></p>
+<p>In other words, all positive results are either true positives or false positives. Because these are mutually exclusive events, the total probability of a positive result is the probability of a true positive plus the probability of a false positive. We can expand each of these terms using the conditional probability rule.</p>
+<p><span class="math display">\[
+\Pr[ \text{ positive test} \cap \text{disease}] = \Pr[\text{ positive test } \mid \text{ disease}]  \Pr[ \text{ disease}]
+\]</span> <span class="math display">\[
+\Pr[ \text{ positive test} \cap \text{no disease}] = \Pr[\text{ positive test } \mid \text{ no disease}]  \Pr[ \text{no disease}]
+\]</span></p>
+<p>For example, suppose that a genetic condition occurs in roughly 1 out of 800 individuals. A simple saliva test is available. If a person has the gene, the test is positive with 97% probability. If a person does not have the gene, a false positive occurs with 4% probability.</p>
+<p>To simplify notation, let <span class="math inline">\(G\)</span> represent “the individual has the gene” and <span class="math inline">\(G'\)</span> be the complementary event that “the individual does not have the gene.” Furthermore, let <span class="math inline">\(Pos\)</span> and <span class="math inline">\(Neg\)</span> represent the test results.</p>
+<p>If a random person from the population takes the test and gets a positive result, what is the probability they have the genetic condition?</p>
+<p>Bayes’ Rule to the rescue:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P[G | Pos] &amp;= \dfrac{P[Pos | G] P[G]}{P[Pos | G] P[G] + P[Pos | G'] P[G']}\\
+&amp;= \dfrac{(.97)(1/800)}{(.97)(1/800)+(.04)(799/800)}\\
+&amp;\approx 0.0295
+\end{aligned}
+\]</span> In other words, a positive test result would raise the likelihood of the gene being present from <span class="math inline">\(1/800=0.00125\)</span> up to <span class="math inline">\(.0295\)</span>.</p>
+</section>
+<section id="dependent-free-throw-shots" class="level3" data-number="3.4.7">
+<h3 data-number="3.4.7" class="anchored" data-anchor-id="dependent-free-throw-shots"><span class="header-section-number">3.4.7</span> Dependent free throw shots</h3>
+<p>Suppose a basketball player’s likelihood of making a basket when making a free throw depends on the previous attempt. On the first throw, they have a probability of <span class="math inline">\(0.67\)</span> of making the basket. On the second throw, following a basket the probability goes up to <span class="math inline">\(.75\)</span>. If the first throw is a miss, the probability of a basket on the second throw goes down to <span class="math inline">\(0.62\)</span>.</p>
+<p><strong>Exercise:</strong> If the second throw is a basket, what is the likelihood the first throw is a basket?</p>
+<p><strong>Exercise:</strong> Given that the player scores at least 1 point, what is the probability that they score 2 points total?</p>
+</section>
+</section>
+<section id="random-variables" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="random-variables"><span class="header-section-number">3.5</span> Random Variables</h2>
+<p>Consider the following quantities/events:</p>
+<ul>
+<li>Whether or not a coin flip comes up heads or tails.</li>
+<li>How many people in the treatment group of a vaccine trial are hospitalized.</li>
+<li>The water level measured in Lake Mendota on a given day.</li>
+<li>How many customers arrive at a store between 2pm and 3pm today.</li>
+<li>How many days between installing a lightbulb and when it burns out.</li>
+</ul>
+<p>All of these are examples of events that we might reasonably model according to different <em>random variables</em>.</p>
+<p>Informal definition of a random variable: a (random) number <span class="math inline">\(X\)</span> about which we can compute quantities of the form <span class="math inline">\(\Pr[ X \in S ]\)</span>, where <span class="math inline">\(S\)</span> is a set.</p>
+<section id="random-variables-formal-definition" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="random-variables-formal-definition"><span class="header-section-number">3.5.1</span> Random variables (formal definition)</h3>
+<p>A random variable <span class="math inline">\(X\)</span> is specified by an outcome set <span class="math inline">\(\Omega\)</span> and a function that specifies probabilities of the form <span class="math inline">\(\Pr[ X \in E ]\)</span> where <span class="math inline">\(E \subseteq \Omega\)</span> is an event. For our purposes though it’s helpful to think of a random variable as a variable that can take random values with specified probabilities.</p>
+<p>Broadly speaking random variables fall into two categories: <strong>discrete</strong> and <strong>continuous</strong>. A discrete random variable can take a value from a countable set (for example, the integers). The set of possible values could be finite or possibly infinite. A continuous random variable can take any real number value along an interval (or union of intervals).</p>
+</section>
+<section id="discrete-random-variables" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="discrete-random-variables"><span class="header-section-number">3.5.2</span> Discrete Random Variables</h3>
+<section id="probability-mass-function" class="level4" data-number="3.5.2.1">
+<h4 data-number="3.5.2.1" class="anchored" data-anchor-id="probability-mass-function"><span class="header-section-number">3.5.2.1</span> Probability Mass Function</h4>
+<p>To define a discrete random variable it is enough to define a function mapping possible values to their probabilities. This is known as a <strong>probability mass function</strong> (pmf). It can be represented in a table or mathematically.</p>
+<p>For example, suppose the random variable <span class="math inline">\(X\)</span> can take values <span class="math inline">\(0,1,2,3\)</span> or <span class="math inline">\(4\)</span>. We could define the probability mass function using a table:</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(k\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Pr[X=k]\)</span></td>
+<td>.10</td>
+<td>.15</td>
+<td>.20</td>
+<td>.30</td>
+<td>.25</td>
+</tr>
+</tbody>
+</table>
+<p>Another random variable <span class="math inline">\(Y\)</span> may be defined as taking any non-negative integer <span class="math inline">\(k\geq0\)</span>, with <span class="math display">\[Pr[Y=k]=(.6)(.4^k)\]</span></p>
+</section>
+<section id="the-cumulative-distribution-function" class="level4" data-number="3.5.2.2">
+<h4 data-number="3.5.2.2" class="anchored" data-anchor-id="the-cumulative-distribution-function"><span class="header-section-number">3.5.2.2</span> The Cumulative Distribution Function</h4>
+<p>We are often interested not just in the probability that a random variable <span class="math inline">\(X\)</span> takes one particular value <span class="math inline">\(k\)</span>, but a value within a range. From a probability mass function <span class="math inline">\(f(k)=Pr[X=k]\)</span> we can define a cumulative distribution function (cdf) <span class="math inline">\(F(k)\)</span>. <span class="math display">\[F(k) = Pr[X \leq k] = \sum_{x \leq k}Pr[X=x]\]</span> (we can just add up these probabilities since they are disjoint events).</p>
+</section>
+<section id="cdf-example" class="level4" data-number="3.5.2.3">
+<h4 data-number="3.5.2.3" class="anchored" data-anchor-id="cdf-example"><span class="header-section-number">3.5.2.3</span> CDF example</h4>
+<p>For example, we can expand the pmf from the previous example to a cdf.</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(k\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Pr[X=k]\)</span></td>
+<td>.10</td>
+<td>.15</td>
+<td>.20</td>
+<td>.30</td>
+<td>.25</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(F(k)\)</span></td>
+<td>.10</td>
+<td>.25</td>
+<td>.45</td>
+<td>.76</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that the cdf increases (technically it is “non-decreasing”) as <span class="math inline">\(k\)</span> increases, going from 0 to 1 and no higher. While the table above only gives cdf values for integers, it is technically a step function defined for all real numbers. The cdf would be 0 for any value <span class="math inline">\(k\)</span> lower than the lowest possible value of <span class="math inline">\(X\)</span>.</p>
+</section>
+</section>
+</section>
+<section id="expectation" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="expectation"><span class="header-section-number">3.6</span> Expectation</h2>
+<p>Before we continue with more random variables, let’s take a pause to discuss one more important probability concept: expectation. You will hopefully recall from previous courses in probability and/or statistics the notion of expectation of a random variable.</p>
+<p><strong>Expectation: long-run averages</strong></p>
+<p>The expectation of a random variable <span class="math inline">\(X\)</span>, which we write <span class="math inline">\(\mathbb{E} X\)</span>, is the “long-run average” of the random variable.</p>
+<p>What we would see on average if we observed many realizations of <span class="math inline">\(X\)</span>.</p>
+<p>That is, we observe <span class="math inline">\(X_1,X_2,\dots,X_n\)</span>, and consider their average, <span class="math inline">\(\bar{X} = n^{-1} \sum_{i=1}^n X_i\)</span>.</p>
+<section id="expected-value-and-the-law-of-large-numbers-first-peek" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="expected-value-and-the-law-of-large-numbers-first-peek"><span class="header-section-number">3.6.1</span> Expected value and the Law of Large Numbers (first peek)</h3>
+<p>The <em>law of large numbers</em> (LLN) states that in a certain sense, as <span class="math inline">\(n\)</span> gets large, <span class="math inline">\(\bar{X}\)</span> gets very close to <span class="math inline">\(\mathbb{E} X\)</span>.</p>
+<p>We would <em>like</em> to say something like <span class="math display">\[
+\lim_{n \rightarrow \infty} \frac{1}{n} \sum_{i=1}^n X_i = \mathbb{E} X.
+\]</span> But <span class="math inline">\(n^{-1} \sum_i X_i\)</span> is a random sum, so how can we take a limit?</p>
+<p>Roughly speaking, for <span class="math inline">\(n\)</span> large, with <strong>high probability</strong>, <span class="math inline">\(\bar{X}\)</span> is <strong>close</strong> to <span class="math inline">\(\mathbb{E}\)</span>.</p>
+</section>
+<section id="expectation-formal-definition" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="expectation-formal-definition"><span class="header-section-number">3.6.2</span> Expectation: formal definition</h3>
+<p>More formally, if <span class="math inline">\(X\)</span> is a discrete random variable, we define its expectation to be <span class="math display">\[
+\mathbb{E} X = \sum_k k \Pr[ X = k],
+\]</span> where the sum is over all <span class="math inline">\(k\)</span> such that <span class="math inline">\(\Pr[ X=k ] &gt; 0\)</span>.</p>
+<ul>
+<li>Note that this set could be finite or infinite.</li>
+<li>If the set is infinite, the sum might not converge, in which case we say that the expectation is either infinite or doesn’t exist. But that won’t be an issue this semester.</li>
+</ul>
+<p><strong>Question:</strong> can you see how this definition is indeed like the “average behavior” of <span class="math inline">\(X\)</span>?</p>
+</section>
+<section id="example-calculating-expectation" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="example-calculating-expectation"><span class="header-section-number">3.6.3</span> Example: Calculating Expectation</h3>
+<p>Calculate the expected value of the random variable <span class="math inline">\(X\)</span> with the pmf</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(k\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Pr[X=k]\)</span></td>
+<td>.10</td>
+<td>.15</td>
+<td>.20</td>
+<td>.30</td>
+<td>.25</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lln-important-take-away" class="level3" data-number="3.6.4">
+<h3 data-number="3.6.4" class="anchored" data-anchor-id="lln-important-take-away"><span class="header-section-number">3.6.4</span> LLN Important take-away</h3>
+<p>The law of large numbers says that if we take the average of a bunch of independent RVs, the average will be close to the expected value.</p>
+<ul>
+<li>Sometimes it’s hard to compute the expected value exactly (e.g., because the math is hard– not all sums are nice!)</li>
+<li>This is where Monte Carlo methods come in– instead of trying to compute the expectation exactly, we just generate lots of RVs and take their average!</li>
+<li>If we generate enough RVs, the LLN says we can get as close as we want.</li>
+<li>We’ll have lots to say about this in our lectures on Monte Carlo methods next week.</li>
+</ul>
+</section>
+</section>
+<section id="continuous-random-variables" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="continuous-random-variables"><span class="header-section-number">3.7</span> Continuous random variables</h2>
+<p><em>Continuous</em> random variables, which take values in “continuous” sets like the interval <span class="math inline">\([0,1]\)</span> or the real <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<p>Continuous random variables have <em>probability density functions</em>, which we will usually write as <span class="math inline">\(f(x)\)</span> or <span class="math inline">\(f(t)\)</span>.</p>
+<p>These random variables are a little trickier to think about at first, because it doesn’t make sense to ask about the probability that a continuous random variable takes a specific value. That is, <span class="math inline">\(\Pr[ X = k ]\)</span> doesn’t really make sense when <span class="math inline">\(X\)</span> is continuous (actually– in a precise sense this does make sense, but the probability is always zero; you’ll see why below).</p>
+<section id="the-probability-density-function" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="the-probability-density-function"><span class="header-section-number">3.7.1</span> The probability density function</h3>
+<p>Rather than defining the probability measure for specific values <span class="math inline">\(k\)</span> that the random variable can take, it only makes sense to describe the relative likelihood of different values. We use a <strong>probability density function</strong> (pdf) to do this. The pdf, typically denoted <span class="math inline">\(f(x)\)</span> defines the how much probability per unit is to be found at <span class="math inline">\(X=x\)</span>.</p>
+<p>Let’s look at an example.</p>
+</section>
+<section id="pdf-example" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="pdf-example"><span class="header-section-number">3.7.2</span> PDF Example</h3>
+<p>Define continuous rv <span class="math inline">\(X\)</span> with density function <span class="math inline">\(f(x)=.5x\)</span> for <span class="math inline">\(x \in [0,2]\)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="probability_rv_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="calculating-probabilities-for-continuous-rvs" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="calculating-probabilities-for-continuous-rvs"><span class="header-section-number">3.7.3</span> Calculating probabilities for continuous RVs</h3>
+<p>Probability can be calculated by integration: For some interval <span class="math inline">\([a,b]\)</span> we calculate <span class="math display">\[Pr\left[a\leq X\leq b\right] = \int_a^b f(x)dx\]</span></p>
+<p>Because the definite integral correspond to the area under the curve, we can sometimes find probabilities using geometry rather than calculus.</p>
+<p>Example: Calculate <span class="math inline">\(Pr[.5 \leq X \leq 1.5]\)</span>.</p>
+</section>
+<section id="probability-that-xk" class="level3" data-number="3.7.4">
+<h3 data-number="3.7.4" class="anchored" data-anchor-id="probability-that-xk"><span class="header-section-number">3.7.4</span> Probability that X=k?</h3>
+<p>Because of how we define probability for continuous random variables, <span class="math inline">\(Pr[X=k]=\int_k^k f(x)dx=0\)</span>, so there is no measurable probability for any one particular value for a continuous random variable. Therefore we can say <span class="math inline">\(Pr[X &lt; k]\)</span> or <span class="math inline">\(Pr[X \leq k]\)</span>. It doesn’t matter since <span class="math inline">\(Pr[X=k]=0\)</span>.</p>
+</section>
+<section id="cdf-for-a-continuous-random-variable" class="level3" data-number="3.7.5">
+<h3 data-number="3.7.5" class="anchored" data-anchor-id="cdf-for-a-continuous-random-variable"><span class="header-section-number">3.7.5</span> CDF for a continuous random variable</h3>
+<p>The CDF is defined as <span class="math inline">\(F(x) = Pr[X \leq x]\)</span> (using <span class="math inline">\(x\)</span> instead of <span class="math inline">\(k\)</span> for now). This is the same definition for continuous random variables, but mathematically it arises from an integral rather than a summation: <span class="math display">\[F(x) = Pr[X \leq x] = \int_{-\infty}^x f(t)dt\]</span> For this course we won’t be integrating density functions. On occasion you’ll be provided with a cdf but you won’t have to produce them yourself.</p>
+<p>But it’s worth noting that <span class="math inline">\(F(x) \in [0,1]\)</span> for all random variables, and <span class="math inline">\(F(x)\)</span> is a non-decreasing function, with <span class="math inline">\(F(x)\to0\)</span> as <span class="math inline">\(x \to -\infty\)</span>, and <span class="math inline">\(F(x)\to 1\)</span> as <span class="math inline">\(x \to +\infty\)</span>.</p>
+</section>
+<section id="expectation-for-continuous-random-variables" class="level3" data-number="3.7.6">
+<h3 data-number="3.7.6" class="anchored" data-anchor-id="expectation-for-continuous-random-variables"><span class="header-section-number">3.7.6</span> Expectation for continuous random variables</h3>
+<p>Previously, we defined the expectation of a discrete random variable <span class="math inline">\(X\)</span> to be <span class="math display">\[
+\mathbb{E} X = \sum_k k \Pr[ X = k ],
+\]</span> with the summand <span class="math inline">\(k\)</span> ranging over all allowable values of <span class="math inline">\(X\)</span>. When <span class="math inline">\(X\)</span> is continuous how should we define the expectation? Change the sum to an integral!</p>
+<p><span class="math display">\[
+\mathbb{E} X = \int_\Omega t f(t) dt,
+\]</span></p>
+<p>where <span class="math inline">\(f(t)\)</span> is the density of <span class="math inline">\(X\)</span> and <span class="math inline">\(\Omega\)</span> is the support.</p>
+<p>This type of exercise is best left to another statistics course. For us it’s enough to think of the expectation as a balancing point (center of mass) for a continuous random variable’s distribution function.</p>
+</section>
+</section>
+<section id="random-variables-and-independence" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="random-variables-and-independence"><span class="header-section-number">3.8</span> Random Variables and Independence</h2>
+<p>Two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent if for all sets <span class="math inline">\(S_1,S_2\)</span>, we have <span class="math inline">\(\Pr[ X \in S_1 ~\&amp;~ Y \in S_2 ] = \Pr[ X \in S_1 ] \Pr[ Y \in S_2 ]\)</span>.</p>
+<p>Roughly speaking, two random variables are independent if learning information about one of them doesn’t tell you anything about the other.</p>
+<ul>
+<li>For example, if each of us flips a coin, it is reasonable to model them as being independent.</li>
+<li>Learning whether my coin landed heads or tails doesn’t tell us anything about your coin.</li>
+</ul>
+<section id="independent-random-variables" class="level3 allowframebreaks" data-number="3.8.1">
+<h3 class="allowframebreaks anchored" data-number="3.8.1" data-anchor-id="independent-random-variables"><span class="header-section-number">3.8.1</span> Independent Random Variables</h3>
+<p>Informally, we’ll say that two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent if <strong>any two events</strong> concerning those random variables are independent.</p>
+<p>That is, for <em>any</em> event <span class="math inline">\(E_X\)</span> concerning <span class="math inline">\(X\)</span> (i.e., <span class="math inline">\(E_X = \{ X \in S \}\)</span> for <span class="math inline">\(S \subseteq \Omega)\)</span> and any event <span class="math inline">\(E_Y\)</span> concerning <span class="math inline">\(Y\)</span>, the events <span class="math inline">\(E_X\)</span> and <span class="math inline">\(E_Y\)</span> are independent.</p>
+<p>i.e., if two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then for any two sets <span class="math inline">\(S_1, S_2 \subset \Omega\)</span>, <span class="math display">\[
+\Pr[ X \in S_1, Y \in S_2 ]
+=
+\Pr[ X \in S_1] \Pr[ Y \in S_2 ].
+\]</span> </p>
+<p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are both discrete, then for any <span class="math inline">\(k\)</span> and <span class="math inline">\(\ell\)</span>, <span class="math display">\[
+\Pr[ X=k, Y=\ell ]
+=
+\Pr[ X=k ] \Pr[ Y=\ell ].
+\]</span></p>
+<p>Similarly, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are continuous, then the <em>joint density</em> has the same property: <span class="math display">\[
+f_{X,Y}(s,t) = f_X(s) f_Y(t).
+\]</span></p>
+</section>
+<section id="how-reasonable-is-independence" class="level3 allowframebreaks" data-number="3.8.2">
+<h3 class="allowframebreaks anchored" data-number="3.8.2" data-anchor-id="how-reasonable-is-independence"><span class="header-section-number">3.8.2</span> How reasonable is independence?</h3>
+<p>In most applications, it is pretty standard that we assume that our data are drawn <em>independently and identically distributed</em> according to some distribution. We say “i.i.d.”. For example, if <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> are all continuous uniform random variables between 0 and 1, we would say <span class="math display">\[
+X_i \overset{\text{iid}}{\sim} \text{Uniform}(0,1), \text{ for } i=1,\ldots, n
+\]</span></p>
+<p>This notation is common to denote iid random variables.</p>
+<p>As another example, when we perform regression (as you did in STAT240, and which we’ll revisit in more detail later this semester), we imagine that the observations (i.e., predictor-response pairs) <span class="math inline">\((X_1,Y_1),(X_2,Y_2),\dots,(X_n,Y_n)\)</span> are independent.</p>
+<p>Most standard testing procedures (e.g., the t-test) assume that data are drawn i.i.d.</p>
+<p>How reasonable are these assumptions?</p>
+<p>It depends on where the data comes from! We have to draw on what we know about the data, either from our own knowledge or from that of our clients, to assess what assumptions are and aren’t reasonable.</p>
+<p>Like most modeling assumptions, we usually acknowledge that independence may not be exactly true, but it’s often a good approximation to the truth!</p>
+<p><strong>Example:</strong> suppose we are modeling the value of a stock over time. We model the stock’s price on days 1, 2, 3, etc as <span class="math inline">\(X_1, X_2, X_3, \dots\)</span>. What is wrong with modeling these prices as being independent of one another? Why might it still be a reasonable modeling assumption?</p>
+<p>What if instead we look at the change in stock price from day to day? For example, let <span class="math inline">\(Y_i = X_{i+1}-X_{i}\)</span>. In other words, <span class="math inline">\(X_{i+1}=X_i+Y_i\)</span>. Would it be more reasonable to assume that the <span class="math inline">\(Y_i\)</span>’s are independent?</p>
+<p>What if instead of considering a stock’s returns on one day after another, we look at a change in stock price on one day, then at the change 10 days from that, and 10 days from that, and so on? Surely there is still dependence, but a longer time lag between observations <em>might</em> make us more willing to accept that our observations are <em>close</em> to independent (or at least have much smaller covariance!).</p>
+<p><strong>Note:</strong> Tobler’s first law of geography states ‘Everything is related to everything else, but near things are more related than distant things.’ Does that ring true in this context?</p>
+<p><strong>Example:</strong> suppose we randomly sample 1000 UW-Madison students to participate in a survey, and record their responses as <span class="math inline">\(X_1,X_2,\dots,X_{1000}\)</span>. What might be the problem with modeling these responses as being independent? Why might be still be a reasonable modeling assumption?</p>
+</section>
+<section id="independence-expectation-and-variance" class="level3 allowframebreaks" data-number="3.8.3">
+<h3 class="allowframebreaks anchored" data-number="3.8.3" data-anchor-id="independence-expectation-and-variance"><span class="header-section-number">3.8.3</span> (in)dependence, expectation and variance</h3>
+<p>Recall the definition of the expectation: If <span class="math inline">\(X\)</span> is continuous with density <span class="math inline">\(f_X\)</span>, <span class="math display">\[
+\mathbb{E} X = \int_\Omega t f_X(t) dt,
+\]</span></p>
+<p>and if <span class="math inline">\(X\)</span> is discrete with probability mass function <span class="math inline">\(\Pr[ X=k]\)</span>, <span class="math display">\[
+\mathbb{E} X = \sum_{k \in \Omega} k \Pr[X=k]
+\]</span></p>
+<p>With the expectation defined, we can also define the variance, <span class="math display">\[
+\operatorname{Var} X = \mathbb{E} (X - \mathbb{E} X)^2
+= \mathbb{E} X^2 - \mathbb{E}^2 X.
+\]</span></p>
+<p>That second equality isn’t necessarily obvious– we’ll see why it’s true in a moment.</p>
+<p><strong>Note:</strong> we often write <span class="math inline">\(\mathbb{E}^2 X\)</span> as short for <span class="math inline">\((\mathbb{E} X)^2\)</span>.</p>
+<p>A basic property of expectation is that it is <em>linear</em>. For any constants (i.e., non-random) <span class="math inline">\(a,b \in \mathbb{R}\)</span>, <span class="math display">\[
+\mathbb{E} (a X + b) = a \mathbb{E} X + b.
+\]</span> If <span class="math inline">\(X,Y\)</span> are random variables, then <span class="math display">\[
+\mathbb{E}( X + Y) = \mathbb{E} X + \mathbb{E} Y.
+\]</span></p>
+<p>Note that derivatives and integrals are linear, too. For example, <span class="math display">\[
+(a ~f(t) + b ~g(t))' = a ~ f'(t) + b ~g'(t)
+\]</span></p>
+<p>and <span class="math display">\[
+\int(a f(t) + b g(t)) dt = a \int f(t) dt + b \int g(t) dt
+\]</span></p>
+<p>Because expected value is simply an integral (or summation), the linearity of expectation follows directly from the definition.</p>
+<p><strong>Exercise:</strong> prove that <span class="math inline">\(\mathbb{E} (a X + b) = a \mathbb{E} X + b\)</span> for discrete r.v. <span class="math inline">\(X\)</span>.</p>
+<p><strong>Exercise:</strong> prove that <span class="math inline">\(\mathbb{E}( X + Y) = \mathbb{E} X + \mathbb{E} Y\)</span> for discrete <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p><strong>Exercise:</strong> Use the linearity of expectation to prove that <span class="math inline">\(\mathbb{E} (X - \mathbb{E} X)^2 = \mathbb{E} X^2 - \mathbb{E}^2 X\)</span>. <strong>Hint:</strong> <span class="math inline">\(\mathbb{E}( X \mathbb{E} X) = \mathbb{E}^2 X\)</span> because <span class="math inline">\(\mathbb{E} X\)</span> is NOT random– it pops right out of the expectation just like <span class="math inline">\(a\)</span> does in the equation above.</p>
+<p>The definition of variance and the linearity of expectation are enough to give us a property of variance:</p>
+<p>For any constants (i.e., non-random) <span class="math inline">\(a,b \in \mathbb{R}\)</span>, <span class="math display">\[
+\operatorname{Var} (a X + b) = a^2 \operatorname{Var} (X).
+\]</span></p>
+<p><strong>Exercise:</strong> Use the definition <span class="math inline">\(\operatorname{Var}(X)=\mathbb{E} X^2 - \mathbb{E}^2 X\)</span> to prove the above.</p>
+<p>This linearity property implies that the expectation of a sum is the sum of the expectations: <span class="math display">\[
+\mathbb{E}[ X_1 + X_2 + \dots + X_n]
+= \mathbb{E} X_1 + \mathbb{E} X_2 + \dots + \mathbb{E} X_n.
+\]</span></p>
+<p>However, the variance of the sum the is not always the sum of the variances.</p>
+<p>Consider RVs <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. <span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(X + Y)
+&amp;= \mathbb{E}[ X + Y - \mathbb{E}(X + Y) ]^2 \\
+&amp;= \mathbb{E}[ (X - \mathbb{E} X) + (Y - \mathbb{E} Y) ]^2,
+\end{aligned}
+\]</span></p>
+<p>where the second equality follows from applying linear of expectation to write <span class="math inline">\(\mathbb{E}(X+Y) = \mathbb{E}X + \mathbb{E}Y\)</span>.</p>
+<p>Now, let’s expand the square in the expectation. <span class="math display">\[
+\begin{aligned}
+\operatorname{Var}(X + Y)
+&amp;=
+\mathbb{E}[ (X - \mathbb{E} X) + (Y - \mathbb{E} Y) ]^2 \\
+&amp;= \mathbb{E}[(X - \mathbb{E} X)^2 + 2(X - \mathbb{E} X)(Y - \mathbb{E} Y)
+              + (Y - \mathbb{E} Y)^2 ] \\
+&amp;= \mathbb{E} (X - \mathbb{E} X)^2 + 2 \mathbb{E} (X - \mathbb{E} X)(Y - \mathbb{E} Y) + \mathbb{E} (Y - \mathbb{E} Y)^2,
+\end{aligned}
+\]</span> where the last equality is just using the linearity of expectation.</p>
+<p>Now, the first and last terms there are the variances of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>: <span class="math display">\[
+\operatorname{Var} X = \mathbb{E}(X - \mathbb{E} X)^2,~~~
+\operatorname{Var} Y = \mathbb{E}(Y - \mathbb{E} Y)^2.
+\]</span></p>
+<p>So <span class="math display">\[
+\operatorname{Var}(X + Y)
+= \operatorname{Var} X + 2 \mathbb{E} (X - \mathbb{E} X)(Y - \mathbb{E} Y)
+  + \operatorname{Var} Y.
+\]</span></p>
+<p>The middle term is (two times) the <em>covariance</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, often written <span class="math display">\[
+\operatorname{Cov}(X,Y)
+= \mathbb{E}( X - \mathbb{E}X)( Y - \mathbb{E} Y).
+\]</span></p>
+<p>If <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>, <em>then</em> <span class="math display">\[
+\operatorname{Var}(X + Y) = \operatorname{Var} X + \operatorname{Var} Y.
+\]</span></p>
+<p>But when does <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>?</p>
+<p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent random variables, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span> (but causality does not work the other way)</p>
+<p><strong>Note:</strong> We will skip the proof that independence of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> implies <span class="math inline">\(Cov(X,Y)=0\)</span>, but you can find this proof in many places online.</p>
+<!--
+## Aside: Skippable proof
+
+If you're curious, here's an explanation as to why independence of $X$ and $Y$ implies that $\operatorname{Cov}(X,Y)=0$.
+As usual, you don't need to memorize this, or even necessarily understand every single line of it, but it's worth your time to understand it at a high level.
+
+Let's see this for the discrete case (the continuous case is the same, just replacing sums with integrals).
+Let $\mu_X = \mathbb{E} X$ and $\mu_Y = \mathbb{E} Y$.
+$$
+\begin{aligned}
+\operatorname{Cov}(X,Y)
+&= \mathbb{E}(X - \mu_X)(Y - \mu_Y) \\
+&= \sum_{k, \ell} (k-\mu_X)(\ell-\mu_Y) \Pr[ X=k, Y=\ell] \\
+&= \sum_{k,\ell} (k-\mu_X)(\ell-\mu_Y)
+  \Pr[ X=k ] \Pr[ Y = \ell ] \\
+&= \sum_{k} \sum_\ell (k-\mu_X)(\ell-\mu_Y) \Pr[ X=k ] \Pr[ Y = \ell ] \\
+&= \sum_{k} (k-\mu_X) \Pr[ X=k ] \sum_\ell (\ell-\mu_Y)\Pr[ Y = \ell ].
+\end{aligned}
+$$
+The first two equalities are just expanding definitions.
+The important one is the third one-- we use independence to write $\Pr[ X=k, Y=\ell] = \Pr[ X=k] \Pr[ Y=\ell]$.
+The last two equalities are then just pushing sums around.
+The important thing is that if $X$ and $Y$ are independent,
+$$
+\operatorname{Cov}(X,Y) = 
+\left( \sum_{k} (k-\mu_X) \Pr[ X=k ] \right)
+\left( \sum_\ell (\ell-\mu_Y)\Pr[ Y = \ell ] \right).
+$$
+But
+$$
+\begin{aligned}
+\sum_{k} (k-\mu_X) \Pr[ X=k ]
+&= \sum_{k} k \Pr[ X=k ] - \sum_k \mu_X \Pr[X=k] \\
+&= \mu_X - \mu_X  \sum_k \Pr[X=k] \\
+&= \mu_X - \mu_X = 0
+\end{aligned}
+$$
+and similarly,
+$$
+\sum_\ell (\ell-\mu_Y)\Pr[ Y = \ell ] = 0.
+$$
+
+So if $X$ and $Y$ are independent, $\operatorname{Cov}(X,Y) = 0$. -->
+</section>
+<section id="uncorrelation-and-independence" class="level3" data-number="3.8.4">
+<h3 data-number="3.8.4" class="anchored" data-anchor-id="uncorrelation-and-independence"><span class="header-section-number">3.8.4</span> (Un)correlation and independence</h3>
+<p>Covariance might look familiar to you from a quantity that you saw in STAT240 (and a quantity that is very important in statistics!). The (Pearson) correlation between random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is defined to be <span class="math display">\[
+\rho_{X,Y} = \frac{ \operatorname{Cov}(X,Y) }{ \sqrt{ (\operatorname{Var} X)(\operatorname{Var} Y)} }.
+\]</span></p>
+<p>Note that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\rho_{X,Y}=0\)</span> and we say that they are <em>uncorrelated</em>.</p>
+<p>But the converse isn’t true– it is possible to cook up examples of random variables that are uncorrelated (i.e., <span class="math inline">\(\rho_{X,Y} = 0\)</span>), but which are <em>not</em> independent.</p>
+</section>
+<section id="example-uncorrelated-but-not-independent" class="level3" data-number="3.8.5">
+<h3 data-number="3.8.5" class="anchored" data-anchor-id="example-uncorrelated-but-not-independent"><span class="header-section-number">3.8.5</span> Example: Uncorrelated but not independent</h3>
+<p>Suppose <span class="math inline">\(X\)</span> can take three values: <span class="math inline">\(-1, 0,\)</span> and <span class="math inline">\(1\)</span> with probabilities <span class="math inline">\(.25, .5\)</span> and <span class="math inline">\(.25\)</span>. We can define a second random variable <span class="math inline">\(Y=X^2\)</span>. You can see from the definition that <span class="math inline">\(Y\)</span> is most definitely dependent on <span class="math inline">\(X\)</span>. If, for example, you know that <span class="math inline">\(x=1\)</span>, then you know that <span class="math inline">\(y=1^2=1\)</span>.</p>
+<p>With a little bit of work, we can show that <span class="math inline">\(EX=0, EY=.5\)</span>, <span class="math inline">\(VarX=.5\)</span> and <span class="math inline">\(VarY=.25\)</span> <em>(do this as an exercise!)</em></p>
+<p>What is the covariance?</p>
+<p><span class="math display">\[
+\begin{aligned}
+Cov(X,Y)  &amp;= E((X-EX)(Y-EY)) \\
+          &amp;= E((X-0)(X^2-.5)) \\
+          &amp;= E(X^3-.5X)\\
+          &amp;= EX^3 - .5EX\\
+          &amp;= EX - 0\\
+          &amp;= 0
+\end{aligned}
+\]</span> (Note that <span class="math inline">\(Y=X^2\)</span> and <span class="math inline">\(X^3=X\)</span>)</p>
+<p><span class="math inline">\(Cov(X,Y)=0\)</span> but <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent.</p>
+</section>
+</section>
+<section id="review" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="review"><span class="header-section-number">3.9</span> Review:</h2>
+<p>In these notes we covered:</p>
+<ul>
+<li>The basic rules of probability: outcome spaces, events</li>
+<li>The concept of independent events</li>
+<li>When the independence assumption is reasonable</li>
+<li>Conditional probability &amp; the general multiplication rule</li>
+<li>Bayes’ rule</li>
+<li>The concept of a random variable</li>
+<li>PMF, PDF and CDF</li>
+<li>The concept of expected value</li>
+<li>Independent random variables</li>
+<li>Definition of variance</li>
+<li>Expectation of a linear combination of r.v.s</li>
+<li>Variance of a linear combination of r.v.s</li>
+<li>Covariance and correlation</li>
+<li>Relationship between correlation and independence</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./R01_Prob_RVs.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability and Random Variable R Examples</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,10 +1,10 @@
 ---
-title: "STAT 340 Index"
+title: "STAT 340"
 format: html
 editor: source
 ---
 
-Here are the course notes, practice problems and other course materials for STAT 340 at UW Madison.
+Here are the course notes, practice problems and other course materials for STAT 340: Data Science II at UW Madison.
 
 Author credits to Karl Rohe, Keith Levin, Bi Cheng Wu, and Brian Powers
 

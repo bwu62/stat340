@@ -9,7 +9,7 @@
 <meta name="author" content="Brian Powers">
 <meta name="dcterms.date" content="2024-03-21">
 
-<title>STAT 340: Data Science II - 23&nbsp; Simple Linear Regression - Examples</title>
+<title>STAT 340: Data Science II - 27&nbsp; Simple Linear Regression - Examples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./slr_practice.html">Prediction</a></li><li class="breadcrumb-item"><a href="./R08_prediction_examples.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prediction1.html">Prediction</a></li><li class="breadcrumb-item"><a href="./R08_prediction_examples.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,14 +165,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
+  <a href="./probability_rv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Probability and Random Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R01_RandomVariables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Random Variables R Examples</span></span></a>
+  <a href="./R01_Prob_RVs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probability and Random Variable R Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -184,14 +184,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cov.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Independence, Conditional Probability and Bayes’ Rule</span></span></a>
+  <a href="./distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variable Distributions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R02_IndepCondBayes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Independence, Conditional Probability and Bayes Theorem R Examples</span></span></a>
+  <a href="./R02_Distributions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Random Variable Distributions R Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -257,14 +257,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./testing2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Statistical Testing, Continued</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./R05_testing_Additional_Examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Monte Carlo Testing: Additional Examples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Monte Carlo Testing: Additional Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./testing2_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Testing and Power Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Testing and Power Practice</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,27 +286,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./estimation1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Estimation Part 1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./estimation1_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R06_More_Estimation_Examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Estimation Examples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Estimation Examples</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./estimation2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Estimation Part 2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./estimation2_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Interval Estimation Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interval Estimation Practice</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R07_More_Estimation_and_CI_Examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Interval Estimation Examples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Interval Estimation Examples</span></span></a>
   </div>
 </li>
       </ul>
@@ -316,55 +334,138 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./prediction1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Prediction (Simple Linear Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./slr_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R08_prediction_examples.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./prediction2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Prediction (Multiple Linear Regression)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R09_Multiple_Regression.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">R10 multiple regression further concepts</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mlr_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Multiple Linear Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./logistic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Logistic Regression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R10_LogisticReg_Extended.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Logistic Regression - Extended Examples</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./logistic_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Logistic Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./cv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Model Selection and Cross Validation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_cv-MSEcomparison.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">cv-extra</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Bias_Variance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Bias Variance Tradeoff</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Model_Selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">R11 Model Selection</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R11_Ridge_LASSO.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">R11: Ridge and Lasso</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./cv_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Cross Validation Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Bootstrapping</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bootstrap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Bootstrapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R12_Bootstrap_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">R13_Bootstrap</span></span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bootstrap_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Bootstrap Practice</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./RV_summary.html" class="sidebar-item-text sidebar-link">
@@ -383,19 +484,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#creating-linear-data" id="toc-creating-linear-data" class="nav-link active" data-scroll-target="#creating-linear-data"><span class="header-section-number">23.1</span> Creating Linear Data</a></li>
-  <li><a href="#atlanta-lead-example" id="toc-atlanta-lead-example" class="nav-link" data-scroll-target="#atlanta-lead-example"><span class="header-section-number">23.2</span> Atlanta Lead Example</a>
+  <li><a href="#creating-linear-data" id="toc-creating-linear-data" class="nav-link active" data-scroll-target="#creating-linear-data"><span class="header-section-number">27.1</span> Creating Linear Data</a></li>
+  <li><a href="#atlanta-lead-example" id="toc-atlanta-lead-example" class="nav-link" data-scroll-target="#atlanta-lead-example"><span class="header-section-number">27.2</span> Atlanta Lead Example</a>
   <ul class="collapse">
-  <li><a href="#looking-at-qqplots" id="toc-looking-at-qqplots" class="nav-link" data-scroll-target="#looking-at-qqplots"><span class="header-section-number">23.2.1</span> looking at qqplots</a></li>
+  <li><a href="#looking-at-qqplots" id="toc-looking-at-qqplots" class="nav-link" data-scroll-target="#looking-at-qqplots"><span class="header-section-number">27.2.1</span> looking at qqplots</a></li>
   </ul></li>
-  <li><a href="#inference-on-the-coefficients" id="toc-inference-on-the-coefficients" class="nav-link" data-scroll-target="#inference-on-the-coefficients"><span class="header-section-number">23.3</span> Inference on the coefficients</a></li>
-  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction"><span class="header-section-number">23.4</span> Prediction</a></li>
-  <li><a href="#uncertainty-in-prediction" id="toc-uncertainty-in-prediction" class="nav-link" data-scroll-target="#uncertainty-in-prediction"><span class="header-section-number">23.5</span> Uncertainty in Prediction</a>
+  <li><a href="#inference-on-the-coefficients" id="toc-inference-on-the-coefficients" class="nav-link" data-scroll-target="#inference-on-the-coefficients"><span class="header-section-number">27.3</span> Inference on the coefficients</a></li>
+  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction"><span class="header-section-number">27.4</span> Prediction</a></li>
+  <li><a href="#uncertainty-in-prediction" id="toc-uncertainty-in-prediction" class="nav-link" data-scroll-target="#uncertainty-in-prediction"><span class="header-section-number">27.5</span> Uncertainty in Prediction</a>
   <ul class="collapse">
-  <li><a href="#uncertainty-of-the-linear-model-estimate" id="toc-uncertainty-of-the-linear-model-estimate" class="nav-link" data-scroll-target="#uncertainty-of-the-linear-model-estimate"><span class="header-section-number">23.5.1</span> Uncertainty of the linear model estimate</a></li>
-  <li><a href="#two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." id="toc-two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." class="nav-link" data-scroll-target="#two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals."><span class="header-section-number">23.5.2</span> Two types of interval estimates for our linear model: Confidence intervals and prediction intervals.</a></li>
-  <li><a href="#contrasting-the-interpretations" id="toc-contrasting-the-interpretations" class="nav-link" data-scroll-target="#contrasting-the-interpretations"><span class="header-section-number">23.5.3</span> Contrasting the interpretations</a></li>
-  <li><a href="#why-the-difference-in-size" id="toc-why-the-difference-in-size" class="nav-link" data-scroll-target="#why-the-difference-in-size"><span class="header-section-number">23.5.4</span> Why the difference in size?</a></li>
+  <li><a href="#uncertainty-of-the-linear-model-estimate" id="toc-uncertainty-of-the-linear-model-estimate" class="nav-link" data-scroll-target="#uncertainty-of-the-linear-model-estimate"><span class="header-section-number">27.5.1</span> Uncertainty of the linear model estimate</a></li>
+  <li><a href="#two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." id="toc-two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." class="nav-link" data-scroll-target="#two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals."><span class="header-section-number">27.5.2</span> Two types of interval estimates for our linear model: Confidence intervals and prediction intervals.</a></li>
+  <li><a href="#contrasting-the-interpretations" id="toc-contrasting-the-interpretations" class="nav-link" data-scroll-target="#contrasting-the-interpretations"><span class="header-section-number">27.5.3</span> Contrasting the interpretations</a></li>
+  <li><a href="#why-the-difference-in-size" id="toc-why-the-difference-in-size" class="nav-link" data-scroll-target="#why-the-difference-in-size"><span class="header-section-number">27.5.4</span> Why the difference in size?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -405,7 +506,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></h1>
+<h1 class="title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></h1>
 </div>
 
 
@@ -432,8 +533,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="creating-linear-data" class="level2" data-number="23.1">
-<h2 data-number="23.1" class="anchored" data-anchor-id="creating-linear-data"><span class="header-section-number">23.1</span> Creating Linear Data</h2>
+<section id="creating-linear-data" class="level2" data-number="27.1">
+<h2 data-number="27.1" class="anchored" data-anchor-id="creating-linear-data"><span class="header-section-number">27.1</span> Creating Linear Data</h2>
 <p>We can simulate data from a linear model <span class="math display">\[Y_i = 5 + 5X+\epsilon\]</span> where <span class="math inline">\(\epsilon \overset{iid}{\sim}N(\mu,\sigma^2)\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#There is no assumption that X follows any particular distribution</span></span>
@@ -448,8 +549,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="atlanta-lead-example" class="level2" data-number="23.2">
-<h2 data-number="23.2" class="anchored" data-anchor-id="atlanta-lead-example"><span class="header-section-number">23.2</span> Atlanta Lead Example</h2>
+<section id="atlanta-lead-example" class="level2" data-number="27.2">
+<h2 data-number="27.2" class="anchored" data-anchor-id="atlanta-lead-example"><span class="header-section-number">27.2</span> Atlanta Lead Example</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lead_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/lead.csv"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>atlanta_lead <span class="ot">&lt;-</span> <span class="fu">subset</span>(lead_data, city<span class="sc">==</span><span class="st">"Atlanta"</span>)</span>
@@ -601,8 +702,8 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-10-6.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="looking-at-qqplots" class="level3" data-number="23.2.1">
-<h3 data-number="23.2.1" class="anchored" data-anchor-id="looking-at-qqplots"><span class="header-section-number">23.2.1</span> looking at qqplots</h3>
+<section id="looking-at-qqplots" class="level3" data-number="27.2.1">
+<h3 data-number="27.2.1" class="anchored" data-anchor-id="looking-at-qqplots"><span class="header-section-number">27.2.1</span> looking at qqplots</h3>
 <p>Let’s just explore the type of variation we see with normal QQ plots for this sample size so we know what tolerable deviation from the diagonal looks like</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
@@ -636,8 +737,8 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </section>
 </section>
-<section id="inference-on-the-coefficients" class="level2" data-number="23.3">
-<h2 data-number="23.3" class="anchored" data-anchor-id="inference-on-the-coefficients"><span class="header-section-number">23.3</span> Inference on the coefficients</h2>
+<section id="inference-on-the-coefficients" class="level2" data-number="27.3">
+<h2 data-number="27.3" class="anchored" data-anchor-id="inference-on-the-coefficients"><span class="header-section-number">27.3</span> Inference on the coefficients</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(atlanta_lead_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -674,8 +775,8 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </section>
-<section id="prediction" class="level2" data-number="23.4">
-<h2 data-number="23.4" class="anchored" data-anchor-id="prediction"><span class="header-section-number">23.4</span> Prediction</h2>
+<section id="prediction" class="level2" data-number="27.4">
+<h2 data-number="27.4" class="anchored" data-anchor-id="prediction"><span class="header-section-number">27.4</span> Prediction</h2>
 <p>Point estimate</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(atlanta_lead_lm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">air.pb.metric.tons=</span><span class="dv">1300</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -738,8 +839,8 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 </section>
-<section id="uncertainty-in-prediction" class="level2" data-number="23.5">
-<h2 data-number="23.5" class="anchored" data-anchor-id="uncertainty-in-prediction"><span class="header-section-number">23.5</span> Uncertainty in Prediction</h2>
+<section id="uncertainty-in-prediction" class="level2" data-number="27.5">
+<h2 data-number="27.5" class="anchored" data-anchor-id="uncertainty-in-prediction"><span class="header-section-number">27.5</span> Uncertainty in Prediction</h2>
 <p>Consider a linear relationship <span class="math display">\[y = 10 + 2x + \epsilon\]</span></p>
 <p>Consider if X ranges from .1 to 3, 1 to 30 or 10 to 300, and <span class="math inline">\(\sigma = .5, 5, 50\)</span></p>
 <div class="cell">
@@ -759,8 +860,8 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>So you can see that the fit of the linear model is related to the range of the <span class="math inline">\(X\)</span> data as well as the variance of the error term.</p>
-<section id="uncertainty-of-the-linear-model-estimate" class="level3" data-number="23.5.1">
-<h3 data-number="23.5.1" class="anchored" data-anchor-id="uncertainty-of-the-linear-model-estimate"><span class="header-section-number">23.5.1</span> Uncertainty of the linear model estimate</h3>
+<section id="uncertainty-of-the-linear-model-estimate" class="level3" data-number="27.5.1">
+<h3 data-number="27.5.1" class="anchored" data-anchor-id="uncertainty-of-the-linear-model-estimate"><span class="header-section-number">27.5.1</span> Uncertainty of the linear model estimate</h3>
 <p>Let’s look at the uncertainty of the line of best fit. We’ll sample 30 points from this population and fit a line and repeat.</p>
 <p><span class="math inline">\(Y = 10 + 2X + \epsilon\)</span></p>
 <div class="cell">
@@ -805,8 +906,8 @@ X            1.46134  0.4236239 3.449615 0.001796701</code></pre>
 </div>
 <p>These are not the exact same as the standard errors, but they are in the ballpark. These standard errors are related to this particular model fit with one set of <span class="math inline">\((X,Y)\)</span> data. If we averaged the standard error over many model fits we’d probably see the values match much better.</p>
 </section>
-<section id="two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." class="level3" data-number="23.5.2">
-<h3 data-number="23.5.2" class="anchored" data-anchor-id="two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals."><span class="header-section-number">23.5.2</span> Two types of interval estimates for our linear model: Confidence intervals and prediction intervals.</h3>
+<section id="two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." class="level3" data-number="27.5.2">
+<h3 data-number="27.5.2" class="anchored" data-anchor-id="two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals."><span class="header-section-number">27.5.2</span> Two types of interval estimates for our linear model: Confidence intervals and prediction intervals.</h3>
 <p>The standard error (i.e.&nbsp;uncertainty) of the slope and intercept estimates is captured by the idea of a “confidence interval” in prediction. Using the last sampled <span class="math inline">\((X,Y)\)</span> data we fit</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
@@ -935,13 +1036,13 @@ X            1.46134  0.4236239 3.449615 0.001796701</code></pre>
 </div>
 </div>
 </section>
-<section id="contrasting-the-interpretations" class="level3" data-number="23.5.3">
-<h3 data-number="23.5.3" class="anchored" data-anchor-id="contrasting-the-interpretations"><span class="header-section-number">23.5.3</span> Contrasting the interpretations</h3>
+<section id="contrasting-the-interpretations" class="level3" data-number="27.5.3">
+<h3 data-number="27.5.3" class="anchored" data-anchor-id="contrasting-the-interpretations"><span class="header-section-number">27.5.3</span> Contrasting the interpretations</h3>
 <p>Our interpretation of a prediction interval is like this: “I am 95% confident (certain) that for a new observation with <span class="math inline">\(X=16\)</span>, <span class="math inline">\(Y\)</span> will be within the interval”</p>
 <p>Our interpretation of a confidence interval is : “I am 95% confident that the mean <span class="math inline">\(Y\)</span> value for all observations with <span class="math inline">\(X=16\)</span> is within the interval”</p>
 </section>
-<section id="why-the-difference-in-size" class="level3" data-number="23.5.4">
-<h3 data-number="23.5.4" class="anchored" data-anchor-id="why-the-difference-in-size"><span class="header-section-number">23.5.4</span> Why the difference in size?</h3>
+<section id="why-the-difference-in-size" class="level3" data-number="27.5.4">
+<h3 data-number="27.5.4" class="anchored" data-anchor-id="why-the-difference-in-size"><span class="header-section-number">27.5.4</span> Why the difference in size?</h3>
 <p>The standard error of a confidence interval for <span class="math inline">\(E(Y|x)\)</span> is <span class="math display">\[
 SE(\overline{Y}|x) = s_e \sqrt{\frac1n + \frac{(x-\bar{x})^2}{SS_{xx}}}
 \]</span> The standard error of a prediction interval for <span class="math inline">\(\hat{Y}|x\)</span> is <span class="math display">\[
@@ -1191,7 +1292,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./slr_practice.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
