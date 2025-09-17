@@ -397,7 +397,7 @@ Suppose you meet someone and learn that they have two children. You ask if eithe
 ::: {.callout-note collapse="true" title="Solution"}
 Before we know anything about their two kids, the number of girls $X$ they have could be 0, 1 or 2. Simplifying the scenario with the 'equally likely hypothesis' means that we assume each kid has a 50% chance of being a girl, independently. Thus the probabilities are 0.25, 0.5 and 0.25 respectively.
 
-If we learn that at least one of the kids is a girl, that tells us that the first possibility, that $x=0$ is not possible. Thus $P(X=2 | X>0) = .\dfrac{25}{.5+.25}= \frac{1}{3}$\*\*
+If we learn that at least one of the kids is a girl, that tells us that the first possibility, that $x=0$ is not possible. Thus $P(X=2 | X>0) = .\dfrac{25}{.5+.25}= \frac{1}{3}$
 :::
 
 ## Monty Hall
