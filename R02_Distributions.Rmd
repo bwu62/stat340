@@ -488,6 +488,13 @@ mean(exp.sim)
 var(exp.sim)
 ```
 
+If rate = 1, what is $Pr(X < 5)$
+
+```{r}
+pexp(5, rate=1)
+
+```
+
 
 ### Relationship between an exponential and a Poisson
 lambda = 10
@@ -513,7 +520,6 @@ Here's an example of how you could combine normally distributed random variables
 ```{r}
 deltas <- rnorm(30)
 X <- 50 + c(0,cumsum(deltas))
-
 plot(x=1:31, y=X, type="l")
-
 ```
+
