@@ -8,7 +8,13 @@ editor: source
 
 ## Phone Repair
 (*From Introduction to Probability and Statistics for Data Science*)
-The repair of a broken cell phone is either completed on time or it is late and the repair is either done satisfactoily or unsatisfactorily. What is the sample space for a cell phone repair?
+The repair of a broken cell phone is either completed on time or it is late and the repair is either done satisfactorily or unsatisfactorily. What is the sample space for a cell phone repair?
+
+::: {.callout-note collapse="true" title="Solution"}
+
+The sample space consists of two outcomes: \{satisfactory, unsatisfactory\}
+
+:::
 
 ## Dice Probabilities I
 What is the probability that at least one of the following events occurs on a single throw of two fair six-sided dice?
@@ -19,6 +25,22 @@ B.  The dice total 6.
 
 C.  The dice total 7.
 
+::: {.callout-note collapse="true" title="Solution"}
+The probability that at least one of the following occurs requires us to look at the union of the events. "The dice total is 5, 6 or 7".
+
+On a single throw of two fair dice, the dice total can be a single number, so events A, B and C are mutually exclusive. We can calculate the probabilities individually and add them up. 
+
+A 5 can occur in 4 ways: $(1,4), (2,3), (3,2), (4,1)$ are the four ways (we are distinguishinng the two dice).
+
+A 6 can occur in 5 ways: $(1,5), (2,4), (3,3), (4,2), (5,1)$.
+
+A 7 can occur in 6 ways: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1)$
+
+In the end, there are $4+5+6 = 15$ ways in which one of these events can occur. Since there are $6\times 6=36$ two-dice outcomes, the probability is
+$$\frac{15}{36}$$
+:::
+
+
 ## Dice Probabilities II
 What is the probability that at least one of the following events occurs on a single throw of two fair four-sided dice?
 
@@ -28,6 +50,16 @@ B.  The dice total 6.
 
 C.  The dice total 7.
 
+::: {.callout-note collapse="true" title="Solution"}
+A 5 can occur in 4 ways: $(1,4), (2,3), (3,2), (4,1)$ are the four ways (we are distinguishing the two dice).
+
+A 6 can occur in 3 ways: $(2,4), (3,3), (4,2)$.
+
+A 7 can occur in 2 ways: $(3,4), (4,3)$
+
+In the end, there are $4+3+2 = 9$ ways in which one of these events can occur. Since there are $4\times 4=16$ two-dice outcomes, the probability is
+$$\frac{9}{16}$$
+:::
 ## Two Fair Coins
 
 Alex and Bob each flips a fair coin twice. Use "1" to denote heads and "0" to denote tails. Let X be the maximum of the two numbers Alex gets, and let Y be the minimum of the two numbers Bob gets.
