@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT 340: Data Science II - 8&nbsp; Independence and Conditional Probability Practice</title>
+<title>STAT 340: Data Science II - 8&nbsp; Random Variable Distribution Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability_rv.html">Sampling</a></li><li class="breadcrumb-item"><a href="./distr_practice.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Independence and Conditional Probability Practice</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./probability_rv.html">Sampling</a></li><li class="breadcrumb-item"><a href="./distr_practice.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Random Variable Distribution Practice</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./distr_practice.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Independence and Conditional Probability Practice</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Random Variable Distribution Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -510,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Independence and Conditional Probability Practice</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Random Variable Distribution Practice</span></h1>
 </div>
 
 
@@ -1616,27 +1616,27 @@ Solution
 <span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(r,p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       r      p
-1  1.100 0.4577
-2  1.105 0.4615
-3  1.110 0.4651
-4  1.115 0.4688
-5  1.120 0.4714
-6  1.125 0.4744
-7  1.130 0.4770
-8  1.135 0.4798
-9  1.140 0.4827
-10 1.145 0.4861
-11 1.150 0.4886
-12 1.155 0.4918
-13 1.160 0.4954
-14 1.165 0.4984
-15 1.170 0.5015
-16 1.175 0.5040
-17 1.180 0.5074
-18 1.185 0.5101
-19 1.190 0.5133
-20 1.195 0.5157
-21 1.200 0.5186</code></pre>
+1  1.100 0.4525
+2  1.105 0.4542
+3  1.110 0.4568
+4  1.115 0.4600
+5  1.120 0.4622
+6  1.125 0.4647
+7  1.130 0.4690
+8  1.135 0.4721
+9  1.140 0.4754
+10 1.145 0.4787
+11 1.150 0.4818
+12 1.155 0.4843
+13 1.160 0.4869
+14 1.165 0.4894
+15 1.170 0.4920
+16 1.175 0.4946
+17 1.180 0.4975
+18 1.185 0.5007
+19 1.190 0.5032
+20 1.195 0.5065
+21 1.200 0.5089</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co">#X^2 + Y^2 ~ Chisq(2)</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co">#so the square root of the 50th percentile from that distribution should be the answer</span></span>
@@ -1673,7 +1673,7 @@ Solution
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>thetas <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">10000</span>, <span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi)</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cos</span>(thetas), <span class="fu">sin</span>(thetas))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.004416689</code></pre>
+<pre><code>[1] 0.0002646251</code></pre>
 </div>
 </div>
 </div>
@@ -1698,7 +1698,7 @@ Solution
 <div class="cell">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">cos</span>(thetas<span class="sc">/</span><span class="dv">4</span>), <span class="fu">sin</span>(thetas<span class="sc">/</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.9180884</code></pre>
+<pre><code>[1] -0.9183002</code></pre>
 </div>
 </div>
 </div>
