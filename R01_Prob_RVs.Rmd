@@ -21,6 +21,7 @@ px <- c(.10, .15, .20, .30, .25)
 ```
 
 We can visualize the probability mass function
+
 ```{r}
 plot(x,px, ylim=c(0, max(px)))
 segments(x,0,x,px)
