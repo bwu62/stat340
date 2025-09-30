@@ -10,10 +10,10 @@ Author credits to Karl Rohe, Keith Levin, Bi Cheng Wu, and Brian Powers
 
 ## Collection of Shiny Apps
 
-- <a href="normal_pdf_cdf">Normal PDF CDF Inverse CDF </a>
-- <a href="onetwotail">Binomial One/Two Tail Test Power</a>
-- <a href="logistic">Logistic Model ROC Plot</a>
-- <a href="model_selection">Model Selection Visualization</a>
+- Monte Carlo: <a href="normal_pdf_cdf">Normal PDF CDF Inverse CDF </a>
+- Testing Part 2: <a href="onetwotail">Binomial One/Two Tail Test Power</a>
+- Logistic Regression: <a href="logistic">ROC Plot</a>
+- Model Selection: <a href="model_selection">Visualization</a>
 
 <!--
 to export an app

@@ -4,7 +4,7 @@
     "href": "index.html#collection-of-shiny-apps",
     "title": "STAT 340: Data Science II",
     "section": "0.1 Collection of Shiny Apps",
-    "text": "0.1 Collection of Shiny Apps\n\nNormal PDF CDF Inverse CDF \nBinomial One/Two Tail Test Power\nLogistic Model ROC Plot\nModel Selection Visualization"
+    "text": "0.1 Collection of Shiny Apps\n\nMonte Carlo: Normal PDF CDF Inverse CDF \nTesting Part 2: Binomial One/Two Tail Test Power\nLogistic Regression: ROC Plot\nModel Selection: Visualization"
   },
   {
     "objectID": "rv_practice.html",
