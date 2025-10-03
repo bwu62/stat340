@@ -146,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">STAT 340 Index</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">STAT 340</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,8 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cov_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Independence and Conditional Probability Practice</span></span></a>
+  <a href="./distr_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Random Variable Distribution Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -604,9 +604,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <p><img src="R04_Monte_Carlo_Testing_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(test.stats <span class="sc">&gt;=</span> t_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(test.stats <span class="sc">&gt;=</span> t_obs) <span class="co">#p-value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0166</code></pre>
+<pre><code>[1] 0.0171</code></pre>
 </div>
 </div>
 </section>
@@ -631,7 +631,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(test.stats <span class="sc">&gt;=</span> t_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0592</code></pre>
+<pre><code>[1] 0.0578</code></pre>
 </div>
 </div>
 </section>
@@ -657,14 +657,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(test.stats <span class="sc">&gt;=</span> t_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0063</code></pre>
+<pre><code>[1] 0.0076</code></pre>
 </div>
 </div>
 <p>I don’t know about you, but this is staring to seem a little bit weird.</p>
 </section>
 <section id="measuring-accuracy" class="level3" data-number="14.1.4">
 <h3 data-number="14.1.4" class="anchored" data-anchor-id="measuring-accuracy"><span class="header-section-number">14.1.4</span> Measuring Accuracy</h3>
-<p>(New idea of what “early spring” means) If both February temperatures and march temperature are greater than average, then we say we have an early spring.</p>
+<p>(New idea of what “early spring” means)</p>
+<p>If both February temperatures and march temperature are greater than average, then we say we have an early spring.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>feb.avg <span class="ot">&lt;-</span> <span class="fu">mean</span>(groundhog<span class="sc">$</span>February.Average.Temperature)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>mar.avg <span class="ot">&lt;-</span> <span class="fu">mean</span>(groundhog<span class="sc">$</span>March.Average.Temperature)</span>
@@ -730,7 +731,7 @@ Full Shadow   No Shadow
 </div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(results <span class="sc">&gt;=</span> accuracy.obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0264</code></pre>
+<pre><code>[1] 0.0242</code></pre>
 </div>
 </div>
 <p>The actual groundhog’s accuracy is statistically much better than the simulated “random guessing” groundhog - at least better at predicting if both Feb &amp; March will be above average temperature.</p>
@@ -755,7 +756,7 @@ Full Shadow   No Shadow
 <pre><code>Loading required package: greybox</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Package "greybox", v2.0.3 loaded.</code></pre>
+<pre><code>Package "greybox", v2.0.6 loaded.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -767,7 +768,7 @@ Attaching package: 'greybox'</code></pre>
     accuracy</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>This is package "smooth", v4.1.1</code></pre>
+<pre><code>This is package "smooth", v4.3.0</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -814,7 +815,7 @@ Attaching package: 'smooth'</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(test.stats <span class="sc">&gt;=</span> t_obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0653</code></pre>
+<pre><code>[1] 0.0589</code></pre>
 </div>
 </div>
 <p>Last let’s consider an “early spring” when both Feb and March average temps are above the moving average.</p>
@@ -827,14 +828,14 @@ Attaching package: 'smooth'</code></pre>
 <span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="fu">accuracy</span>(groundhog<span class="sc">$</span>Punxsutawney.Phil, earlySpring)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7217391</code></pre>
+<pre><code>[1] 0.7130435</code></pre>
 </div>
 </div>
 <p>The accuracy is now not much better than a flip of a coin. But that’s not statistical thinking - we need to see if he is better than a randomly guessing groundhog.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>(accuracy.obs <span class="ot">&lt;-</span> <span class="fu">accuracy</span>(groundhog<span class="sc">$</span>Punxsutawney.Phil, earlySpring))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7217391</code></pre>
+<pre><code>[1] 0.7130435</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#simulate guesses by Bernoulli Phil</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>randomGuesses <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n=</span><span class="dv">115</span>, <span class="at">p=</span><span class="fl">0.8695652</span>){</span>
@@ -852,7 +853,7 @@ Attaching package: 'smooth'</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(results <span class="sc">&gt;=</span> accuracy.obs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0254</code></pre>
+<pre><code>[1] 0.0294</code></pre>
 </div>
 </div>
 <p>I’m still convinced - the groundhog does significantly better than a random guesser.</p>
@@ -924,7 +925,7 @@ Attaching package: 'smooth'</code></pre>
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">mean</span>(t.sim <span class="sc">&gt;=</span> obs.t),</span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mean</span>(t.sim <span class="sc">&lt;=</span> obs.t))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0012</code></pre>
+<pre><code>[1] 0.0022</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(t.sim)</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>obs.t, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -938,11 +939,12 @@ Attaching package: 'smooth'</code></pre>
 <h3 data-number="14.2.2" class="anchored" data-anchor-id="a-permutation-test-of-autocorrelation"><span class="header-section-number">14.2.2</span> A Permutation Test of Autocorrelation</h3>
 <p>We could also take a different approach for our null model. We could use a permutation test. Under the null hypothesis, every permutation of the data is equally likely. So we could produce a simulated test statistic distribution by shuffling the data around each time. This is consistent with our null hypothesis because there’s no trend in this model.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>t.sim <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">test.stat</span>(<span class="fu">sample</span>(time_series<span class="sc">$</span>x)))</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">mean</span>(t.sim <span class="sc">&gt;=</span> obs.t),</span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mean</span>(t.sim <span class="sc">&lt;=</span> obs.t))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>t.sim <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>,</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">test.stat</span>(<span class="fu">sample</span>(time_series<span class="sc">$</span>x)))</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="fu">min</span>(<span class="fu">mean</span>(t.sim <span class="sc">&gt;=</span> obs.t),</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mean</span>(t.sim <span class="sc">&lt;=</span> obs.t))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 8e-04</code></pre>
+<pre><code>[1] 0.0018</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(t.sim)</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>obs.t, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -970,7 +972,7 @@ Attaching package: 'smooth'</code></pre>
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>t.sim <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">10000</span>, <span class="fu">test.stat</span>(<span class="fu">sample</span>(time_series<span class="sc">$</span>x)))</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(t.sim <span class="sc">&gt;=</span> obs.t) <span class="co">#right-tailed p-value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0044</code></pre>
+<pre><code>[1] 0.0039</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(t.sim)</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>obs.t, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

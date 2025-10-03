@@ -71,7 +71,7 @@ for(i in 1:NMC){
 hist(test.stats)
 abline(v=t_obs, col="red")
 
-mean(test.stats >= t_obs)
+mean(test.stats >= t_obs) #p-value
 
 ```
 
@@ -124,6 +124,7 @@ I don't know about you, but this is staring to seem a little bit weird.
 ### Measuring Accuracy
 
 (New idea of what "early spring" means) 
+
 If both February temperatures and march temperature are greater than average, then we say we have an early spring.
 
 ```{r}
@@ -156,6 +157,7 @@ prop.table(table(groundhog$Punxsutawney.Phil))
 
 p.shadow <- prop.table(table(groundhog$Punxsutawney.Phil))[1]
 ```
+
 ```{r}
 (accuracy.obs <- accuracy(groundhog$Punxsutawney.Phil, groundhog$EarlySpring))
 
@@ -325,7 +327,8 @@ We have a very low p-value, indicating that if the data were in fact independent
 We could also take a different approach for our null model. We could use a permutation test. Under the null hypothesis, every permutation of the data is equally likely. So we could produce a simulated test statistic distribution by shuffling the data around each time. This is consistent with our null hypothesis because there's no trend in this model.
 
 ```{r}
-t.sim <- replicate(10000, test.stat(sample(time_series$x)))
+t.sim <- replicate(10000,
+                   test.stat(sample(time_series$x)))
 2 * min(mean(t.sim >= obs.t),
         mean(t.sim <= obs.t))
 hist(t.sim)
