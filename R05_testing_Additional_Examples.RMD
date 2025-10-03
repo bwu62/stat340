@@ -12,6 +12,7 @@ knitr::opts_chunk$set(cache=T)
 
 ## Type 1 Errors and the P-Value Distribution
 
+
 I want to sample from $N(\mu, 5^2)$
 
 Say I want to test $H_0: \mu = 10$ vs $H_A: \mu > 10$
@@ -186,7 +187,7 @@ hack_decision_rule2 <- function(T){
 
 if(file.exists("discrete_exact_alpha.rds")){
   #So this knits faster- load the results if they exist.
-  discreteRR <- readRDS("discrete_exact_alpha.Rds")
+  discreteRR <- readRDS("discrete_exact_alpha.rds")
 } else {
   pseq <- seq(0,.5,.01)
   rr_0 <- rep(0,length(pseq))
@@ -539,7 +540,9 @@ Similarly, we can **divide the number of YY by the number of YN** to get an esti
 
 Now, note that **if the "hot hands" effect really exists** in the data, then **YY/YN should be larger than NY/NN** in a large enough sample. We use this fact to define the following quantity:
 
-$$R=\frac{(\text{# of YY})/(\text{# of YN})}{(\text{# of NY})/(\text{# of NN})}$$
+$$
+R=\frac{(\text{# of YY})/(\text{# of YN})}{(\text{# of NY})/(\text{# of NN})}
+$$
 
 The ratio $R$ represents, in some sense, **how much more likely** the player is to **make the next shot** if he **made the previous shot _vs_ if he didn't make the previous shot** (note the **_vs_**). This is exactly what we're trying to investigate!
 
