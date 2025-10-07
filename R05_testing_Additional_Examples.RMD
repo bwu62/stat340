@@ -12,7 +12,6 @@ knitr::opts_chunk$set(cache=T)
 
 ## Type 1 Errors and the P-Value Distribution
 
-
 I want to sample from $N(\mu, 5^2)$
 
 Say I want to test $H_0: \mu = 10$ vs $H_A: \mu > 10$
@@ -211,7 +210,7 @@ if(file.exists("discrete_exact_alpha.rds")){
   saveRDS(discreteRR, "discrete_exact_alpha.rds")
 }
 
-plot(rr_0~pseq, type="l", ylab="rejection rate", xlab="Prob of H", main="Power Comparison of Hack Rejection Rules", data=discreteRR)
+plot(discreteRR$rr_0~discreteRR$pseq, type="l", ylab="rejection rate", xlab="Prob of H", main="Power Comparison of Hack Rejection Rules", data=discreteRR)
 abline(h=0.025, col="red")
 lines(x=discreteRR$pseq, y=discreteRR$rr_1, col="blue")
 lines(x=discreteRR$pseq, y=discreteRR$rr_2, col="orange")
@@ -220,10 +219,9 @@ legend(x=0, y=.6, legend=c("Hack rule", "reject sometimes if T<=86", "reject som
 
 Compare their levels:
 ```{r}
-rr_0[51]
-rr_1[51]
-rr_2[51]
-
+discreteRR$rr_0[51]
+discreteRR$rr_1[51]
+discreteRR$rr_2[51]
 ```
 
 
@@ -1322,7 +1320,7 @@ hist(t.sim); abline(v=t.obs, col="red");
 ```
 
 
-### Test Statistic 5: Number of clumps
+### Test Stat 5: Number of clumps
 
 Let's count the number of contiguous clumps
 
@@ -1367,7 +1365,7 @@ nClumps(obsData)+nClumps(1-obsData)
 ```
 
 
-### Test Statistic 6: Variation in clump sizes
+### Test Stat 6: Variation in clump sizes
 Perhaps the standard deviation of the clump sizes might be useful.
 ```{r}
 sdClumpSize <- function(matrix){
