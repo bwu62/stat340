@@ -246,6 +246,78 @@ It is very hard to see much difference. Neither test statistic seems  to be more
 
 :::
 
+## Elevated homocysteine
+
+Normal levels of homocysteine are low (e.g., 10-12 $\mu$mol/L), while early kidney disease is associated with elevated, or hyperhomocysteinemia, levels because the kidneys are responsible for clearing homocysteine from the blood.
+
+Suppose that typical levels for a healthy individual are normally distributed with a mean of 11 $\mu$mol/L and a standard deviation of 2. If early kidney disease is associated with levels that are normally distributed with a mean of $14$ and a standard deviation of $3$, let's devise a hypothesis test based purely on a measure of homocysteine.
+
+a. Suppose that a single sample is drawn from a patient and the decision of the test is based on that. If this is the case, what is the threshold we'd use to determine there's evidence of possible early kidney disease, if we aim to keep an alpha level of $0.05$.
+
+b. What is the power of the test using the threshold above?
+
+c. If we wanted the power to be 80%, what threshold would we have to use? What would the $\alpha$ be in this case?
+
+d. Suppose in a population (excluding individuals known to have kidney disease) that 3\% of the population are at the early stage of kidney disease. What is the Positive Predictive Value and Negative Predictive Value of this test, using the thresholds you chose from part a.
+
+e. If a person's homocysteine level exceeds 15 then what is the likelihood they have Kidney disease?
+
+f. Create a plot of positive predictive power for thresholds of 15 to 20.
+::: {.callout-note collapse="true" title="Solution"}
+a. To maintain a type 1 error rate of 5%, we'd need to find the upper 5th percentile from $N(11, 2^2)$
+```{r}
+qnorm(.05, 11, 2, lower.tail=F)
+```
+So if a patient's homoscysteine level exceeds 14.28971 this would indicate a high level of homocysteine.
+
+b. The power of the test is $Pr[X > 14.28971 | H_A]$
+```{r}
+pnorm(14.28971, 14, 3, lower.tail=F)
+```
+The power of the test is 46.15339%
+
+c. 
+```{r}
+(thresh.c <- qnorm(.80, 14, 3, lower.tail=F))
+pnorm(thresh.c, 11, 2, lower.tail=F)
+```
+If we wished to have a power of 80%, then we'd diagnose early kidney disease if homocysteine levels were above 11.47514, but the type 1 error rate would rise to 40.61%
+
+d. 
+```{r}
+prob.pos.given.d <- 0.4615339
+prob.pos.given.notd <- 0.05
+prob.d <- .03
+
+#PPV
+prob.d * prob.pos.given.d / 
+  (prob.d*prob.pos.given.d + (1-prob.d)*prob.pos.given.notd)
+
+#NPV
+(1-prob.d) * (1-prob.pos.given.notd) / 
+  ((1-prob.d)*(1-prob.pos.given.notd) + (prob.d)*(1-prob.pos.given.d))
+```
+
+e.
+For this I'll simulate a population
+```{r}
+NMC <- 100000
+status <- sample(c(1,0),NMC, prob=c(.03,.97), replace = TRUE)
+hLevel <- (1-status)*rnorm(NMC, 11, 2) + (status)*rnorm(NMC, 14,3)
+
+mean(status ==1 & hLevel >15)/mean(hLevel > 15)
+```
+f.
+```{r}
+threshs <- seq(15,20,by=.05)
+ppv <- numeric(length(threshs))
+for(i in 1:length(threshs)){
+  ppv[i] <- mean(status ==1 & hLevel >threshs[i])/mean(hLevel > threshs[i])
+}
+plot(x=threshs, y=ppv, type="l", ylim=c(0,1))
+```
+
+:::
 
 # Beyond STAT 340
 
