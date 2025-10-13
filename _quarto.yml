@@ -38,17 +38,17 @@ book:
     - part: "Estimation"
       chapters:
       - estimation1.qmd
-      - estimation1_practice.qmd
       - R06_More_Estimation_Examples.Rmd
+      - estimation1_practice.qmd
       - text: "---"
       - estimation2.qmd
-      - estimation2_practice.qmd
       - R07_More_Estimation_and_CI_Examples.Rmd
+      - estimation2_practice.qmd
     - part: "Prediction"
       chapters:
       - prediction1.qmd
-      - slr_practice.qmd
       - R08_prediction_examples.Rmd
+      - slr_practice.qmd
       - text: "---"
       - prediction2.qmd
       - R09_Multiple_Regression.Rmd

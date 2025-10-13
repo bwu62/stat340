@@ -6,6 +6,78 @@ editor: source
 
 # Practice Problems
 
+## Method of Moments I
+
+Use the method of moments to construct an estimator for the parameter $N$ when your data $X_1, X_2, \ldots, X_n$ each are drawn independently from $Binom(N, p)$. In this case assume that $p$ is known to you. Note the sample size you're working with is not the same as the $N$ parameter from the binomial distribution.
+
+## Method of Moments II
+
+Continuing from the previous problem, suppose that your data $X_1, X_2, \ldots, X_n$ each are drawn independently from $Binom(N, p)$ but both $N$ and $p$ are unknown. Use the method of moments to construct two simultaneous estimators $\hat{N}$ and $\hat{p}$. You can only use sample statistics in your estimator functions, you cannot use $N$ or $p$ because both of these parameters are unknown.
+
+## Method of Moments III
+
+Suppose $X_1, \ldots, X_n \sim Unif(0, M)$. Use the method of moments to construct an estimator $\hat{M}$. 
+
+## Method of Moments IV
+
+The gamma distribution takes two parameters, the shape parameter $\alpha>0$ and the scale parameter $\theta>0$. For $X\sim Gamma(\alpha, \theta)$, we have two properties of the distribution: $EX=\alpha\theta$ and $VarX=\alpha\theta^2$. Suppose we have a random sample $X_1, \ldots, X_n$ from such a gamma distribution.
+
+a. If you know $\theta$, use the method of moments to find an estimator $\hat\alpha$.
+
+b. If you do not know $\theta$, use the method of moments to find an estimator $\hat\alpha$. Note this estimator will need to use both sample mean and sample variance in some way.
+
+## Method of Moments V
+
+Suppose we observe a sequence of independent trials where each trial is a success or a failure. Let $X$ denote the number of failures before the first success. This experiment is repeated $n$ times. Use the method of moments to construct an estimator for $p$, the probability of success.
+
+## Bias Sample SD
+
+Suppose we have a normally distributed population, and an independent sample of size $15$ from this population. So our data $X_1,\ldots,X_{15}\sim N(10, \sigma^2)$. For parts (a) and (b) you can set $\sigma$ to be whatever value you want.
+
+a. Use Monte Carlo to demonstrate that $S^2$ is an unbiased estimator of $\sigma^2$. 
+
+b. Use Monte Carlo to demonstrate that $S$, the sample standard deviation, is a *biased* estimator of $\sigma$, the population variance. 
+
+## A Poisson Estimator
+Your random sample $X_1, \ldots, X_20 \sim Poisson(\lambda)$. For parts (a) and (b) let's assume the true value of $\lambda$ is 5.
+
+a. Use Monte Carlo to demonstrate that $\bar{X}$ and $S^2$ are both unbiased estimators of $\lambda$.
+
+b. Which estimator $\bar{X}$ or $S^2$ has a lower variance (i.e. is a more precise) estimator for $\lambda$? Use Monte Carlo support your answer.
+
+## The Tricky Sample Maximum
+
+Suppose $X_1, \ldots, X_n \sim Unif(0, M)$ (continuous). Consider two estimators for $M$: 
+
+$$\hat{M}_1 = \max(X_1, \ldots, X_n)$$
+$$\hat{M}_2 = \frac{n+1}{n}\max(X_1, \ldots, X_n)$$
+Suppose that You have a sample size $n=25$ and a true $M=100$.
+
+a. Use Monte Carlo  to estimate the bias of each of these estimators.
+
+b. Use Monte Carlo to estimate the variance of both of these estimators. 
+
+c. The Mean Squared Error is $E\left[(\hat\theta-\theta)^2\right]$. This can be approximated by Monte Carlo by estimating the parameter repeatedly, squaring the error and averaging. Use Monte Carlo to estimate the MSE of both $\hat{M}_1$ and $\hat{M}_2$.
+
+## Tricky Sample Maximum II
+
+Another couple estimators for $M$ from the previous problem is $\hat{M}_3=2\bar{X}$, twice the sample mean and $\hat{M}_4=2\tilde{X}$, twice the sample median. 
+
+Suppose that You have a sample size $n=25$ and a true $M=100$.
+
+a. Use Monte Carlo to estimate the bias and variance of each estimator.
+
+b. Use Monte Carlo to approximate the MSE of each estimator.
+
+c. Between $\hat{M}_1$ through $\hat{M}_4$, which estimator would you prefer? What are some pros and cons of each of them?
+
+## Exponential Data
+
+Consider the data below given by Wang (2000) on failure times of an electrical component. Assuming an exponential distribution $Exp(\lambda)$, find the method of moments estimate of $\lambda$
+
+```{r}
+t <- c(5, 11, 21, 31, 46, 75, 98, 122, 145, 165, 196, 224, 245, 293, 321, 330, 350, 420)
+```
 
 
 # Beyond STAT 340
