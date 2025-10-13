@@ -80,6 +80,26 @@ t <- c(5, 11, 21, 31, 46, 75, 98, 122, 145, 165, 196, 224, 245, 293, 321, 330, 3
 ```
 
 
+## A uniform mystery
+
+Suppose $X_1, \ldots, X_n \sim Unif(a, b)$, but both $a$ and $b$ are unknown. 
+
+a. Construct simultaneous method of moment estimators $\hat{a}$ and $\hat{b}$ from the facts that $E(X)=\frac{b-a}{2}$ and $Var(X)=\frac{(b-a)^2}{12}$.
+
+b. One could also use the estimator $\hat{b}=\frac{n+1}{n}\max(X_1, \ldots, X_n)$, which is unbiased. Show that $\frac{n+1}{n}(\max(X)-\min(X))$ is an unbiased estimator for $b-a$ using Monte Carlo.
+
+c. From Part b, use algebra to figure out an estimator $\hat{a}$ for the lower bound of the support.
+
+d. Is the estimator from part (c) unbiased? Is it possible that $\hat{a} > \min(X)$?
+
+## Another Uniform Estimation
+
+Suppose $X_1, \ldots X_n \sim Unif(-\theta, theta)$ are an independent random sample. 
+
+a. Use the method of moments to construct an estimator for $\theta$ (hint: the first moment will be useless!)
+
+b. Construct another estimator based on the sample max and sample min. Is it biased?
+
 # Beyond STAT 340
 
 These problems are excellent practice but they are beyond the material we cover in STAT 340.
