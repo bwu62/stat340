@@ -100,6 +100,39 @@ a. Use the method of moments to construct an estimator for $\theta$ (hint: the f
 
 b. Construct another estimator based on the sample max and sample min. Is it biased?
 
+## Goldfish
+
+In 1997 Pepperidge Farm started putting faces on some of the goldfish crackers they produce. Roughly 40% of goldfish crackers have faces.
+
+Suppose you want to estimate this proportion, and you buy a 20 pack box as a representative sample of Goldfish. The box contains 20 1-oz packs of goldfish, each containing roughly 50 goldfish. Suppose we can model the number of goldfish in a pack using a normal distribution (rounded to the nearest integer), $Y_i \sim N(50, 2^2)$.
+
+To estimate the proportion of smiley faces, you figure you could do three things:
+
+1. Open all 20 bags in one pile and calculate the sample proportion
+2. Calculate the proportion in each of the 20 bags and average those proportions
+3. Calculate the proportions in each bag and calculate the **weighted** average (weighting by the number of goldfish in each bag)
+
+Using a normal model for the number of fish in a bag, and a binomial for the number of smiley fish, determine the bias and variance of these three estimators.
+
+```{r}
+NMC <- 10000
+estimates <- data.frame(method1=numeric(NMC),
+                        method2=numeric(NMC),
+                        method3=numeric(NMC))
+for(i in 1:NMC){
+  Y <- round(rnorm(20, 50, 2))
+  X <- rbinom(20, Y, .40)
+  estimates[i,] <- c(sum(X)/sum(Y),
+                     mean(X/Y),
+                     sum(X/Y * Y/sum(Y))) 
+}
+
+colMeans(estimates)
+apply(estimates, 2, FUN=var)
+```
+When working out the math, it becomes clear that method 1 and 3 are actually identical to each other. 
+Running the MC a few times it seems that all 3 methods give an unbiased estimate. Method 2 however has a slightly larger variance. This seems consistent after re-running the MC multiple times. Thus method 1 is probably the best method to estimate $p$.
+
 # Beyond STAT 340
 
 These problems are excellent practice but they are beyond the material we cover in STAT 340.
