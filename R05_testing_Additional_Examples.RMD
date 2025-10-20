@@ -87,6 +87,9 @@ If the null hypothesis is true, and we get data and calculate a p-value, the p-v
 
 What about the distribution of p-values if the mean  = 11 (i.e. the null is false) - this is the model from which we got our initial data.
 
+Reminder: $H_0: \mu=10$ and $H_A: \mu > 10$
+
+
 ```{r}
 p.val <- 0
 for(i in 1:NMC){
