@@ -28,7 +28,7 @@ We call the $X_i$ values the *predictors* (also called the *independent variable
 
 Let's look at an example that we discussed in our very first lecture.
 
-<img src="income_by_edu.png" style="width:70%;"/>
+<img src="images/edu_income.png" style="width:70%;"/>
 
 Here, our $(X_i,Y_i)$ pairs correspond to years of education ($X_i$) and income ($Y_i$).
 That is, our predictors are years of education, and our responses are income.

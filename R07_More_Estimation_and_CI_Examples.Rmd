@@ -16,7 +16,6 @@ run_exprate_expt <- function( nsamp, true_rate, NMC=2000 ) {
   estd_rate <- 1/mean(obsd_data);
   # Now generate "fake" data sets and estimate lambda on each.
   replicates <- rep(NA, NMC);
-  expt_results <- rep(NA, NMC);
   for ( i in 1:NMC) {
     fake_data <- rexp(nsamp, rate=estd_rate);
     replicates[i] <- 1/mean(fake_data);
@@ -33,6 +32,8 @@ estimate_exp_coverage <- function(lambda_true=2,
   return(mean(reps))
 }
 
+estimate_exp_coverage(lambda_true=10,
+                      nsamp=25, 2000, 500)
 ```
 
 Try playing around with `nsamp` and `lambda_true` in the code above. 
