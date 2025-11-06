@@ -24,6 +24,21 @@ Y <- 5 + 5*X + e
 plot(X, Y)
 ```
 
+## Income by Education
+```{r}
+#generate data
+set.seed(2)
+yrs <- rbinom(100,20,.40)+8
+inc <- (50 + (yrs-12)*(170-55)/10 + rnorm(100,0,15) )/ 10
+#note that the true model is Y= -8.8 + + 1.15 X + e
+# also note that SD(epsilon) = 1.5
+```
+
+```{r}
+inc.lm <- lm(inc~1+yrs)
+inc.lm
+```
+
 
 ## Atlanta Lead Example
 
@@ -41,7 +56,11 @@ lm(aggr.assault.per.million ~ 1 + air.pb.metric.tons, data=atlanta_lead)
 atlanta_lead_lm <- lm(aggr.assault.per.million ~ 1 + air.pb.metric.tons, data=atlanta_lead)
 summary(atlanta_lead_lm)
 ```
-
+```{r}
+#check the R^2
+cor(atlanta_lead$air.pb.metric.tons, atlanta_lead$aggr.assault.per.million)
+cor(atlanta_lead$air.pb.metric.tons, atlanta_lead$aggr.assault.per.million)^2
+```
 
 Scatter Plot using Base R
 ```{r}
@@ -154,7 +173,8 @@ This estimates the range of values for a individual data point line with 95% con
 predict(atlanta_lead_lm, newdata=data.frame(air.pb.metric.tons=1300), interval="prediction")
 ```
 
-Demonstration of the difference between the two types of intervals.
+
+## Demonstration of the difference between the two types of intervals.
 
 ```{r}
 NMC <- 1000
