@@ -9,7 +9,7 @@
 <meta name="author" content="Brian Powers">
 <meta name="dcterms.date" content="2024-03-21">
 
-<title>STAT 340: Data Science II - 27&nbsp; Simple Linear Regression - Examples</title>
+<title>STAT 340: Data Science II - 26&nbsp; Simple Linear Regression - Examples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,7 +66,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./slr_practice.html" rel="prev">
+<link href="./slr_practice.html" rel="next">
+<link href="./prediction1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prediction1.html">Prediction</a></li><li class="breadcrumb-item"><a href="./R08_prediction_examples.html"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prediction1.html">Prediction</a></li><li class="breadcrumb-item"><a href="./R08_prediction_examples.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">STAT 340 Index</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">STAT 340</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -196,8 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cov_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Independence and Conditional Probability Practice</span></span></a>
+  <a href="./distr_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Random Variable Distribution Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -292,14 +293,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation1_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span></a>
+  <a href="./R06_More_Estimation_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Estimation Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R06_More_Estimation_Examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Estimation Examples</span></span></a>
+  <a href="./estimation1_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Point Estimation Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -311,14 +312,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./estimation2_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interval Estimation Practice</span></span></a>
+  <a href="./R07_More_Estimation_and_CI_Examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Interval Estimation Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R07_More_Estimation_and_CI_Examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Interval Estimation Examples</span></span></a>
+  <a href="./estimation2_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Interval Estimation Practice</span></span></a>
   </div>
 </li>
       </ul>
@@ -340,14 +341,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./slr_practice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span></a>
+  <a href="./R08_prediction_examples.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./R08_prediction_examples.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></span></a>
+  <a href="./slr_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span></a>
   </div>
 </li>
           <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -484,19 +485,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#creating-linear-data" id="toc-creating-linear-data" class="nav-link active" data-scroll-target="#creating-linear-data"><span class="header-section-number">27.1</span> Creating Linear Data</a></li>
-  <li><a href="#atlanta-lead-example" id="toc-atlanta-lead-example" class="nav-link" data-scroll-target="#atlanta-lead-example"><span class="header-section-number">27.2</span> Atlanta Lead Example</a>
+  <li><a href="#creating-linear-data" id="toc-creating-linear-data" class="nav-link active" data-scroll-target="#creating-linear-data"><span class="header-section-number">26.1</span> Creating Linear Data</a></li>
+  <li><a href="#income-by-education" id="toc-income-by-education" class="nav-link" data-scroll-target="#income-by-education"><span class="header-section-number">26.2</span> Income by Education</a></li>
+  <li><a href="#atlanta-lead-example" id="toc-atlanta-lead-example" class="nav-link" data-scroll-target="#atlanta-lead-example"><span class="header-section-number">26.3</span> Atlanta Lead Example</a>
   <ul class="collapse">
-  <li><a href="#looking-at-qqplots" id="toc-looking-at-qqplots" class="nav-link" data-scroll-target="#looking-at-qqplots"><span class="header-section-number">27.2.1</span> looking at qqplots</a></li>
+  <li><a href="#looking-at-qqplots" id="toc-looking-at-qqplots" class="nav-link" data-scroll-target="#looking-at-qqplots"><span class="header-section-number">26.3.1</span> looking at qqplots</a></li>
   </ul></li>
-  <li><a href="#inference-on-the-coefficients" id="toc-inference-on-the-coefficients" class="nav-link" data-scroll-target="#inference-on-the-coefficients"><span class="header-section-number">27.3</span> Inference on the coefficients</a></li>
-  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction"><span class="header-section-number">27.4</span> Prediction</a></li>
-  <li><a href="#uncertainty-in-prediction" id="toc-uncertainty-in-prediction" class="nav-link" data-scroll-target="#uncertainty-in-prediction"><span class="header-section-number">27.5</span> Uncertainty in Prediction</a>
+  <li><a href="#inference-on-the-coefficients" id="toc-inference-on-the-coefficients" class="nav-link" data-scroll-target="#inference-on-the-coefficients"><span class="header-section-number">26.4</span> Inference on the coefficients</a></li>
+  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction"><span class="header-section-number">26.5</span> Prediction</a></li>
+  <li><a href="#demonstration-of-the-difference-between-the-two-types-of-intervals." id="toc-demonstration-of-the-difference-between-the-two-types-of-intervals." class="nav-link" data-scroll-target="#demonstration-of-the-difference-between-the-two-types-of-intervals."><span class="header-section-number">26.6</span> Demonstration of the difference between the two types of intervals.</a></li>
+  <li><a href="#uncertainty-in-prediction" id="toc-uncertainty-in-prediction" class="nav-link" data-scroll-target="#uncertainty-in-prediction"><span class="header-section-number">26.7</span> Uncertainty in Prediction</a>
   <ul class="collapse">
-  <li><a href="#uncertainty-of-the-linear-model-estimate" id="toc-uncertainty-of-the-linear-model-estimate" class="nav-link" data-scroll-target="#uncertainty-of-the-linear-model-estimate"><span class="header-section-number">27.5.1</span> Uncertainty of the linear model estimate</a></li>
-  <li><a href="#two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." id="toc-two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." class="nav-link" data-scroll-target="#two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals."><span class="header-section-number">27.5.2</span> Two types of interval estimates for our linear model: Confidence intervals and prediction intervals.</a></li>
-  <li><a href="#contrasting-the-interpretations" id="toc-contrasting-the-interpretations" class="nav-link" data-scroll-target="#contrasting-the-interpretations"><span class="header-section-number">27.5.3</span> Contrasting the interpretations</a></li>
-  <li><a href="#why-the-difference-in-size" id="toc-why-the-difference-in-size" class="nav-link" data-scroll-target="#why-the-difference-in-size"><span class="header-section-number">27.5.4</span> Why the difference in size?</a></li>
+  <li><a href="#uncertainty-of-the-linear-model-estimate" id="toc-uncertainty-of-the-linear-model-estimate" class="nav-link" data-scroll-target="#uncertainty-of-the-linear-model-estimate"><span class="header-section-number">26.7.1</span> Uncertainty of the linear model estimate</a></li>
+  <li><a href="#two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." id="toc-two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." class="nav-link" data-scroll-target="#two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals."><span class="header-section-number">26.7.2</span> Two types of interval estimates for our linear model: Confidence intervals and prediction intervals.</a></li>
+  <li><a href="#contrasting-the-interpretations" id="toc-contrasting-the-interpretations" class="nav-link" data-scroll-target="#contrasting-the-interpretations"><span class="header-section-number">26.7.3</span> Contrasting the interpretations</a></li>
+  <li><a href="#why-the-difference-in-size" id="toc-why-the-difference-in-size" class="nav-link" data-scroll-target="#why-the-difference-in-size"><span class="header-section-number">26.7.4</span> Why the difference in size?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -506,7 +509,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></h1>
+<h1 class="title"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression - Examples</span></h1>
 </div>
 
 
@@ -533,8 +536,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="creating-linear-data" class="level2" data-number="27.1">
-<h2 data-number="27.1" class="anchored" data-anchor-id="creating-linear-data"><span class="header-section-number">27.1</span> Creating Linear Data</h2>
+<section id="creating-linear-data" class="level2" data-number="26.1">
+<h2 data-number="26.1" class="anchored" data-anchor-id="creating-linear-data"><span class="header-section-number">26.1</span> Creating Linear Data</h2>
 <p>We can simulate data from a linear model <span class="math display">\[Y_i = 5 + 5X+\epsilon\]</span> where <span class="math inline">\(\epsilon \overset{iid}{\sim}N(\mu,\sigma^2)\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#There is no assumption that X follows any particular distribution</span></span>
@@ -549,12 +552,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="atlanta-lead-example" class="level2" data-number="27.2">
-<h2 data-number="27.2" class="anchored" data-anchor-id="atlanta-lead-example"><span class="header-section-number">27.2</span> Atlanta Lead Example</h2>
+<section id="income-by-education" class="level2" data-number="26.2">
+<h2 data-number="26.2" class="anchored" data-anchor-id="income-by-education"><span class="header-section-number">26.2</span> Income by Education</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>lead_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/lead.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>atlanta_lead <span class="ot">&lt;-</span> <span class="fu">subset</span>(lead_data, city<span class="sc">==</span><span class="st">"Atlanta"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(atlanta_lead)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#generate data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>yrs <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>,<span class="dv">20</span>,.<span class="dv">40</span>)<span class="sc">+</span><span class="dv">8</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>inc <span class="ot">&lt;-</span> (<span class="dv">50</span> <span class="sc">+</span> (yrs<span class="dv">-12</span>)<span class="sc">*</span>(<span class="dv">170-55</span>)<span class="sc">/</span><span class="dv">10</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">15</span>) )<span class="sc">/</span> <span class="dv">10</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#note that the true model is Y= -8.8 + + 1.15 X + e</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># also note that SD(epsilon) = 1.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>inc.lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(inc<span class="sc">~</span><span class="dv">1</span><span class="sc">+</span>yrs)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>inc.lm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = inc ~ 1 + yrs)
+
+Coefficients:
+(Intercept)          yrs  
+     -8.553        1.137  </code></pre>
+</div>
+</div>
+</section>
+<section id="atlanta-lead-example" class="level2" data-number="26.3">
+<h2 data-number="26.3" class="anchored" data-anchor-id="atlanta-lead-example"><span class="header-section-number">26.3</span> Atlanta Lead Example</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lead_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/lead.csv"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>atlanta_lead <span class="ot">&lt;-</span> <span class="fu">subset</span>(lead_data, city<span class="sc">==</span><span class="st">"Atlanta"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(atlanta_lead)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     city           air.pb.metric.tons aggr.assault.per.million
  Length:36          Min.   : 421.0     Min.   : 431.0          
@@ -564,8 +591,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                     3rd Qu.:1247.8     3rd Qu.:1850.2          
                     Max.   :1516.0     Max.   :2301.0          </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if we call lm without storing it to a object</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(aggr.assault.per.million <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> air.pb.metric.tons, <span class="at">data=</span>atlanta_lead)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if we call lm without storing it to a object</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(aggr.assault.per.million <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> air.pb.metric.tons, <span class="at">data=</span>atlanta_lead)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -578,8 +605,8 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>atlanta_lead_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(aggr.assault.per.million <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> air.pb.metric.tons, <span class="at">data=</span>atlanta_lead)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(atlanta_lead_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>atlanta_lead_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(aggr.assault.per.million <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> air.pb.metric.tons, <span class="at">data=</span>atlanta_lead)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(atlanta_lead_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -602,18 +629,29 @@ Multiple R-squared:  0.898, Adjusted R-squared:  0.895
 F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check the R^2</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(atlanta_lead<span class="sc">$</span>air.pb.metric.tons, atlanta_lead<span class="sc">$</span>aggr.assault.per.million)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9476473</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(atlanta_lead<span class="sc">$</span>air.pb.metric.tons, atlanta_lead<span class="sc">$</span>aggr.assault.per.million)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8980353</code></pre>
+</div>
+</div>
 <p>Scatter Plot using Base R</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(aggr.assault.per.million <span class="sc">~</span> air.pb.metric.tons, <span class="at">data=</span>atlanta_lead)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(atlanta_lead_lm, <span class="at">col=</span><span class="st">"red"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="at">y=</span><span class="fu">fitted</span>(atlanta_lead_lm), <span class="at">x=</span>atlanta_lead<span class="sc">$</span>air.pb.metric.tons, <span class="at">pch=</span><span class="dv">16</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(aggr.assault.per.million <span class="sc">~</span> air.pb.metric.tons, <span class="at">data=</span>atlanta_lead)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(atlanta_lead_lm, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(<span class="at">y=</span><span class="fu">fitted</span>(atlanta_lead_lm), <span class="at">x=</span>atlanta_lead<span class="sc">$</span>air.pb.metric.tons, <span class="at">pch=</span><span class="dv">16</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>atlanta_lead_lm<span class="sc">$</span>residuals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>atlanta_lead_lm<span class="sc">$</span>residuals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          1           2           3           4           5           6 
  330.080025  226.850054  155.793859 -216.454844  256.930171  102.756395 
@@ -628,42 +666,42 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
          31          32          33          34          35          36 
  199.737410  -64.487372   16.648940   14.188998  -27.773538    3.977759 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># or resid(atlanta_lead_lm)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or residuals(atlanta_lead_lm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># or resid(atlanta_lead_lm)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or residuals(atlanta_lead_lm)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A proper residual plot</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">y=</span>atlanta_lead_lm<span class="sc">$</span>residuals,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">x=</span><span class="fu">fitted</span>(atlanta_lead_lm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">y=</span>atlanta_lead_lm<span class="sc">$</span>residuals,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">x=</span><span class="fu">fitted</span>(atlanta_lead_lm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>The wrong way to make a residual plot</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">y=</span>atlanta_lead_lm<span class="sc">$</span>residuals,</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">x=</span>atlanta_lead<span class="sc">$</span>aggr.assault.per.million)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">y=</span>atlanta_lead_lm<span class="sc">$</span>residuals,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">x=</span>atlanta_lead<span class="sc">$</span>aggr.assault.per.million)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Checking for auto-correlation among residuals</p>
 <p>This is when the residual values tend to be associated with the ‘next’ residual.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#we look at the correlation between residuals and the </span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># next residual</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span><span class="fu">resid</span>(atlanta_lead_lm)[<span class="sc">-</span><span class="fu">length</span>(<span class="fu">resid</span>(atlanta_lead_lm))], <span class="at">y=</span> <span class="fu">resid</span>(atlanta_lead_lm)[<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#we look at the correlation between residuals and the </span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># next residual</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span><span class="fu">resid</span>(atlanta_lead_lm)[<span class="sc">-</span><span class="fu">length</span>(<span class="fu">resid</span>(atlanta_lead_lm))], <span class="at">y=</span> <span class="fu">resid</span>(atlanta_lead_lm)[<span class="sc">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#we're looking for independence between the residual values - no shape </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#we're looking for independence between the residual values - no shape </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>QQ plot</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(atlanta_lead)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at what 36 equally spaced quantiles would be</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>)<span class="sc">/</span>(<span class="dv">37</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(atlanta_lead)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at what 36 equally spaced quantiles would be</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>)<span class="sc">/</span>(<span class="dv">37</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0.02702703 0.05405405 0.08108108 0.10810811 0.13513514 0.16216216
  [7] 0.18918919 0.21621622 0.24324324 0.27027027 0.29729730 0.32432432
@@ -672,64 +710,64 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 [25] 0.67567568 0.70270270 0.72972973 0.75675676 0.78378378 0.81081081
 [31] 0.83783784 0.86486486 0.89189189 0.91891892 0.94594595 0.97297297</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>qs <span class="ot">&lt;-</span> <span class="fu">qnorm</span>((<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>)<span class="sc">/</span>(<span class="dv">37</span>))</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stripchart</span>(qs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>qs <span class="ot">&lt;-</span> <span class="fu">qnorm</span>((<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>)<span class="sc">/</span>(<span class="dv">37</span>))</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stripchart</span>(qs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>The 4 pre-fab plots of the linear model object</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(atlanta_lead_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(atlanta_lead_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-10-4.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#You can run this to get just the first two plots</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(atlanta_lead_lm, <span class="at">which=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-10-5.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-13-3.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-10-6.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-13-4.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#You can run this to get just the first two plots</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(atlanta_lead_lm, <span class="at">which=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-13-5.png" class="img-fluid" width="672"></p>
+</div>
+<div class="cell-output-display">
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-13-6.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="looking-at-qqplots" class="level3" data-number="27.2.1">
-<h3 data-number="27.2.1" class="anchored" data-anchor-id="looking-at-qqplots"><span class="header-section-number">27.2.1</span> looking at qqplots</h3>
+<section id="looking-at-qqplots" class="level3" data-number="26.3.1">
+<h3 data-number="26.3.1" class="anchored" data-anchor-id="looking-at-qqplots"><span class="header-section-number">26.3.1</span> looking at qqplots</h3>
 <p>Let’s just explore the type of variation we see with normal QQ plots for this sample size so we know what tolerable deviation from the diagonal looks like</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(<span class="fu">rnorm</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#also the qqPlot function in the car library adds a 95% tolerance band</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">#also the qqPlot function in the car library adds a 95% tolerance band</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: carData</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqPlot</span>(<span class="fu">residuals</span>(atlanta_lead_lm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqPlot</span>(<span class="fu">residuals</span>(atlanta_lead_lm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9 7</code></pre>
@@ -737,10 +775,10 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </section>
 </section>
-<section id="inference-on-the-coefficients" class="level2" data-number="27.3">
-<h2 data-number="27.3" class="anchored" data-anchor-id="inference-on-the-coefficients"><span class="header-section-number">27.3</span> Inference on the coefficients</h2>
+<section id="inference-on-the-coefficients" class="level2" data-number="26.4">
+<h2 data-number="26.4" class="anchored" data-anchor-id="inference-on-the-coefficients"><span class="header-section-number">26.4</span> Inference on the coefficients</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(atlanta_lead_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(atlanta_lead_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -765,21 +803,21 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>If for example I want to test <span class="math inline">\(H_0: \beta_1 = 1.3\)</span> vs <span class="math inline">\(H_A: \beta_1 &gt; 1.3\)</span> The t statistic would be <span class="math display">\[t = \dfrac{1.40375 - 1.3}{.08112}=1.278969\]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (<span class="fl">1.40375-1.3</span>)<span class="sc">/</span>.<span class="dv">08112</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> (<span class="fl">1.40375-1.3</span>)<span class="sc">/</span>.<span class="dv">08112</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <span class="math inline">\(p\)</span>-value is going to be the right -tail probability from a T distribtuion with 34 degrees of freedom</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(t, <span class="at">df=</span><span class="dv">34</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pt</span>(t, <span class="at">df=</span><span class="dv">34</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.1047842</code></pre>
 </div>
 </div>
 </section>
-<section id="prediction" class="level2" data-number="27.4">
-<h2 data-number="27.4" class="anchored" data-anchor-id="prediction"><span class="header-section-number">27.4</span> Prediction</h2>
+<section id="prediction" class="level2" data-number="26.5">
+<h2 data-number="26.5" class="anchored" data-anchor-id="prediction"><span class="header-section-number">26.5</span> Prediction</h2>
 <p>Point estimate</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(atlanta_lead_lm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">air.pb.metric.tons=</span><span class="dv">1300</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(atlanta_lead_lm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">air.pb.metric.tons=</span><span class="dv">1300</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       1 
 1932.813 </code></pre>
@@ -787,7 +825,7 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>A confidence interval for <span class="math inline">\(E(Y|X=1300)\)</span> This estimates the location of the regression line with 95% confidence.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(atlanta_lead_lm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">air.pb.metric.tons=</span><span class="dv">1300</span>), <span class="at">interval=</span><span class="st">"confidence"</span>, <span class="at">level=</span>.<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(atlanta_lead_lm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">air.pb.metric.tons=</span><span class="dv">1300</span>), <span class="at">interval=</span><span class="st">"confidence"</span>, <span class="at">level=</span>.<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       fit      lwr      upr
 1 1932.813 1845.229 2020.397</code></pre>
@@ -795,109 +833,111 @@ F-statistic: 299.4 on 1 and 34 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 <p>A ‘prediction’ interval for <span class="math inline">\(\hat{Y}|X=1300)\)</span> This estimates the range of values for a individual data point line with 95% confidence.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(atlanta_lead_lm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">air.pb.metric.tons=</span><span class="dv">1300</span>), <span class="at">interval=</span><span class="st">"prediction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(atlanta_lead_lm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">air.pb.metric.tons=</span><span class="dv">1300</span>), <span class="at">interval=</span><span class="st">"prediction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       fit      lwr      upr
 1 1932.813 1555.393 2310.233</code></pre>
 </div>
 </div>
-<p>Demonstration of the difference between the two types of intervals.</p>
+</section>
+<section id="demonstration-of-the-difference-between-the-two-types-of-intervals." class="level2" data-number="26.6">
+<h2 data-number="26.6" class="anchored" data-anchor-id="demonstration-of-the-difference-between-the-two-types-of-intervals."><span class="header-section-number">26.6</span> Demonstration of the difference between the two types of intervals.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>NMC <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span><span class="cn">NA</span>, <span class="at">y=</span><span class="cn">NA</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">400</span>,<span class="dv">1400</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2000</span>))</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>NMC){</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Generate data from a linear model</span></span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="dv">400</span>, <span class="dv">1400</span>)</span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  err <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="at">sd=</span><span class="dv">100</span>)</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">+</span> <span class="fl">1.4</span> <span class="sc">*</span> X <span class="sc">+</span> err</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  myFit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X)</span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>  b0[i] <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coefficients</span>(myFit)[<span class="dv">1</span>])</span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>  b1[i] <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coefficients</span>(myFit)[<span class="dv">2</span>])</span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(myFit, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">25</span>))</span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>NMC <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x=</span><span class="cn">NA</span>, <span class="at">y=</span><span class="cn">NA</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">400</span>,<span class="dv">1400</span>), <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">2000</span>))</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>NMC){</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Generate data from a linear model</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="dv">400</span>, <span class="dv">1400</span>)</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  err <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="at">sd=</span><span class="dv">100</span>)</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">+</span> <span class="fl">1.4</span> <span class="sc">*</span> X <span class="sc">+</span> err</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>  myFit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y <span class="sc">~</span> X)</span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>  b0[i] <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coefficients</span>(myFit)[<span class="dv">1</span>])</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>  b1[i] <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coefficients</span>(myFit)[<span class="dv">2</span>])</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(myFit, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">25</span>))</span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>y.est <span class="ot">&lt;-</span> b0 <span class="sc">+</span> <span class="dv">1300</span><span class="sc">*</span>b1</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(y.est, <span class="fu">c</span>(.<span class="dv">025</span>, .<span class="dv">975</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>y.est <span class="ot">&lt;-</span> b0 <span class="sc">+</span> <span class="dv">1300</span><span class="sc">*</span>b1</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(y.est, <span class="fu">c</span>(.<span class="dv">025</span>, .<span class="dv">975</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    2.5%    97.5% 
-1861.168 1979.547 </code></pre>
+1856.640 1981.615 </code></pre>
 </div>
 </div>
 <p>For the second type of confidence interval</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1300</span>, <span class="dv">1000</span>)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>y.pred <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">+</span> <span class="fl">1.4</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">0</span>, <span class="at">sd=</span><span class="dv">100</span>)</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(y.pred, <span class="fu">c</span>(.<span class="dv">025</span>, .<span class="dv">975</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1300</span>, <span class="dv">1000</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>y.pred <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">+</span> <span class="fl">1.4</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">0</span>, <span class="at">sd=</span><span class="dv">100</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(y.pred, <span class="fu">c</span>(.<span class="dv">025</span>, .<span class="dv">975</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    2.5%    97.5% 
-1732.464 2115.994 </code></pre>
+1732.092 2117.385 </code></pre>
 </div>
 </div>
 </section>
-<section id="uncertainty-in-prediction" class="level2" data-number="27.5">
-<h2 data-number="27.5" class="anchored" data-anchor-id="uncertainty-in-prediction"><span class="header-section-number">27.5</span> Uncertainty in Prediction</h2>
+<section id="uncertainty-in-prediction" class="level2" data-number="26.7">
+<h2 data-number="26.7" class="anchored" data-anchor-id="uncertainty-in-prediction"><span class="header-section-number">26.7</span> Uncertainty in Prediction</h2>
 <p>Consider a linear relationship <span class="math display">\[y = 10 + 2x + \epsilon\]</span></p>
 <p>Consider if X ranges from .1 to 3, 1 to 30 or 10 to 300, and <span class="math inline">\(\sigma = .5, 5, 50\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>scalar <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">10</span>)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">seq</span>(scalar[i]<span class="sc">*</span><span class="dv">1</span>, scalar[i]<span class="sc">*</span><span class="dv">30</span>, <span class="at">length.out=</span><span class="dv">30</span>)</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    Y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(X), <span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span><span class="sc">*</span>scalar[j])</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(X, Y, <span class="at">main=</span><span class="fu">ifelse</span>(i<span class="sc">==</span><span class="dv">1</span>, <span class="fu">paste0</span>(<span class="st">"sigma="</span>,<span class="dv">5</span><span class="sc">*</span>scalar[j]),<span class="st">""</span>))</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">abline</span>(<span class="fu">lm</span>(Y<span class="sc">~</span>X))    </span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>))</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>scalar <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">10</span>)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">seq</span>(scalar[i]<span class="sc">*</span><span class="dv">1</span>, scalar[i]<span class="sc">*</span><span class="dv">30</span>, <span class="at">length.out=</span><span class="dv">30</span>)</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    Y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(X), <span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span><span class="sc">*</span>scalar[j])</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(X, Y, <span class="at">main=</span><span class="fu">ifelse</span>(i<span class="sc">==</span><span class="dv">1</span>, <span class="fu">paste0</span>(<span class="st">"sigma="</span>,<span class="dv">5</span><span class="sc">*</span>scalar[j]),<span class="st">""</span>))</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">abline</span>(<span class="fu">lm</span>(Y<span class="sc">~</span>X))    </span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>So you can see that the fit of the linear model is related to the range of the <span class="math inline">\(X\)</span> data as well as the variance of the error term.</p>
-<section id="uncertainty-of-the-linear-model-estimate" class="level3" data-number="27.5.1">
-<h3 data-number="27.5.1" class="anchored" data-anchor-id="uncertainty-of-the-linear-model-estimate"><span class="header-section-number">27.5.1</span> Uncertainty of the linear model estimate</h3>
+<section id="uncertainty-of-the-linear-model-estimate" class="level3" data-number="26.7.1">
+<h3 data-number="26.7.1" class="anchored" data-anchor-id="uncertainty-of-the-linear-model-estimate"><span class="header-section-number">26.7.1</span> Uncertainty of the linear model estimate</h3>
 <p>Let’s look at the uncertainty of the line of best fit. We’ll sample 30 points from this population and fit a line and repeat.</p>
 <p><span class="math inline">\(Y = 10 + 2X + \epsilon\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>slopes <span class="ot">&lt;-</span> <span class="dv">0</span>; intercepts <span class="ot">&lt;-</span> <span class="dv">0</span>; <span class="co">#empty vectors</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>){</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="at">min=</span><span class="dv">10</span>, <span class="at">max=</span><span class="dv">20</span>)</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i<span class="sc">==</span><span class="dv">1</span>){</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(X,Y)</span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>  linearFit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(linearFit, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">1</span>))</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>  slopes[i] <span class="ot">&lt;-</span> <span class="fu">coef</span>(linearFit)[<span class="dv">2</span>]</span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>  intercepts[i] <span class="ot">&lt;-</span> <span class="fu">coef</span>(linearFit)[<span class="dv">1</span>]</span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a=</span><span class="dv">10</span>, <span class="at">b=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>slopes <span class="ot">&lt;-</span> <span class="dv">0</span>; intercepts <span class="ot">&lt;-</span> <span class="dv">0</span>; <span class="co">#empty vectors</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>){</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="at">min=</span><span class="dv">10</span>, <span class="at">max=</span><span class="dv">20</span>)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i<span class="sc">==</span><span class="dv">1</span>){</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(X,Y)</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  linearFit <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(linearFit, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">1</span>))</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>  slopes[i] <span class="ot">&lt;-</span> <span class="fu">coef</span>(linearFit)[<span class="dv">2</span>]</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>  intercepts[i] <span class="ot">&lt;-</span> <span class="fu">coef</span>(linearFit)[<span class="dv">1</span>]</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a=</span><span class="dv">10</span>, <span class="at">b=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>What is the standard deviation of the intercept and slope estimates?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(intercepts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(intercepts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5.022983</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(slopes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(slopes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.332713</code></pre>
 </div>
 </div>
 <p>Look at the summary output from the linear model (this is the very last model that was fit):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(linearFit)<span class="sc">$</span>coefficients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(linearFit)<span class="sc">$</span>coefficients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            Estimate Std. Error  t value    Pr(&gt;|t|)
 (Intercept) 18.66863  6.6534833 2.805844 0.009027105
@@ -906,16 +946,16 @@ X            1.46134  0.4236239 3.449615 0.001796701</code></pre>
 </div>
 <p>These are not the exact same as the standard errors, but they are in the ballpark. These standard errors are related to this particular model fit with one set of <span class="math inline">\((X,Y)\)</span> data. If we averaged the standard error over many model fits we’d probably see the values match much better.</p>
 </section>
-<section id="two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." class="level3" data-number="27.5.2">
-<h3 data-number="27.5.2" class="anchored" data-anchor-id="two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals."><span class="header-section-number">27.5.2</span> Two types of interval estimates for our linear model: Confidence intervals and prediction intervals.</h3>
+<section id="two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals." class="level3" data-number="26.7.2">
+<h3 data-number="26.7.2" class="anchored" data-anchor-id="two-types-of-interval-estimates-for-our-linear-model-confidence-intervals-and-prediction-intervals."><span class="header-section-number">26.7.2</span> Two types of interval estimates for our linear model: Confidence intervals and prediction intervals.</h3>
 <p>The standard error (i.e.&nbsp;uncertainty) of the slope and intercept estimates is captured by the idea of a “confidence interval” in prediction. Using the last sampled <span class="math inline">\((X,Y)\)</span> data we fit</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>xrng <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">20</span>,.<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>xrng <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">20</span>,.<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Using the predict function we can estimate <span class="math inline">\(E(Y|X=x)\)</span> for some particular value of <span class="math inline">\(X\)</span>. For example, if <span class="math inline">\(X=16\)</span> a point estimate is given by</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       1 
 42.05007 </code></pre>
@@ -923,7 +963,7 @@ X            1.46134  0.4236239 3.449615 0.001796701</code></pre>
 </div>
 <p>A confidence interval for <span class="math inline">\(E(Y|X=16)\)</span> is given by adding the <code>interval="confidence"</code> option</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"confidence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"confidence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       fit      lwr      upr
 1 42.05007 39.96838 44.13175</code></pre>
@@ -932,20 +972,20 @@ X            1.46134  0.4236239 3.449615 0.001796701</code></pre>
 <p>We would say “I am 95% confident that the expected value of <span class="math inline">\(Y\)</span> when <span class="math inline">\(x=16\)</span> is between 39.97 and 44.13”.</p>
 <p>We can actually plot the confidence interval band over the data range to see it visualized.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>CIconf <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span>xrng), <span class="at">interval=</span><span class="st">"confidence"</span>)</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X,Y)</span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(Ylm)</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">10</span>,<span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIconf[,<span class="dv">2</span>], <span class="at">col=</span><span class="st">"black"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIconf[,<span class="dv">3</span>], <span class="at">col=</span><span class="st">"black"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>CIconf <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span>xrng), <span class="at">interval=</span><span class="st">"confidence"</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X,Y)</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(Ylm)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">10</span>,<span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIconf[,<span class="dv">2</span>], <span class="at">col=</span><span class="st">"black"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIconf[,<span class="dv">3</span>], <span class="at">col=</span><span class="st">"black"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>In a sense, we are 95% certain that the true line is within this interval, at least within the range of data that we have observed. But the better way to interpret it is that for any particular <span class="math inline">\(X\)</span> value, we are 95% certain that the the expected value of <span class="math inline">\(Y\)</span> (true line value in red) is within the interval.</p>
 <p>For example, take <span class="math inline">\(x=16\)</span>. What is the 95% confidence interval for <span class="math inline">\(E(\hat Y|X=16)\)</span>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"confidence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"confidence"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       fit      lwr      upr
 1 42.05007 39.96838 44.13175</code></pre>
@@ -953,66 +993,66 @@ X            1.46134  0.4236239 3.449615 0.001796701</code></pre>
 </div>
 <p>And what is the <strong>true</strong> <span class="math inline">\(E(Y|X=16)\)</span>?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="sc">+</span><span class="dv">2</span><span class="sc">*</span><span class="dv">16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="sc">+</span><span class="dv">2</span><span class="sc">*</span><span class="dv">16</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 42</code></pre>
 </div>
 </div>
 <p>The 95% confidence manifests itself if we were to repeat this many times, sampling a different sample each time and checking whether our interval covers the true expected value of 42.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>contains42 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>NMC <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>NMC){</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="at">min=</span><span class="dv">10</span>, <span class="at">max=</span><span class="dv">20</span>)</span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>  Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>  CI <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"confidence"</span>)[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
-<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>  contains42[i] <span class="ot">&lt;-</span> CI[<span class="dv">1</span>]<span class="sc">&lt;=</span><span class="dv">42</span> <span class="sc">&amp;</span> CI[<span class="dv">2</span>]<span class="sc">&gt;=</span><span class="dv">42</span></span>
-<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(contains42) <span class="co">#proportion of TRUEs in the results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>contains42 <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>NMC <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>NMC){</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="at">min=</span><span class="dv">10</span>, <span class="at">max=</span><span class="dv">20</span>)</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>  Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>  CI <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"confidence"</span>)[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>  contains42[i] <span class="ot">&lt;-</span> CI[<span class="dv">1</span>]<span class="sc">&lt;=</span><span class="dv">42</span> <span class="sc">&amp;</span> CI[<span class="dv">2</span>]<span class="sc">&gt;=</span><span class="dv">42</span></span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(contains42) <span class="co">#proportion of TRUEs in the results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.95</code></pre>
 </div>
 </div>
 <p>On the other hand, a <strong>prediction interval</strong> is wider. Let’s just plot it and then talk about what it actually means.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>xrng <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">20</span>,.<span class="dv">5</span>)</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>CIconf <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span>xrng), <span class="at">interval=</span><span class="st">"confidence"</span>)</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>CIpred <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span>xrng), <span class="at">interval=</span><span class="st">"prediction"</span>)</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X,Y)</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(Ylm)</span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">10</span>,<span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIconf[,<span class="dv">2</span>], <span class="at">col=</span><span class="st">"black"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIconf[,<span class="dv">3</span>], <span class="at">col=</span><span class="st">"black"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIpred[,<span class="dv">2</span>], <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIpred[,<span class="dv">3</span>], <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>xrng <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">20</span>,.<span class="dv">5</span>)</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>CIconf <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span>xrng), <span class="at">interval=</span><span class="st">"confidence"</span>)</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>CIpred <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span>xrng), <span class="at">interval=</span><span class="st">"prediction"</span>)</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X,Y)</span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(Ylm)</span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">10</span>,<span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIconf[,<span class="dv">2</span>], <span class="at">col=</span><span class="st">"black"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIconf[,<span class="dv">3</span>], <span class="at">col=</span><span class="st">"black"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIpred[,<span class="dv">2</span>], <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIpred[,<span class="dv">3</span>], <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>This interval predicts the next observed point from the population. For example, suppose we observe 1000 more points with <span class="math inline">\(X=16\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>newX <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">16</span>,<span class="dv">1000</span>)</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>newY <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> newX <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>xrng <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">20</span>,.<span class="dv">5</span>)</span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>CIpred <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span>xrng), <span class="at">interval=</span><span class="st">"prediction"</span>)</span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X,Y, <span class="at">ylim=</span><span class="fu">range</span>(newY))</span>
-<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(Ylm)</span>
-<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">10</span>,<span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
-<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIpred[,<span class="dv">2</span>], <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIpred[,<span class="dv">3</span>], <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
-<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(newX, newY, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,.<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>newX <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">16</span>,<span class="dv">1000</span>)</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>newY <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> newX <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>xrng <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">10</span>,<span class="dv">20</span>,.<span class="dv">5</span>)</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>CIpred <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span>xrng), <span class="at">interval=</span><span class="st">"prediction"</span>)</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(X,Y, <span class="at">ylim=</span><span class="fu">range</span>(newY))</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(Ylm)</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">10</span>,<span class="dv">2</span>, <span class="at">col=</span><span class="st">"red"</span>)</span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIpred[,<span class="dv">2</span>], <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="at">x=</span>xrng, <span class="at">y=</span>CIpred[,<span class="dv">3</span>], <span class="at">col=</span><span class="st">"blue"</span>, <span class="at">lty=</span><span class="dv">2</span>)</span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(newX, newY, <span class="at">col=</span><span class="fu">rgb</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,.<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
+<p><img src="R08_prediction_examples_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Most of these new observations are within the prediction interval, but not all of them. What proportion of them?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>CI <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"prediction"</span>)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(newY <span class="sc">&gt;=</span> CI[<span class="dv">2</span>] <span class="sc">&amp;</span> newY <span class="sc">&lt;=</span> CI[<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>CI <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"prediction"</span>)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(newY <span class="sc">&gt;=</span> CI[<span class="dv">2</span>] <span class="sc">&amp;</span> newY <span class="sc">&lt;=</span> CI[<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.963</code></pre>
 </div>
@@ -1020,29 +1060,29 @@ X            1.46134  0.4236239 3.449615 0.001796701</code></pre>
 <p>Not a huge surprise - It’s a 95% prediction interval. How high or low this proportion is is dependent on the particular 30 data points that we used to fit the data - if our slope and intercept estimates are better, we’ll get closer to 95%, and if our standard error of residuals is higher this will increase the percentage because each prediction interval will be wider.</p>
 <p>A better way to measure the predictive power of the interval is to repeat with <strong>new data</strong> on every model fit:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>containsY <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>NMC <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>NMC){</span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="at">min=</span><span class="dv">10</span>, <span class="at">max=</span><span class="dv">20</span>)</span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>  Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
-<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>  newY <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">16</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
-<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>  CI <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"prediction"</span>)[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
-<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>  containsY[i] <span class="ot">&lt;-</span> CI[<span class="dv">1</span>]<span class="sc">&lt;=</span>newY <span class="sc">&amp;</span> CI[<span class="dv">2</span>]<span class="sc">&gt;=</span>newY</span>
-<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(containsY) <span class="co">#proportion of TRUEs in the results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>containsY <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>NMC <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>NMC){</span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>  X <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="at">min=</span><span class="dv">10</span>, <span class="at">max=</span><span class="dv">20</span>)</span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>  Y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> X <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>  Ylm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Y<span class="sc">~</span>X)</span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>  newY <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> <span class="dv">16</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">1</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">5</span>)</span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>  CI <span class="ot">&lt;-</span> <span class="fu">predict</span>(Ylm, <span class="at">newdata=</span><span class="fu">data.frame</span>(<span class="at">X=</span><span class="dv">16</span>), <span class="at">interval=</span><span class="st">"prediction"</span>)[,<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>  containsY[i] <span class="ot">&lt;-</span> CI[<span class="dv">1</span>]<span class="sc">&lt;=</span>newY <span class="sc">&amp;</span> CI[<span class="dv">2</span>]<span class="sc">&gt;=</span>newY</span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(containsY) <span class="co">#proportion of TRUEs in the results</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.956</code></pre>
 </div>
 </div>
 </section>
-<section id="contrasting-the-interpretations" class="level3" data-number="27.5.3">
-<h3 data-number="27.5.3" class="anchored" data-anchor-id="contrasting-the-interpretations"><span class="header-section-number">27.5.3</span> Contrasting the interpretations</h3>
+<section id="contrasting-the-interpretations" class="level3" data-number="26.7.3">
+<h3 data-number="26.7.3" class="anchored" data-anchor-id="contrasting-the-interpretations"><span class="header-section-number">26.7.3</span> Contrasting the interpretations</h3>
 <p>Our interpretation of a prediction interval is like this: “I am 95% confident (certain) that for a new observation with <span class="math inline">\(X=16\)</span>, <span class="math inline">\(Y\)</span> will be within the interval”</p>
 <p>Our interpretation of a confidence interval is : “I am 95% confident that the mean <span class="math inline">\(Y\)</span> value for all observations with <span class="math inline">\(X=16\)</span> is within the interval”</p>
 </section>
-<section id="why-the-difference-in-size" class="level3" data-number="27.5.4">
-<h3 data-number="27.5.4" class="anchored" data-anchor-id="why-the-difference-in-size"><span class="header-section-number">27.5.4</span> Why the difference in size?</h3>
+<section id="why-the-difference-in-size" class="level3" data-number="26.7.4">
+<h3 data-number="26.7.4" class="anchored" data-anchor-id="why-the-difference-in-size"><span class="header-section-number">26.7.4</span> Why the difference in size?</h3>
 <p>The standard error of a confidence interval for <span class="math inline">\(E(Y|x)\)</span> is <span class="math display">\[
 SE(\overline{Y}|x) = s_e \sqrt{\frac1n + \frac{(x-\bar{x})^2}{SS_{xx}}}
 \]</span> The standard error of a prediction interval for <span class="math inline">\(\hat{Y}|x\)</span> is <span class="math display">\[
@@ -1291,11 +1331,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./slr_practice.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span>
+      <a href="./prediction1.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Prediction (Simple Linear Regression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./slr_practice.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Simple Linear Regression Practice</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
