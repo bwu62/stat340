@@ -12,7 +12,7 @@ Author credits to Karl Rohe, Keith Levin, Bi Cheng Wu, and Brian Powers
 
 - Monte Carlo: <a href="normal_pdf_cdf">Normal PDF CDF Inverse CDF </a>
 - Testing Part 2: <a href="onetwotail">Binomial One/Two Tail Test Power</a>
-- Logistic Regression: <a href="logistic">ROC Plot</a>
+- Logistic Regression: <a href="logistic_ROC">ROC Plot</a>
 - Model Selection: <a href="model_selection">Visualization</a>
 
 <!--
