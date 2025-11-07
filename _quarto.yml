@@ -5,7 +5,7 @@ project:
 book:
   title: "STAT 340: Data Science II"
   author: "Brian Powers"
-  date: "5/7/2025"
+  date: "11/7/2025"
   reader-mode: true
   sidebar:
     collapse-level: 1
