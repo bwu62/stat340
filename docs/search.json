@@ -3,8 +3,11 @@
     "objectID": "index.html#collection-of-shiny-apps",
     "href": "index.html#collection-of-shiny-apps",
     "title": "STAT 340: Data Science II",
-    "section": "0.1 Collection of Shiny Apps",
-    "text": "0.1 Collection of Shiny Apps\n\nMonte Carlo: Normal PDF CDF Inverse CDF \nTesting Part 2: Binomial One/Two Tail Test Power\nLogistic Regression: ROC Plot\nModel Selection: Visualization"
+    "section": "",
+    "text": "Monte Carlo: Normal PDF CDF Inverse CDF \nTesting Part 2: Binomial One/Two Tail Test Power\nLogistic Regression: ROC Plot\nModel Selection: Visualization",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>STAT 340</span>"
+    ]
   },
   {
     "objectID": "rv_practice.html",
@@ -952,7 +955,7 @@
     "href": "index.html",
     "title": "STAT 340: Data Science II",
     "section": "",
-    "text": "0.1 Collection of Shiny Apps",
+    "text": "0.1 Collection of Shiny Apps\nHere are the course notes, practice problems and other course materials for STAT 340: Data Science II at UW Madison.\nAuthor credits to Karl Rohe, Keith Levin, Bi Cheng Wu, and Brian Powers",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>STAT 340</span>"
     ]
