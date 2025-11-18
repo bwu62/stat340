@@ -6,7 +6,8 @@ editor: source
 
 # Practice Problems
 
-1.  Researchers studying anthropometry collected body and skeletal diameter measurements, as well as age, weight, height and sex for 507 physically active individuals. The scatterplot below shows the relationship between height and shoulder girth (circumference of shoulders measured over deltoid muscles), both measured in centimeters.
+##  skeletons
+Researchers studying anthropometry collected body and skeletal diameter measurements, as well as age, weight, height and sex for 507 physically active individuals. The scatterplot below shows the relationship between height and shoulder girth (circumference of shoulders measured over deltoid muscles), both measured in centimeters.
 
 ```{r, warning=FALSE}
 if(!require(openintro)){
@@ -28,7 +29,8 @@ b.  How would the relationship change if shoulder girth was measured in inches w
 **The relationship would be the same if the units of shoulder girth were changed; the only change to the plot would be the labeling of the X axis. The scatterplot itself would appear unchanged.**
 :::
 
-2.  The Coast Starlight Amtrak train runs from Seattle to Los Angeles. The scatterplot below displays the distance between each stop (in miles) and the amount of time it takes to travel from one stop to another (in minutes).
+## Train Travel
+The Coast Starlight Amtrak train runs from Seattle to Los Angeles. The scatterplot below displays the distance between each stop (in miles) and the amount of time it takes to travel from one stop to another (in minutes).
 
 ::: {.callout-note collapse="true" title="Solution"}
 ```{r}
@@ -115,7 +117,8 @@ range(coast_starlight$dist)
 **Because the dataset that generated this model included distances from 10 to 352 miles, it would only be appropriate to use this model to predict travel time for distances in this range. We lack any evidence from the dataset that the modeled relationship exists for distances beyond 352 miles.**
 :::
 
-3.  What would be the correlation between the ages of partners if people always dated others who are
+## Understanding Correlation  
+What would be the correlation between the ages of partners if people always dated others who are
 
 <!-- -->
 
@@ -155,13 +158,17 @@ cor(age.a, age.b)
 ```
 :::
 
-4.  Suppose we fit a regression line to predict the shelf life of an apple based on its weight. For a particular apple, we predict the shelf life to be 4.6 days. The apple's residual is -0.6 days. Did we over or under estimate the shelf-life of the apple? Explain your reasoning.
+## Shelf Life of Apples
+
+Suppose we fit a regression line to predict the shelf life of an apple based on its weight. For a particular apple, we predict the shelf life to be 4.6 days. The apple's residual is -0.6 days. Did we over or under estimate the shelf-life of the apple? Explain your reasoning.
 
 ::: {.callout-note collapse="true" title="Solution"}
 The residual is $y-\hat{y}$ or $observed-predicted$. A negative residual indicates that $\hat{y} > y$, so our model would have over-estimated shelf life for this apple.
 :::
 
-5.  Explore the `starbucks` dataset in the `openintro` package, specifically the relationship between the number of calories and the amount of protein (in grams) in Starbucks food. Since Starbucks only lists the number of calories on the display items, we might be interested in predicting the amount of protein a menu item has based on its calorie content.
+## Starbucks
+
+Explore the `starbucks` dataset in the `openintro` package, specifically the relationship between the number of calories and the amount of protein (in grams) in Starbucks food. Since Starbucks only lists the number of calories on the display items, we might be interested in predicting the amount of protein a menu item has based on its calorie content.
 
 <!-- -->
 
@@ -208,7 +215,9 @@ What does the residuals vs. predicted plot tell us about the variability in our 
 **This plot demonstrates very clearly that the variability is not constant; we have much higher variation in protein for foods with higher predicted protein than in foods with lower predicted protein. This indicates a violation in the assumption of constant variance. In order to fit a linear model perhaps the data should be transformed first, for example a log-transformation to the variables.**
 :::
 
-6.  The scatterplot shows the relationship between socioeconomic status measured as the percentage of children in a neighborhood receiving reduced-fee lunches at school (lunch) and the percentage of bike riders in the neighborhood wearing helmets (helmet). The average percentage of children receiving reduced-fee lunches is 30.833% with a standard deviation of 26.724% and the average percentage of bike riders wearing helmets is 30.883% with a standard deviation of 16.948%.
+## Lunches and Bike Safety
+
+The scatterplot shows the relationship between socioeconomic status measured as the percentage of children in a neighborhood receiving reduced-fee lunches at school (lunch) and the percentage of bike riders in the neighborhood wearing helmets (helmet). The average percentage of children receiving reduced-fee lunches is 30.833% with a standard deviation of 26.724% and the average percentage of bike riders wearing helmets is 30.883% with a standard deviation of 16.948%.
 
 ```{r}
 library(openintro)

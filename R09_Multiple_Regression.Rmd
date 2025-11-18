@@ -228,6 +228,9 @@ Here is a dataset where the linear model includes an interaction between two con
 ```{r}
 states <- as.data.frame(state.x77)
 summary(states)
+cor(states$Income, states$Illiteracy)
+cor(states$Income, states$Murder)
+
 ```
 
 First I want to fit a model that does not include an interaction term.
@@ -408,10 +411,17 @@ $$ X_2 = 2.5 X_1-1$$
 If the true model looks like this:
 $$Y = 10 + 2X_1 +.3 X_2 + \epsilon, \quad \epsilon \sim N(0, 4^2)$$
 We could actually write $X_2$ in terms of $X_1$ or vice versa. For instance, we could substitute in the expression $2.5X_1-1$ and get
-$$Y = 10 + 2X_1 + .3(2.5X_1-1) + \epsilon = 9.7 + 2.75X_1 + \epsilon$$
+$$\begin{aligned}
+Y &= 10 + 2X_1 + .3(2.5X_1-1) + \epsilon \\
+  &= 9.7 + 2.75X_1 + \epsilon
+\end{aligned}$$
+
 Or we could substitute $X_1 = \frac{X_2+1}{2.5}$ and get
-$$ Y = 10 + 2\frac{X_2+1}{2.5}+.3X_2+\epsilon = 10.8 + 1.1 X_2+ \epsilon$$
-Both of these models are perfectly true. The fact is that both would fit the data just as well.
+$$\begin{aligned}
+Y &= 10 + 2\frac{X_2+1}{2.5}+.3X_2+\epsilon\\
+  &= 10.8 + 1.1 X_2+ \epsilon
+\end{aligned}$$
+Both of these models are perfectly true; both would fit the data just as well.
 
 In fact, if your predictors exhibit perfect correlation then R will be unable to properly fit a linear model to the data.
 
@@ -460,7 +470,7 @@ Notice that the coefficient of $X_1$ is now a lot lower (and negative) and the c
 
 The first two problems are understandable if we think about the extreme case. We actually had three models that were equally valid when we had perfect correlation (ignoring $\epsilon$ for simplicity):
 
-$$Y = 10 + 2X_1 +.3 X_2, \quad Y=9.7 + 2.75X_1, \quad Y=10.8 + 1.1 X_2$$
+$$Y = 10 + 2X_1 +.3 X_2',\\ Y=9.7 + 2.75X_1,\\ Y=10.8 + 1.1 X_2$$
 In fact, there are an infinite number of models you could fit that would fit equally well. This means we have no certainty of either of the coefficient values. In fact, the uncertainty of $\beta_1$ and $\beta_2$ affects our uncertainty of $\beta_0$ as well! This causes the standard errors to be large.
 
 What happens when we remove a predictor? I'll refit the model with only $X_1$ and only $X_2$ to see

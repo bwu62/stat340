@@ -96,7 +96,7 @@ y <- Pima.te$typeTF
 
 y.hat <- predict(Pima.glm, type="response")
 pY <- y * y.hat + (1-y)*(1-y.hat)
-data.frame(y,y.hat,pY)
+head(data.frame(y,y.hat,pY),10)
 ```
 
 
@@ -126,7 +126,7 @@ For each observation, we can translate $P(Y=y | model)$ into a log-likelihood by
 
 ```{r}
 ll <- log(pY)
-data.frame(y,y.hat,pY, ll, -2*ll)
+head(data.frame(y,y.hat,pY, ll, -2*ll),10)
 ```
 
 ## Prediction
@@ -317,7 +317,7 @@ as.numeric(TPR[optimalThresh])
 ```
 
 ```{r}
-data.frame(TPR, FPR)
+#data.frame(TPR, FPR)
 
 ```
 

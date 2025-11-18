@@ -4,6 +4,10 @@ format: html
 editor: source
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dev = 'svg') # set output device to svg
+```
+
 ```{R, warning=F, message=F, echo=F}
 require(ggplot2)
 ```
