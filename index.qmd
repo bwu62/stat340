@@ -24,4 +24,14 @@ shinylive::export(appdir="shiny/appname", destdir="docs/appname")
 
 to test
 httpuv::runStaticServer("docs/appname")
+
+
+shinylive::export(appdir="shiny/logistic_ROC", destdir="docs/logistic_ROC")
+shinylive::export(appdir="shiny/model_selection", destdir="docs/model_selection")
+shinylive::export(appdir="shiny/normal_pdf_cdf", destdir="docs/normal_pdf_cdf")
+shinylive::export(appdir="shiny/onetwotail", destdir="docs/onetwotail")
+shinylive::export(appdir="shiny/power_mean", destdir="docs/power_mean")
+shinylive::export(appdir="shiny/power_var", destdir="docs/power_var")
+
+
 -->

@@ -21,6 +21,7 @@ book:
       - distributions.qmd
       - R02_Distributions.Rmd
       - distr_practice.qmd
+      - RV_summary.qmd
       - text: "---"
       - mc.qmd
       - R03_MonteCarloExamples.Rmd
