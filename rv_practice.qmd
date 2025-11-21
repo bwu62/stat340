@@ -340,7 +340,7 @@ c.  The probability that Linda is a liberal female banker and a Democrat.
 
 ::: {.callout-note collapse="true" title="Solution"}
 ```{r}
-gss <- read.csv("https://github.com/AllenDowney/ThinkBayes2/raw/master/data/gss_bayes.csv")
+gss <- read.csv("data/gss_bayes.csv")
 #banker : indus10==6870
 #female : sex == 2
 #liberal: polviews <= 3

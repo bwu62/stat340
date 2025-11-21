@@ -115,7 +115,8 @@ log(L)
 l <- sum(log(y * y.hat + (1-y)*(1-y.hat)))
 l
 ```
-The closer to zero the log likelihood is, the better; The closer to -infinity, the "worse". 
+The closer to zero the log likelihood is, the better; The closer to -infinity, the "worse".
+
 The residual deviance is defined as -2 times the log likelihood. It turns a big negative log likelihood into a large positive number (easier to interpret)
 
 ```{r}
@@ -342,7 +343,7 @@ The area under the curve (AUC) is a common metric measuring how good your classi
 
 ## Comparing using AIC and BIC
 
-As we'll see next week, the AIC is a useful statistic to compare logistic models. 
+As we'll see next week, the AIC (Akaike Information Criterion) is a useful statistic to compare logistic models. 
 $$AIC = \text{residual deviance} + 2k\text{ (k is the number of coefficients fit)}$$
 $$BIC = \text{residual deviance} + ln(n)*k$$
 When sample size is large then BIC will give a larger penalty per predictor. $ln(8) > 2$ so when $n \geq 8$ BIC gives a heftier penalty per coefficient in the model than AIC does and thus will favor simpler models.

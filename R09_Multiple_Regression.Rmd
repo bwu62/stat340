@@ -581,10 +581,9 @@ By looking at the model summary, the R-squared value of 0.362 is not bad for a c
 For further diagnosis of the problem, let us first look at the pair-wise correlation among the numerical variables.
 
 
-```{r}
+```{r, warning=F}
 X<-wages[,c("EDUCATION","EXPERIENCE","WAGE","AGE")]
-library(GGally)
-ggpairs(X)
+pairs(X)
 ```
 
 The high correlation between age and experience might be the root cause of multicollinearity.

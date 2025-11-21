@@ -24,7 +24,7 @@ server = function(input, output) {
   if(is.factor(Pima.te$type)) Pima.te$type = ifelse(Pima.te$type=='Yes',1,0)
   model = list(null=glm(type~1, data=Pima.te, family="binomial"),
                glu=glm(type~glu, data=Pima.te, family="binomial"),
-               all=glm(type~., data=Pima.te, family="binomial"))
+               all=glm(type~npreg+bp+skin+bmi+ped+age, data=Pima.te, family="binomial"))
   
   observeEvent(c(input$threshold,input$model),{
     predictions = predict.glm(model[[input$model]], newdata=Pima.te, type="response")
